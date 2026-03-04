@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-primary: #C4A484;
+  --color-primary-foreground: #FFFFFF;
+  
+  --color-background: #FFFFFF;
+  --color-foreground: #121212;
+  
+  --color-muted: #F5F3F0;
+  --color-muted-foreground: #737373;
+
+  --color-card: #F5F3F0;
+  --color-card-foreground: #121212;
+
+  --color-border: #E5E5E5;
+
+  --color-accent-purple: #6B5E82;
+  --color-accent-wine: #8B5A5A;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}

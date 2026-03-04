@@ -1,0 +1,90 @@
+import { Link } from 'react-router-dom';
+import { motion } from 'motion/react';
+import { ArrowRight } from 'lucide-react';
+
+export default function Home() {
+  return (
+    <div className="flex flex-col min-h-screen">
+      {/* Hero Section */}
+      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDEE5Mt2icreK6XZIUbxdCJoOh6MuaB3ZJWt8MRNUcUIa8BGEdq6cat1dt4hQ1Lb4bmzMA0TezYl9g1mFm92D3pxVnx0d3nCcBOtz5IAPIK7urYo5W9DHrlYSqkLbEdg4jO_Dsg8FtZfGoeRViUUhrsveiemx0HOTRlSPuD62DGUmALhluOIrdo1JSXQ7r8dZdbhCWJNS0PHVTN76d4TiuNC1FTbBeqzE9iQAUoTiEa8aJT40SHAyJ5TW1xpR4t2JU-74BZqF2oIEM")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
+          >
+            Affordable Luxury. Delivered.
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl md:text-2xl font-light mb-8 text-white/90"
+          >
+            Discover premium lifestyle products without the premium price tag.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <Link 
+              to="/shop" 
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-all transform hover:scale-105 shadow-lg"
+            >
+              Shop Now <ArrowRight className="h-5 w-5" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Featured Collections */}
+      <section className="py-20 px-4 max-w-7xl mx-auto w-full">
+        <h2 className="text-3xl font-bold mb-12 text-center">Featured Collections</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            { name: 'Fashion', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBKALPArCgjYy393ALY1pUUQX1q__FHyY3fvIt_R-FkBXMbhEwzI0FaeUPtOBwlGLBdktucKGR9nBIG5lIkYlvYjbExtsVskcUz52MrjmafpdHLiLw6p0ZceZVOsqn7dTw_mvU3UgYwp4js2UgRp7YR2mmCviNPQz9TIU0ErCPZm7vwJP30de1TAm0Xwup8V1aIKhjGf7Jh9r5RfOi_CNb4CrZPPAMyk8pxpZ3cln2mbj-aWtt7wEqtHq3_XclbY54evo4Cw3zuwaI' },
+            { name: 'Gadgets', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAALpKp9T9ryIf7nzs5kTTPepauInGkTgWhTcDl-1sIZdxeGjatrY81nRGYbOBCE_rZOaLHjoYX4iDAa4Jby6z9R5p6MPa8s_-zEoFShpk0srxqMIiNgbr-ppnT6wH_PomEAUVeK7y1oxWKp14Tl6pamXNfIpQ7gwwL44b0jcw2UpUTKabWjowPOcqKVj7JKiNCSkVgGlcpipfkOaX9S4X0h8IyV47WgJzR9OaYajWLL9wQNfXhmBJ6cZqu3TOdeEnLsqfJ9Od124c' },
+            { name: 'Skincare', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD-V9qEHhkCxIuuJ5mYg4EQto58NXdwxhgu_kgfLW3ZUJR2hznmqRRvlCMu5hFkkVC8z52zH-J_HTQwoTEBvRJUJ2_6ZeyrkRsGEXaSGDDarWiDCqkT11BnFocOfAbxzaXCtyaCL_Qgby4HYk23xo5DI78L146Rxh_c1CliNKn6vhcd6WHciuARzvFMbo4Yc6rV5HOQKvEnKoALc5I2T5K3gDPQFQQ3-OMDnUXCSiE8QfmQID8aOfNevgJziJzKMSEJ4QTcrvAM4k4' },
+            { name: 'Perfumes', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAg4WkepRKU1147MIAz6AV54Q8NKh7Bk3oEdU19HFv8QUh-PotHD4YmVozMdCk825kBKTVpiXmq-7x-uQZUTsMpgRF0Q2dINTHZsFv4dhM3cl4oaLwvtx48O0XGgECw_i6kjg-GRWmQQLo7MMVfzUZnIrxrLdfYzo2crnDzCtvI6idgaK4clrO6KJpYxXMX4VpPCIzs2cq4UJTJjwE5e0qzOD_CuaB5YGQxBhalisbqCb7M5VsARvNjp7kh2-DTaEty715uoX6uiTw' },
+          ].map((collection, index) => (
+            <motion.div
+              key={collection.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="group relative aspect-[3/4] overflow-hidden rounded-2xl cursor-pointer"
+            >
+              <Link to="/shop">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                  style={{ backgroundImage: `url(${collection.image})` }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                <div className="absolute bottom-0 left-0 p-6 w-full">
+                  <h3 className="text-2xl font-bold text-white mb-2">{collection.name}</h3>
+                  <span className="text-sm font-medium text-white/80 group-hover:text-primary transition-colors flex items-center gap-1">
+                    Explore Collection <ArrowRight className="h-4 w-4" />
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
