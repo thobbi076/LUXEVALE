@@ -55,5 +55,16 @@ export const products: Product[] = [
     description: 'Travel in style with our handcrafted leather weekend bag. Made from full-grain leather that ages beautifully, it features ample storage, durable hardware, and a timeless design for the discerning traveler.',
     rating: 4.6,
     reviews: 34
+  },
+  {
+    id: 'premium-leather-tote',
+    name: 'Premium Leather Tote',
+    category: 'Fashion',
+    price: 320.00,
+    image: 'https://i.ibb.co/KjXdpwvY/bag1.png',
+    isNew: true,
+    description: 'A versatile and stylish tote bag crafted from high-quality leather. Perfect for daily use, it features a spacious interior and a sleek design that complements any outfit.',
+    rating: 4.8,
+    reviews: 12
   }
 ];
