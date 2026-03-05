@@ -22,14 +22,15 @@ export const products: Product[] = [
     id: 'modern-key-lock-satchel',
     name: 'Modern Key Lock Satchel',
     category: 'Fashion',
-    price: 25000 / 1500,
-    originalPrice: 50000 / 1500,
+    price: 16.67,
+    originalPrice: 33.33,
     image: 'https://i.ibb.co/KjXdpwvY/bag1.png',
     images: [
       'https://i.ibb.co/KjXdpwvY/bag1.png',
       'https://i.ibb.co/xtfKfQH7/bag5.png',
       'https://i.ibb.co/DHDMn86G/bag3.png',
       'https://i.ibb.co/q37hNf8W/bag2.png',
+      'https://i.ibb.co/xqRgq3JB/bag4.png',
     ],
     isNew: true,
     description: "A sophisticated satchel featuring a distinctive buckle and key charm detail. Available in classic black and bold red, this structured bag is perfect for the modern professional. The high-gloss finish and silver-tone hardware add a touch of luxury to any outfit.",
@@ -53,8 +54,8 @@ export const products: Product[] = [
     id: 'mens-wide-leg-trousers',
     name: "Men's Wide Leg Trousers",
     category: 'Fashion',
-    price: 14999 / 1500,
-    originalPrice: 25000 / 1500,
+    price: 10.00,
+    originalPrice: 16.67,
     image: 'https://i.ibb.co/JRt1F0BJ/tro1.png',
     images: [
       'https://i.ibb.co/JRt1F0BJ/tro1.png',
@@ -85,8 +86,8 @@ export const products: Product[] = [
     name: 'MacGregor Natural Moisture Sheet Mask',
     brand: 'MacGregor',
     category: 'Skincare',
-    price: 2500 / 1500,
-    originalPrice: 3600 / 1500,
+    price: 1.67,
+    originalPrice: 2.40,
     image: 'https://i.ibb.co/jZ8x6dmB/mas1.png',
     images: [
       'https://i.ibb.co/jZ8x6dmB/mas1.png',
@@ -116,8 +117,8 @@ export const products: Product[] = [
     id: 'green-mask-stick',
     name: 'Green Mask Stick For Pimples',
     category: 'Skincare',
-    price: 3500 / 1500,
-    originalPrice: 6000 / 1500,
+    price: 2.33,
+    originalPrice: 4.00,
     image: 'https://i.ibb.co/kgyk2dtr/mask1.png',
     images: [
       'https://i.ibb.co/kgyk2dtr/mask1.png',
@@ -151,8 +152,8 @@ export const products: Product[] = [
     name: 'Balila Unisex Perfume',
     brand: 'Balila',
     category: 'Perfumes',
-    price: 3.67, // Approx 5,500 NGN
-    originalPrice: 6.67, // Approx 10,000 NGN
+    price: 3.67,
+    originalPrice: 6.67,
     image: 'https://i.ibb.co/KxKsFn5s/balila1.png',
     images: [
       'https://i.ibb.co/KxKsFn5s/balila1.png',
@@ -183,8 +184,8 @@ export const products: Product[] = [
     name: 'Temptation EAU DE PARFUM TEMPTATION 100ML FOR MEN',
     brand: 'Temptation',
     category: 'Perfumes',
-    price: 8500 / 1500,
-    originalPrice: 10000 / 1500,
+    price: 5.67,
+    originalPrice: 6.67,
     image: 'https://i.ibb.co/RpCBv8Pr/tempt1.png',
     images: [
       'https://i.ibb.co/RpCBv8Pr/tempt1.png',
@@ -217,8 +218,8 @@ export const products: Product[] = [
     id: 'black-studded-bag',
     name: 'Black Studded Bag',
     category: 'Fashion',
-    price: 22000 / 1500,
-    originalPrice: 45000 / 1500,
+    price: 14.67,
+    originalPrice: 30.00,
     image: 'https://i.ibb.co/93pkK9bk/bg1.png',
     images: [
       'https://i.ibb.co/93pkK9bk/bg1.png',
