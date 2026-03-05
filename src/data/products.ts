@@ -1,3 +1,31 @@
+import bag1 from '../assets/bag1.png';
+import bag2 from '../assets/bag2.png';
+import bag3 from '../assets/bag3.png';
+import bag5 from '../assets/bag5.png';
+import balila1 from '../assets/balila1.png';
+import balila2 from '../assets/balila2.png';
+import balila3 from '../assets/balila3.png';
+import balila4 from '../assets/balila4.png';
+import bg1 from '../assets/bg1.png';
+import bg2 from '../assets/bg2.png';
+import bg3 from '../assets/bg3.png';
+import bg4 from '../assets/bg4.png';
+import mas1 from '../assets/mas1.png';
+import mas2 from '../assets/mas2.png';
+import mas3 from '../assets/mas3.png';
+import mas4 from '../assets/mas4.png';
+import mask1 from '../assets/mask1.png';
+import mask2 from '../assets/mask2.png';
+import mask3 from '../assets/mask3.png';
+import mask4 from '../assets/mask4.png';
+import tempt1 from '../assets/tempt1.png';
+import tempt2 from '../assets/tempt2.png';
+import tempt3 from '../assets/tempt3.png';
+import tempt4 from '../assets/tempt4.png';
+import tro1 from '../assets/tro1.png';
+import tro2 from '../assets/tro2.png';
+import tro3 from '../assets/tro3.png';
+import tro4 from '../assets/tro4.png';
 
 export interface Product {
   id: string;
@@ -24,12 +52,12 @@ export const products: Product[] = [
     category: 'Fashion',
     price: 25000 / 1500,
     originalPrice: 50000 / 1500,
-    image: '/assets/bag1.png',
+    image: bag1,
     images: [
-      '/assets/bag1.png',
-      '/assets/bag5.png',
-      '/assets/bag3.png',
-      '/assets/bag2.png',
+      bag1,
+      bag5,
+      bag3,
+      bag2,
     ],
     isNew: true,
     description: "A sophisticated satchel featuring a distinctive buckle and key charm detail. Available in classic black and bold red, this structured bag is perfect for the modern professional. The high-gloss finish and silver-tone hardware add a touch of luxury to any outfit.",
@@ -55,12 +83,12 @@ export const products: Product[] = [
     category: 'Fashion',
     price: 14999 / 1500,
     originalPrice: 25000 / 1500,
-    image: '/assets/tro1.png',
+    image: tro1,
     images: [
-      '/assets/tro1.png',
-      '/assets/tro2.png',
-      '/assets/tro3.png',
-      '/assets/tro4.png',
+      tro1,
+      tro2,
+      tro3,
+      tro4,
     ],
     isNew: true,
     description: "Stay comfortable and stylish with these Men's Wide Leg Trousers. Featuring a relaxed fit and a clean, minimalist design, these trousers are perfect for creating a modern silhouette. Ideal for pairing with a simple tee or a crisp shirt.",
@@ -87,12 +115,12 @@ export const products: Product[] = [
     category: 'Skincare',
     price: 2500 / 1500,
     originalPrice: 3600 / 1500,
-    image: '/assets/mas1.png',
+    image: mas1,
     images: [
-      '/assets/mas1.png',
-      '/assets/mas2.png',
-      '/assets/mas3.png',
-      '/assets/mas4.png',
+      mas1,
+      mas2,
+      mas3,
+      mas4,
     ],
     isNew: true,
     description: "Revitalize your skin with MacGregor Natural Moisture Sheet Masks. Available in Charcoal for deep pore cleansing and oil control, and Pomegranate for firming and wrinkle improvement. These masks provide intense hydration and leave your skin feeling refreshed and radiant.",
@@ -118,12 +146,12 @@ export const products: Product[] = [
     category: 'Skincare',
     price: 3500 / 1500,
     originalPrice: 6000 / 1500,
-    image: '/assets/mask1.png',
+    image: mask1,
     images: [
-      '/assets/mask1.png',
-      '/assets/mask2.png',
-      '/assets/mask3.png',
-      '/assets/mask4.png',
+      mask1,
+      mask2,
+      mask3,
+      mask4,
     ],
     isNew: true,
     description: "The mask cleansing face contains green tea extract, which can effectively clean the skin pores, deeply clean up skin dirt, adjust the skin's water and oil balance, replenish skin moisture, and nourish the skin. Effectively reduce control oil, improve facial fullness, and Keep beautiful skin.",
@@ -153,12 +181,12 @@ export const products: Product[] = [
     category: 'Perfumes',
     price: 3.67, // Approx 5,500 NGN
     originalPrice: 6.67, // Approx 10,000 NGN
-    image: '/assets/balila1.png',
+    image: balila1,
     images: [
-      '/assets/balila1.png',
-      '/assets/balila2.png',
-      '/assets/balila3.png',
-      '/assets/balila4.png',
+      balila1,
+      balila2,
+      balila3,
+      balila4,
     ],
     isNew: true,
     description: "Announce your arrival without much effort with this sensational fragrance. It's a floral, woody fragrance infused in the exotic gourmand scents making every one that wears it stand out with its aroma still trailing after he/she had long left the scene. A very sensual and aromatic scent that every one who has taste for good perfumes will love. A combination of floral and woody accord form the top, middle and base notes.",
@@ -185,12 +213,12 @@ export const products: Product[] = [
     category: 'Perfumes',
     price: 8500 / 1500,
     originalPrice: 10000 / 1500,
-    image: '/assets/tempt1.png',
+    image: tempt1,
     images: [
-      '/assets/tempt1.png',
-      '/assets/tempt2.png',
-      '/assets/tempt3.png',
-      '/assets/tempt4.png',
+      tempt1,
+      tempt2,
+      tempt3,
+      tempt4,
     ],
     isNew: true,
     description: "This Eau Du Parfum is Luxurious and Sensuous. Its romantic scent is a dazzling, oriental with floral aroma. A romantic blend of Asian fruit with subtle undertones of musk and raspberry. It has a romantic scent that makes you dazzle all day. Suitable for everyday use with a lasting effect. This 100ml perfume smells great and awesome, a great addition for your daily use. Lightweight and affordable. Need a perfume? This is perfect for you. Smell good, feel great and look awesome.",
@@ -219,12 +247,12 @@ export const products: Product[] = [
     category: 'Fashion',
     price: 22000 / 1500,
     originalPrice: 45000 / 1500,
-    image: '/assets/bg1.png',
+    image: bg1,
     images: [
-      '/assets/bg1.png',
-      '/assets/bg2.png',
-      '/assets/bg3.png',
-      '/assets/bg4.png',
+      bg1,
+      bg2,
+      bg3,
+      bg4,
     ],
     isNew: true,
     description: "Elevate your style with this exquisite black studded handbag. Featuring a structured silhouette with geometric detailing and a matte finish, this bag is the perfect blend of edgy and elegant. It comes with a chain strap for versatile styling. Please note: This item is sold without the original box.",
