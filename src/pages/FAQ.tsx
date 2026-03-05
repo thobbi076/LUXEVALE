@@ -34,7 +34,7 @@ const faqs = [
       },
       {
         question: 'How do I initiate a return?',
-        answer: 'To initiate a return, please contact our concierge team via email at concierge@luxevale.com or through WhatsApp. We will guide you through the process and provide a return shipping label if applicable.'
+        answer: 'To initiate a return, please contact our concierge team via email at luxevale1@gmail.com or through WhatsApp. We will guide you through the process and provide a return shipping label if applicable.'
       },
       {
         question: 'When will I receive my refund?',

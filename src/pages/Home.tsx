@@ -53,10 +53,9 @@ export default function Home() {
       {/* Featured Collections */}
       <section className="py-20 px-4 max-w-7xl mx-auto w-full">
         <h2 className="text-3xl font-bold mb-12 text-center">Featured Collections</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             { name: 'Fashion', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBKALPArCgjYy393ALY1pUUQX1q__FHyY3fvIt_R-FkBXMbhEwzI0FaeUPtOBwlGLBdktucKGR9nBIG5lIkYlvYjbExtsVskcUz52MrjmafpdHLiLw6p0ZceZVOsqn7dTw_mvU3UgYwp4js2UgRp7YR2mmCviNPQz9TIU0ErCPZm7vwJP30de1TAm0Xwup8V1aIKhjGf7Jh9r5RfOi_CNb4CrZPPAMyk8pxpZ3cln2mbj-aWtt7wEqtHq3_XclbY54evo4Cw3zuwaI' },
-            { name: 'Gadgets', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAALpKp9T9ryIf7nzs5kTTPepauInGkTgWhTcDl-1sIZdxeGjatrY81nRGYbOBCE_rZOaLHjoYX4iDAa4Jby6z9R5p6MPa8s_-zEoFShpk0srxqMIiNgbr-ppnT6wH_PomEAUVeK7y1oxWKp14Tl6pamXNfIpQ7gwwL44b0jcw2UpUTKabWjowPOcqKVj7JKiNCSkVgGlcpipfkOaX9S4X0h8IyV47WgJzR9OaYajWLL9wQNfXhmBJ6cZqu3TOdeEnLsqfJ9Od124c' },
             { name: 'Skincare', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD-V9qEHhkCxIuuJ5mYg4EQto58NXdwxhgu_kgfLW3ZUJR2hznmqRRvlCMu5hFkkVC8z52zH-J_HTQwoTEBvRJUJ2_6ZeyrkRsGEXaSGDDarWiDCqkT11BnFocOfAbxzaXCtyaCL_Qgby4HYk23xo5DI78L146Rxh_c1CliNKn6vhcd6WHciuARzvFMbo4Yc6rV5HOQKvEnKoALc5I2T5K3gDPQFQQ3-OMDnUXCSiE8QfmQID8aOfNevgJziJzKMSEJ4QTcrvAM4k4' },
             { name: 'Perfumes', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAg4WkepRKU1147MIAz6AV54Q8NKh7Bk3oEdU19HFv8QUh-PotHD4YmVozMdCk825kBKTVpiXmq-7x-uQZUTsMpgRF0Q2dINTHZsFv4dhM3cl4oaLwvtx48O0XGgECw_i6kjg-GRWmQQLo7MMVfzUZnIrxrLdfYzo2crnDzCtvI6idgaK4clrO6KJpYxXMX4VpPCIzs2cq4UJTJjwE5e0qzOD_CuaB5YGQxBhalisbqCb7M5VsARvNjp7kh2-DTaEty715uoX6uiTw' },
           ].map((collection, index) => (

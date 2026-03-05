@@ -1,4 +1,4 @@
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { ShoppingCart, Search, Diamond, Menu, X, Globe } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useCurrency } from '../context/CurrencyContext';
@@ -10,7 +10,28 @@ export default function Layout() {
   const { currency, setCurrency } = useCurrency();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCurrencyOpen, setIsCurrencyOpen] = useState(false);
+  const [email, setEmail] = useState('');
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setIsSubscribed(true);
+      setEmail('');
+      setTimeout(() => setIsSubscribed(false), 5000);
+    }
+  };
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/shop?search=${encodeURIComponent(searchQuery.trim())}`);
+      setSearchQuery('');
+    }
+  };
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -49,14 +70,16 @@ export default function Layout() {
 
             {/* Right Actions */}
             <div className="flex items-center gap-4">
-              <div className="hidden sm:flex items-center relative">
+              <form onSubmit={handleSearch} className="hidden sm:flex items-center relative">
                 <Search className="absolute left-3 h-4 w-4 text-muted-foreground" />
                 <input
                   type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search luxury..."
                   className="h-9 w-64 rounded-full bg-muted pl-9 pr-4 text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-all"
                 />
-              </div>
+              </form>
 
               {/* Currency Selector */}
               <div className="relative hidden sm:block">
@@ -135,6 +158,28 @@ export default function Layout() {
                   {link.name}
                 </Link>
               ))}
+              
+              <div className="pt-4 border-t border-border">
+                <span className="text-sm font-bold text-muted-foreground mb-2 block">Currency</span>
+                <div className="flex gap-2 flex-wrap">
+                  {currencies.map((curr) => (
+                    <button
+                      key={curr}
+                      onClick={() => {
+                        setCurrency(curr as any);
+                        setIsMenuOpen(false);
+                      }}
+                      className={`px-4 py-2 rounded-lg text-sm font-bold border transition-colors ${
+                        currency === curr 
+                          ? 'bg-primary text-primary-foreground border-primary' 
+                          : 'bg-card text-muted-foreground border-border hover:border-primary'
+                      }`}
+                    >
+                      {curr}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </nav>
           </motion.div>
         )}
@@ -159,9 +204,9 @@ export default function Layout() {
           <div>
             <h3 className="font-bold mb-4">Shop</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/shop" className="hover:text-primary">All Products</Link></li>
-              <li><Link to="/shop" className="hover:text-primary">New Arrivals</Link></li>
-              <li><Link to="/shop" className="hover:text-primary">Best Sellers</Link></li>
+              <li><Link to="/shop?category=Perfumes" className="hover:text-primary">Perfumes</Link></li>
+              <li><Link to="/shop?category=Fashion" className="hover:text-primary">Fashion</Link></li>
+              <li><Link to="/shop?category=Skincare" className="hover:text-primary">Skincare</Link></li>
             </ul>
           </div>
 
@@ -176,20 +221,33 @@ export default function Layout() {
 
           <div>
             <h3 className="font-bold mb-4">Newsletter</h3>
-            <div className="flex gap-2">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-              />
-              <button className="bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 rounded-md text-sm font-medium transition-colors">
-                Subscribe
-              </button>
-            </div>
+            {isSubscribed ? (
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-green-600 font-medium bg-green-50 p-3 rounded-lg border border-green-100"
+              >
+                Thanks for subscribing!
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubscribe} className="flex gap-2">
+                <input 
+                  type="email" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email" 
+                  required
+                  className="flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                />
+                <button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                  Subscribe
+                </button>
+              </form>
+            )}
           </div>
         </div>
         <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          &copy; 2024 LUXEVALE. All rights reserved.
+          &copy; 2026 LUXEVALE. All rights reserved.
         </div>
       </footer>
     </div>

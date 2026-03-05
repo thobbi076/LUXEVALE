@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Heart, ShoppingBag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
@@ -8,29 +7,50 @@ import { useCurrency } from '../context/CurrencyContext';
 import { products } from '../data/products';
 
 export default function Shop() {
-  const [filter, setFilter] = useState('All');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const filter = searchParams.get('category') || 'All';
+  const searchQuery = searchParams.get('search') || '';
+
+  const setFilter = (category: string) => {
+    if (category === 'All') {
+      setSearchParams({});
+    } else {
+      setSearchParams({ category });
+    }
+  };
+
   const { addToCart } = useCart();
   const { toggleWishlist, isInWishlist } = useWishlist();
   const { formatPrice } = useCurrency();
 
-  const filteredProducts = filter === 'All' 
-    ? products 
-    : products.filter(p => p.category === filter);
+  const filteredProducts = products.filter(p => {
+    const matchesCategory = filter === 'All' || p.category === filter;
+    const matchesSearch = searchQuery 
+      ? p.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        p.description.toLowerCase().includes(searchQuery.toLowerCase())
+      : true;
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Header */}
       <div className="mb-12">
-        <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-4">Shop All Products</h1>
+        <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-4">
+          {searchQuery ? `Search Results for "${searchQuery}"` : 'Shop All Products'}
+        </h1>
         <p className="text-lg text-muted-foreground max-w-2xl">
-          Discover our curated collection of luxury items, designed for the modern connoisseur.
+          {searchQuery 
+            ? `Found ${filteredProducts.length} items matching your search.`
+            : 'Discover our curated collection of luxury items, designed for the modern connoisseur.'
+          }
         </p>
       </div>
 
       {/* Filters */}
       <div className="flex flex-wrap items-center justify-between gap-4 mb-12 border-b border-border pb-6">
         <div className="flex gap-3 flex-wrap">
-          {['All', 'Fashion', 'Gadgets', 'Skincare', 'Perfumes'].map((category) => (
+          {['All', 'Fashion', 'Skincare', 'Perfumes'].map((category) => (
             <button
               key={category}
               onClick={() => setFilter(category)}
