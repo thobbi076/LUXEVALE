@@ -11,34 +11,16 @@ export default function Product() {
   const { id } = useParams();
   const { addToCart } = useCart();
   const { formatPrice } = useCurrency();
-  
-  const product = products.find(p => p.id === id);
-  
   const [quantity, setQuantity] = useState(1);
-  const [activeAccordion, setActiveAccordion] = useState<string | null>(
-    product?.category === 'Perfumes' ? 'notes' : 'features'
-  );
-  const [selectedImage, setSelectedImage] = useState<string>('');
+  const [selectedSize, setSelectedSize] = useState('100ml');
+  const [activeAccordion, setActiveAccordion] = useState<string | null>('notes');
+  const [activeImage, setActiveImage] = useState<string>('');
 
-  const availableSizes = product?.specifications?.Volume 
-    ? [String(product.specifications.Volume)] 
-    : product?.category === 'Perfumes' 
-      ? ['50ml', '100ml', '120ml', '150ml']
-      : [];
-
-  const [selectedSize, setSelectedSize] = useState(availableSizes[0]);
+  const product = products.find(p => p.id === id);
 
   useEffect(() => {
     if (product) {
-      setSelectedImage(product.image);
-      // Update selected size when product changes
-      const sizes = product.specifications?.Volume 
-        ? [String(product.specifications.Volume)] 
-        : product.category === 'Perfumes' 
-          ? ['50ml', '100ml', '120ml', '150ml']
-          : [];
-      setSelectedSize(sizes[0]);
-      setActiveAccordion(product.category === 'Perfumes' ? 'notes' : 'features');
+      setActiveImage(product.image);
     }
   }, [product]);
 
@@ -94,26 +76,32 @@ export default function Product() {
     </div>
   );
 
+  const productImages = product.images || [product.image, product.image, product.image, product.image];
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         {/* Product Image */}
         <div className="space-y-4">
           <div className="aspect-square bg-card rounded-2xl overflow-hidden relative">
-            <img 
-              src={selectedImage || product.image} 
+            <motion.img 
+              key={activeImage}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              src={activeImage || product.image} 
               alt={product.name} 
               className="w-full h-full object-cover object-center"
             />
           </div>
           <div className="grid grid-cols-4 gap-4">
-            {(product.images && product.images.length > 0 ? product.images : [product.image, product.image, product.image, product.image]).map((img, i) => (
+            {productImages.map((img, i) => (
               <div 
                 key={i} 
-                className={`aspect-square bg-card rounded-lg overflow-hidden cursor-pointer transition-all ${selectedImage === img ? 'ring-2 ring-primary' : 'hover:ring-2 hover:ring-primary/50'}`}
-                onClick={() => setSelectedImage(img)}
+                className={`aspect-square bg-card rounded-lg overflow-hidden cursor-pointer hover:ring-2 ring-primary transition-all ${activeImage === img ? 'ring-2 ring-primary' : ''}`}
+                onClick={() => setActiveImage(img)}
               >
-                <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
+                <img src={img} alt={`Thumbnail ${i + 1}`} className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
@@ -125,22 +113,14 @@ export default function Product() {
             <Link to="/" className="hover:text-primary">Home</Link> / <Link to="/shop" className="hover:text-primary">Shop</Link> / <span className="text-foreground font-medium">{product.name}</span>
           </nav>
 
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-primary">{product.category}</span>
-            {product.brand && (
-              <>
-                <span className="text-muted-foreground">•</span>
-                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{product.brand}</span>
-              </>
-            )}
-          </div>
+          <span className="text-xs font-bold uppercase tracking-widest text-primary mb-2">{product.category}</span>
           <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-4">{product.name}</h1>
           
           <div className="flex items-center gap-4 mb-6">
-            <div className="flex flex-col">
+            <div className="flex items-baseline gap-3">
               <span className="text-2xl font-bold text-primary">{formatPrice(product.price)}</span>
               {product.originalPrice && (
-                <span className="text-sm text-muted-foreground line-through">
+                <span className="text-lg text-muted-foreground line-through decoration-red-500/50 decoration-2">
                   {formatPrice(product.originalPrice)}
                 </span>
               )}
@@ -155,26 +135,35 @@ export default function Product() {
             {product.description}
           </p>
 
-          {availableSizes.length > 1 && (
+          {product.keyFeatures && (
             <div className="mb-8">
-              <span className="text-sm font-bold uppercase tracking-wider mb-3 block">Size</span>
-              <div className="flex gap-3">
-                {availableSizes.map((size) => (
-                  <button
-                    key={size}
-                    onClick={() => setSelectedSize(size)}
-                    className={`flex-1 py-3 rounded-lg border text-sm font-bold transition-all ${
-                      selectedSize === size 
-                        ? 'border-primary bg-primary/5 text-primary ring-1 ring-primary' 
-                        : 'border-border hover:border-primary/50'
-                    }`}
-                  >
-                    {size}
-                  </button>
+              <h4 className="font-bold text-sm uppercase tracking-wider mb-3">Key Features</h4>
+              <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+                {product.keyFeatures.map((feature, index) => (
+                  <li key={index}>{feature}</li>
                 ))}
-              </div>
+              </ul>
             </div>
           )}
+
+          <div className="mb-8">
+            <span className="text-sm font-bold uppercase tracking-wider mb-3 block">Size</span>
+            <div className="flex gap-3">
+              {['One Size'].map((size) => (
+                <button
+                  key={size}
+                  onClick={() => setSelectedSize(size)}
+                  className={`flex-1 py-3 rounded-lg border text-sm font-bold transition-all ${
+                    selectedSize === size 
+                      ? 'border-primary bg-primary/5 text-primary ring-1 ring-primary' 
+                      : 'border-border hover:border-primary/50'
+                  }`}
+                >
+                  {size}
+                </button>
+              ))}
+            </div>
+          </div>
 
           <div className="mb-8">
             <span className="text-sm font-bold uppercase tracking-wider mb-3 block">Quantity</span>
@@ -223,44 +212,29 @@ export default function Product() {
           </div>
 
           <div className="border-t border-border">
-            {product.keyFeatures && (
-              <AccordionItem id="features" title="Key Features">
-                <ul className="list-disc pl-5 space-y-1">
-                  {product.keyFeatures.map((feature, i) => (
-                    <li key={i}>{feature}</li>
-                  ))}
-                </ul>
-              </AccordionItem>
-            )}
-            
             {product.specifications && (
               <AccordionItem id="specs" title="Specifications">
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 gap-y-2">
                   {Object.entries(product.specifications).map(([key, value]) => (
-                    <div key={key} className="flex flex-col">
-                      <span className="font-bold text-xs uppercase text-muted-foreground">{key}</span>
+                    <div key={key} className="contents">
+                      <span className="font-medium text-foreground">{key}:</span>
                       <span>{value}</span>
                     </div>
                   ))}
                 </div>
               </AccordionItem>
             )}
-
-            {product.category === 'Perfumes' && (
-              <>
-                <AccordionItem id="notes" title="Fragrance Notes">
-                  <p><strong>Top Notes:</strong> Bergamot, Black Pepper, Cardamom</p>
-                  <p><strong>Heart Notes:</strong> Midnight Jasmine, Dark Vanilla, Rose Absolute</p>
-                  <p><strong>Base Notes:</strong> Rare Oud, Amber, Musk, Sandalwood</p>
-                </AccordionItem>
-                <AccordionItem id="ingredients" title="Ingredients">
-                  Alcohol Denat., Parfum (Fragrance), Aqua (Water), Benzyl Salicylate, Limonene, Linalool, Coumarin, Citronellol, Geraniol, Citral.
-                </AccordionItem>
-                <AccordionItem id="usage" title="How to Use">
-                  Spray onto pulse points: wrists, neck, and behind ears. For best results, apply to moisturized skin. Do not rub wrists together as this crushes the fragrance molecules.
-                </AccordionItem>
-              </>
-            )}
+            <AccordionItem id="notes" title="Fragrance Notes">
+              <p><strong>Top Notes:</strong> Bergamot, Black Pepper, Cardamom</p>
+              <p><strong>Heart Notes:</strong> Midnight Jasmine, Dark Vanilla, Rose Absolute</p>
+              <p><strong>Base Notes:</strong> Rare Oud, Amber, Musk, Sandalwood</p>
+            </AccordionItem>
+            <AccordionItem id="ingredients" title="Ingredients">
+              Alcohol Denat., Parfum (Fragrance), Aqua (Water), Benzyl Salicylate, Limonene, Linalool, Coumarin, Citronellol, Geraniol, Citral.
+            </AccordionItem>
+            <AccordionItem id="usage" title="How to Use">
+              Spray onto pulse points: wrists, neck, and behind ears. For best results, apply to moisturized skin. Do not rub wrists together as this crushes the fragrance molecules.
+            </AccordionItem>
           </div>
         </div>
       </div>

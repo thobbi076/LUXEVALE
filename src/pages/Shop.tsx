@@ -144,7 +144,12 @@ export default function Shop() {
                   {product.name}
                 </h3>
               </Link>
-              <p className="text-primary font-bold">{formatPrice(product.price)}</p>
+              <div className="flex items-center justify-center gap-2">
+                <p className="text-primary font-bold">{formatPrice(product.price)}</p>
+                {product.originalPrice && (
+                  <p className="text-muted-foreground text-sm line-through">{formatPrice(product.originalPrice)}</p>
+                )}
+              </div>
             </div>
           </motion.div>
         ))}

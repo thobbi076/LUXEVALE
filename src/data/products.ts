@@ -3,12 +3,16 @@ export interface Product {
   name: string;
   category: string;
   price: number;
+  originalPrice?: number;
   image: string;
+  images?: string[];
   isNew: boolean;
   isBestSeller?: boolean;
   description: string;
   rating: number;
   reviews: number;
+  keyFeatures?: string[];
+  specifications?: Record<string, string>;
 }
 
 export const products: Product[] = [
@@ -57,14 +61,34 @@ export const products: Product[] = [
     reviews: 34
   },
   {
-    id: 'premium-leather-tote',
-    name: 'Premium Leather Tote',
+    id: 'modern-key-lock-satchel',
+    name: 'Modern Key Lock Satchel',
     category: 'Fashion',
-    price: 320.00,
+    price: 16.67,
+    originalPrice: 33.33,
     image: 'https://i.ibb.co/KjXdpwvY/bag1.png',
+    images: [
+      'https://i.ibb.co/KjXdpwvY/bag1.png',
+      'https://i.ibb.co/xtfKfQH7/bag5.png',
+      'https://i.ibb.co/q37hNf8W/bag2.png',
+      'https://i.ibb.co/DHDMn86G/bag3.png'
+    ],
     isNew: true,
-    description: 'A versatile and stylish tote bag crafted from high-quality leather. Perfect for daily use, it features a spacious interior and a sleek design that complements any outfit.',
+    description: 'A sophisticated satchel featuring a distinctive buckle and key charm detail. Available in classic black and bold red, this structured bag is perfect for the modern professional. The high-gloss finish and silver-tone hardware add a touch of luxury to any outfit.',
     rating: 4.8,
-    reviews: 12
+    reviews: 7,
+    keyFeatures: [
+      'High-gloss finish',
+      'Distinctive buckle detail',
+      'Key charm accessory',
+      'Structured silhouette',
+      'Available in Black and Red'
+    ],
+    specifications: {
+      'Material': 'Patent Faux Leather',
+      'Style': 'Satchel / Crossbody',
+      'Closure': 'Zip & Buckle',
+      'Strap': 'Detachable Shoulder Strap'
+    }
   }
 ];
