@@ -62,7 +62,7 @@ export const products: Product[] = [
       'https://i.ibb.co/FLHcxdST/tro3.png',
       'https://i.ibb.co/cSGK80XL/tro4.png',
     ],
-    isNew: true,
+    isNew: false,
     description: "Stay comfortable and stylish with these Men's Wide Leg Trousers. Featuring a relaxed fit and a clean, minimalist design, these trousers are perfect for creating a modern silhouette. Ideal for pairing with a simple tee or a crisp shirt.",
     rating: 4.5,
     reviews: 0,
