@@ -26,7 +26,7 @@ const CURRENCY_SYMBOLS: Record<Currency, string> = {
 };
 
 export function CurrencyProvider({ children }: { children: React.ReactNode }) {
-  const [currency, setCurrency] = useState<Currency>('NGN');
+  const [currency, setCurrency] = useState<Currency>('USD');
 
   // Load currency from local storage on mount
   useEffect(() => {
