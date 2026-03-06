@@ -29,7 +29,7 @@ export const products: Product[] = [
     name: 'Modern Key Lock Satchel',
     category: 'Fashion',
     price: 25000,
-    originalPrice: 50000,
+    originalPrice: 36000,
     image: 'https://i.ibb.co/KjXdpwvY/bag1.png',
     images: [
       'https://i.ibb.co/KjXdpwvY/bag1.png',
@@ -60,7 +60,7 @@ export const products: Product[] = [
     name: "Men's Wide Leg Trousers",
     category: 'Fashion',
     price: 15000,
-    originalPrice: 25000,
+    originalPrice: 23000,
     image: 'https://i.ibb.co/JRt1F0BJ/tro1.png',
     images: [
       'https://i.ibb.co/JRt1F0BJ/tro1.png',
@@ -162,7 +162,7 @@ export const products: Product[] = [
     brand: 'Balila',
     category: 'Perfumes',
     price: 5500,
-    originalPrice: 10000,
+    originalPrice: 9000,
     image: 'https://i.ibb.co/KxKsFn5s/balila1.png',
     images: [
       'https://i.ibb.co/KxKsFn5s/balila1.png',
@@ -242,7 +242,7 @@ export const products: Product[] = [
     name: 'Black Studded Bag',
     category: 'Fashion',
     price: 22000,
-    originalPrice: 45000,
+    originalPrice: 37000,
     image: 'https://i.ibb.co/93pkK9bk/bg1.png',
     images: [
       'https://i.ibb.co/93pkK9bk/bg1.png',
@@ -284,7 +284,7 @@ export const products: Product[] = [
     isNew: true,
     description: "The 6 Pieces (3 Pairs) ankle socks are produced from cotton rich fabric. Designed to protect the feet from the effect of the harshness of shoe on the feet, warm and cold weathers. It expands for proper fit on the feet. It is one size (fits adults). High quality 100% cotton which boasts ample absorbency and softness while resisting pilling and shedding, finished off in a stronger pure natural cotton fibre and is machine washable for easy care and comfortability.",
     rating: 4.5,
-    reviews: 0,
+    reviews: 18,
     keyFeatures: [
       "6 Pieces (3 Pairs)",
       "1 Pair of each color (Black/White/Ash)",
@@ -357,7 +357,7 @@ export const products: Product[] = [
     isNew: true,
     description: "This stylish minimalist square watch features a comfortable silicone strap and a durable alloy case. It is an incredible gift suitable for any occasion, highlighting your temperament and emphasizing your uniqueness. With its business casual and sports style, it fits perfectly into any wardrobe.",
     rating: 4.5,
-    reviews: 0,
+    reviews: 22,
     keyFeatures: [
       "Minimalist Square Design",
       "Quartz Movement",
@@ -382,7 +382,7 @@ export const products: Product[] = [
     name: 'Givanas 100% CARBBEAN VANILLA PERFUME',
     category: 'Perfumes',
     price: 6500,
-    originalPrice: 5000,
+    originalPrice: 9500,
     image: 'https://i.ibb.co/jZhpzm2f/perf1.png',
     images: [
       'https://i.ibb.co/jZhpzm2f/perf1.png',
