@@ -6,7 +6,6 @@ import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import { useCurrency } from '../context/CurrencyContext';
 import { products } from '../data/products';
-import { optimizeImage } from '../utils/image';
 
 export default function Shop() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -110,7 +109,7 @@ export default function Shop() {
               <Link to={`/product/${product.id}`}>
                 <div 
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                  style={{ backgroundImage: `url(${optimizeImage(product.image, 640)})` }}
+                  style={{ backgroundImage: `url(${product.image})` }}
                 />
               </Link>
               
