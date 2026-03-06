@@ -6,6 +6,7 @@ import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import { useCurrency } from '../context/CurrencyContext';
 import { products } from '../data/products';
+import { optimizeImage } from '../utils/image';
 
 export default function Shop() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -21,6 +22,7 @@ export default function Shop() {
   };
 
   const [sortBy, setSortBy] = useState('Featured');
+  const [visibleCount, setVisibleCount] = useState(4);
 
   const { addToCart } = useCart();
   const { toggleWishlist, isInWishlist } = useWishlist();
@@ -96,7 +98,7 @@ export default function Shop() {
 
       {/* Product Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-        {filteredProducts.map((product) => (
+        {filteredProducts.slice(0, visibleCount).map((product) => (
           <motion.div 
             key={product.id}
             initial={{ opacity: 0, scale: 0.95 }}
@@ -108,7 +110,7 @@ export default function Shop() {
               <Link to={`/product/${product.id}`}>
                 <div 
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                  style={{ backgroundImage: `url(${product.image})` }}
+                  style={{ backgroundImage: `url(${optimizeImage(product.image, 640)})` }}
                 />
               </Link>
               
@@ -173,11 +175,16 @@ export default function Shop() {
         ))}
       </div>
 
-      <div className="flex justify-center mt-20">
-        <button className="px-8 py-4 border-2 border-foreground text-foreground font-bold uppercase tracking-widest text-sm rounded-full hover:bg-foreground hover:text-background transition-colors">
-          Load More Products
-        </button>
-      </div>
+      {visibleCount < filteredProducts.length && (
+        <div className="flex justify-center mt-20">
+          <button 
+            onClick={() => setVisibleCount(prev => prev + 4)}
+            className="px-8 py-4 border-2 border-foreground text-foreground font-bold uppercase tracking-widest text-sm rounded-full hover:bg-foreground hover:text-background transition-colors"
+          >
+            Load More Products
+          </button>
+        </div>
+      )}
     </div>
   );
 }
