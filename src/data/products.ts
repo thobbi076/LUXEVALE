@@ -14,6 +14,13 @@ export interface Product {
   keyFeatures?: string[];
   specifications?: Record<string, string>;
   brand?: string;
+  ingredients?: string;
+  howToUse?: string;
+  fragranceNotes?: {
+    top: string;
+    heart: string;
+    base: string;
+  };
 }
 
 export const products: Product[] = [
@@ -109,7 +116,9 @@ export const products: Product[] = [
       "Variants": "Charcoal, Pomegranate",
       "Skin Type": "All Skin Types",
       "Usage": "Single Use"
-    }
+    },
+    ingredients: "Water, Glycerin, Butylene Glycol, Charcoal Powder (for Charcoal variant), Punica Granatum Fruit Extract (for Pomegranate variant), Sodium Hyaluronate, Betaine, Allantoin, Panthenol, Carbomer, Triethanolamine, Phenoxyethanol, Ethylhexylglycerin, Disodium EDTA, Fragrance.",
+    howToUse: "1. After cleansing and toning, remove the mask from the package and unfold it carefully.\n2. Apply the mask to your face, smoothing out any air bubbles to ensure good contact with the skin.\n3. Leave on for 15-20 minutes to allow the essence to absorb.\n4. Remove the mask and gently pat the remaining essence into your skin until fully absorbed. Do not rinse."
   },
   {
     id: 'green-mask-stick',
@@ -143,7 +152,9 @@ export const products: Product[] = [
       "Weight": "40g",
       "Main Material": "Plastic",
       "Color": "Green"
-    }
+    },
+    ingredients: "Water, Propylene Glycol, Glycerin, Titanium Dioxide, Kaolin, Isoceteth-20, Butylene Glycol, Sodium Hydroxide, Stearic Acid, Tea Extract, Disodium EDTA, Chromium Oxide Green, Dipotassium Glycyrrhizate, Tocopherol (Vitamin E).",
+    howToUse: "1. Twist the base to spin out the paste.\n2. Apply evenly to the face, avoiding the eye area.\n3. Leave it on for about 10-15 minutes until it dries.\n4. Rinse thoroughly with water.\n5. Use 2-3 times a week for oily skin, 1-2 times for dry skin."
   },
   {
     id: 'balila-unisex-perfume',
@@ -175,6 +186,13 @@ export const products: Product[] = [
       "Product Line": "JETO",
       "Weight (kg)": "0.01",
       "Volume": "120ml"
+    },
+    ingredients: "Alcohol Denat., Parfum (Fragrance), Aqua (Water), Benzyl Salicylate, Limonene, Linalool, Coumarin, Citronellol, Geraniol, Citral.",
+    howToUse: "Hold the bottle 3-6 inches away from your skin and spray onto pulse points such as your wrists, neck, and behind the ears. For a longer-lasting scent, apply to moisturized skin. Avoid rubbing your wrists together as this can break down the fragrance notes.",
+    fragranceNotes: {
+      top: "Bergamot, Black Pepper, Cardamom",
+      heart: "Midnight Jasmine, Dark Vanilla, Rose Absolute",
+      base: "Rare Oud, Amber, Musk, Sandalwood"
     }
   },
   {
@@ -210,6 +228,13 @@ export const products: Product[] = [
       "Model": "Temptation",
       "Weight (kg)": "0.1",
       "Volume": "100ml"
+    },
+    ingredients: "Alcohol Denat., Parfum (Fragrance), Aqua (Water), Limonene, Linalool, Citronellol, Coumarin, Citral, Geraniol.",
+    howToUse: "Spray liberally onto pulse points (neck, chest, and wrists) for long-lasting results. Best applied after a shower when pores are open.",
+    fragranceNotes: {
+      top: "Asian Fruit, Bergamot",
+      heart: "Musk, Raspberry, Floral Notes",
+      base: "Oriental Woods, Amber"
     }
   },
   {
