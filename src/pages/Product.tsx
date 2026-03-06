@@ -114,7 +114,7 @@ export default function Product() {
                 className={`aspect-square bg-card rounded-lg overflow-hidden cursor-pointer transition-all ${selectedImage === img ? 'ring-2 ring-primary' : 'hover:ring-2 hover:ring-primary/50'}`}
                 onClick={() => setSelectedImage(img)}
               >
-                <img src={optimizeImage(img, 320)} alt="Thumbnail" className="w-full h-full object-cover" />
+                <img src={optimizeImage(img, 320)} alt="Thumbnail" className="w-full h-full object-cover" loading="lazy" />
               </div>
             ))}
           </div>
