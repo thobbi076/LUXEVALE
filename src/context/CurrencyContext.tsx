@@ -12,10 +12,10 @@ interface CurrencyContextType {
 const CurrencyContext = createContext<CurrencyContextType | undefined>(undefined);
 
 const EXCHANGE_RATES: Record<Currency, number> = {
-  USD: 1,
-  NGN: 1500, // Example rate
-  EUR: 0.92,
-  GBP: 0.79,
+  NGN: 1,
+  USD: 0.00067,
+  EUR: 0.00061,
+  GBP: 0.00053,
 };
 
 const CURRENCY_SYMBOLS: Record<Currency, string> = {
@@ -29,12 +29,12 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
   const [currency, setCurrency] = useState<Currency>('NGN');
 
   // Load currency from local storage on mount
-  useEffect(() => {
-    const savedCurrency = localStorage.getItem('luxevale-currency');
-    if (savedCurrency && Object.keys(EXCHANGE_RATES).includes(savedCurrency)) {
-      setCurrency(savedCurrency as Currency);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const savedCurrency = localStorage.getItem('luxevale-currency');
+  //   if (savedCurrency && Object.keys(EXCHANGE_RATES).includes(savedCurrency)) {
+  //     setCurrency(savedCurrency as Currency);
+  //   }
+  // }, []);
 
   // Save currency to local storage on change
   useEffect(() => {

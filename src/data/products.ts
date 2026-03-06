@@ -13,59 +13,16 @@ export interface Product {
   reviews: number;
   keyFeatures?: string[];
   specifications?: Record<string, string>;
+  brand?: string;
 }
 
 export const products: Product[] = [
   {
-    id: '1',
-    name: 'Silk Evening Gown',
-    category: 'Fashion',
-    price: 850.00,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAUvlqN9JIP7AwYfSCfIdxcwUCOm89w6OEIU4DeuQZOB3PxNsVBw8LLi8bnquEYvVfqOSLup8dE0KuiTFovZPh5UKvYZBxgYPpOqgsQn2wFIe89skwbrCYR5K4lX84onmorTxSz339fo1u-behWsz4HS2lTwRh0MR38BLBeYIrK8kUwhuawBgbUMpYfE87sLCXZOgRgzwAhQYeitkhoMv4pJrYir6wmkp_Q3THA8pPURpCUOPOuROJFmPNeUTxUfbjlykxN_I8q3IM',
-    isNew: false,
-    description: 'Elegance personified. This silk evening gown features a flowing silhouette, delicate draping, and a lustrous finish that catches the light with every movement. Perfect for galas, red carpet events, or sophisticated soirées.',
-    rating: 4.8,
-    reviews: 42
-  },
-  {
-    id: '3',
-    name: 'Radiance Face Serum',
-    category: 'Skincare',
-    price: 120.00,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDeRPBtU2J444JqSqZeQTi3v981WSOHfsAs8S7rW68mFlTnYC_rzshJo8yXBu8O9kBxjNDTA6MMLtlh0T4jP472wxHqVNL1qWB6tgzCF3ziYYKWvW2VSweekM0KLVMSnC-xzhp_APZXVmISxwtledkHUGYj5PjsQ27LSSClqVyKlwYzPBgzc0Yo8S91OM1kBAMacH3aVH8a5SsS_krhJqHqI54MHsoybDK2SE7c6TkydhP20Cjqnjzt-xE6zGiKUt5SXHReBtlqEtQ',
-    isNew: false,
-    description: 'Unlock your skin\'s natural glow. Formulated with rare botanicals and advanced peptides, this serum deeply hydrates, reduces fine lines, and restores luminosity for a youthful, radiant complexion.',
-    rating: 4.7,
-    reviews: 156
-  },
-  {
-    id: 'aura-de-luxe',
-    name: 'Aura de Luxe',
-    category: 'Perfumes',
-    price: 125.00,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCE9KT_Nuza5fyX3UM3489hkJMKe-0dEqUffejKxF9WY3KXrA4pe8s1t0hbmZjNvIi4idVgsUjTc1QtRj04BRXUEddve9HRQjqaP27lHoSgyyQ7JrFzI_5Ge0GjhPg4iGII8GHXtc_C6E_-hTOqQhfEMFwolZTpUIaM5d9QHFvo1q9a9iieln4PcltWC6GcDACrIKY7nmDZn7d0XgkIHNAvnAcwimmrMem83m97Sr4An3voxH2WLE43uTiUZDbZJn6y2FcvmshpZuA',
-    isNew: false,
-    description: 'An intoxicating blend of rare oud, dark vanilla, and midnight jasmine. Aura de Luxe is crafted for the modern individual who commands the room. Long-lasting, provocative, and unmistakably premium. Leaves a signature trail that captivates from dawn to dusk.',
-    rating: 4.9,
-    reviews: 128
-  },
-  {
-    id: '5',
-    name: 'Leather Weekend Bag',
-    category: 'Fashion',
-    price: 450.00,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA1BfnkTkEEWzjg1fr5ZVYTtyoDertvru5dO28mQbCULORf4hvVVZCQGMjd1yOv0ZM7LbnAKbaItpvHXvrx622qvOXpeJ4jDTyM1NRvVnS50OSwigBmasQZI2hufmgoI1PqJj0W-5xujvzIBJ003nKmghLBI6BXkhCMVxW6OjZwNok2NUDkS8Rr6knlP-Lfe2tEUyMM23Fp8vQC4NNa4fAKwWq0J_v7qFwUpx4VfzFjEM-teAzDL34AkHW3TcT9GF1IoiKC9p3SyJk',
-    isNew: false,
-    description: 'Travel in style with our handcrafted leather weekend bag. Made from full-grain leather that ages beautifully, it features ample storage, durable hardware, and a timeless design for the discerning traveler.',
-    rating: 4.6,
-    reviews: 34
-  },
-  {
     id: 'modern-key-lock-satchel',
     name: 'Modern Key Lock Satchel',
     category: 'Fashion',
-    price: 16.67,
-    originalPrice: 33.33,
+    price: 25000,
+    originalPrice: 50000,
     image: 'https://i.ibb.co/KjXdpwvY/bag1.png',
     images: [
       'https://i.ibb.co/KjXdpwvY/bag1.png',
@@ -89,6 +46,201 @@ export const products: Product[] = [
       'Style': 'Satchel / Crossbody',
       'Closure': 'Zip & Buckle',
       'Strap': 'Detachable Shoulder Strap'
+    }
+  },
+  {
+    id: 'mens-wide-leg-trousers',
+    name: "Men's Wide Leg Trousers",
+    category: 'Fashion',
+    price: 15000,
+    originalPrice: 25000,
+    image: 'https://i.ibb.co/JRt1F0BJ/tro1.png',
+    images: [
+      'https://i.ibb.co/JRt1F0BJ/tro1.png',
+      'https://i.ibb.co/LXrYYg8m/tro2.png',
+      'https://i.ibb.co/FLHcxdST/tro3.png',
+      'https://i.ibb.co/cSGK80XL/tro4.png'
+    ],
+    isNew: true,
+    description: "Stay comfortable and stylish with these Men's Wide Leg Trousers. Featuring a relaxed fit and a clean, minimalist design, these trousers are perfect for creating a modern silhouette. Ideal for pairing with a simple tee or a crisp shirt.",
+    rating: 4.5,
+    reviews: 5,
+    keyFeatures: [
+      "Relaxed wide-leg fit",
+      "Versatile black color",
+      "Comfortable waistband",
+      "Durable fabric",
+      "Minimalist design"
+    ],
+    specifications: {
+      "Material": "Cotton Blend",
+      "Fit": "Wide Leg",
+      "Color": "Black",
+      "Occasion": "Casual"
+    }
+  },
+  {
+    id: 'macgregor-sheet-mask',
+    name: 'MacGregor Natural Moisture Sheet Mask',
+    brand: 'MacGregor',
+    category: 'Skincare',
+    price: 2500,
+    originalPrice: 3600,
+    image: 'https://i.ibb.co/jZ8x6dmB/mas1.png',
+    images: [
+      'https://i.ibb.co/jZ8x6dmB/mas1.png',
+      'https://i.ibb.co/Vprz2jsM/mas2.png',
+      'https://i.ibb.co/cc0dYLJJ/mas3.png',
+      'https://i.ibb.co/JjhFrmbW/mas4.png'
+    ],
+    isNew: true,
+    description: "Revitalize your skin with MacGregor Natural Moisture Sheet Masks. Available in Charcoal for deep pore cleansing and oil control, and Pomegranate for firming and wrinkle improvement. These masks provide intense hydration and leave your skin feeling refreshed and radiant.",
+    rating: 4.7,
+    reviews: 10,
+    keyFeatures: [
+      "Deep pore cleansing (Charcoal)",
+      "Wrinkle improvement (Pomegranate)",
+      "Intense hydration",
+      "Oil control",
+      "Natural ingredients"
+    ],
+    specifications: {
+      "Type": "Sheet Mask",
+      "Variants": "Charcoal, Pomegranate",
+      "Skin Type": "All Skin Types",
+      "Usage": "Single Use"
+    }
+  },
+  {
+    id: 'green-mask-stick',
+    name: 'Green Mask Stick For Pimples',
+    category: 'Skincare',
+    price: 3500,
+    originalPrice: 6000,
+    image: 'https://i.ibb.co/kgyk2dtr/mask1.png',
+    images: [
+      'https://i.ibb.co/kgyk2dtr/mask1.png',
+      'https://i.ibb.co/dJgjPr9q/mask2.png',
+      'https://i.ibb.co/zV0V19hs/mask3.png',
+      'https://i.ibb.co/TV7ttWs/mask4.png'
+    ],
+    isNew: true,
+    description: "The mask cleansing face contains green tea extract, which can effectively clean the skin pores, deeply clean up skin dirt, adjust the skin's water and oil balance, replenish skin moisture, and nourish the skin. Effectively reduce control oil, improve facial fullness, and Keep beautiful skin.",
+    rating: 4.6,
+    reviews: 18,
+    keyFeatures: [
+      "Contains green tea extract",
+      "Deeply cleans skin pores and dirt",
+      "Adjusts water and oil balance",
+      "Rotating head design for easy application",
+      "Removes whiteheads and excess oil"
+    ],
+    specifications: {
+      "SKU": "GE779ST439KNVNAFAMZ",
+      "Model": "Green Mask",
+      "Production Country": "China",
+      "Size": "10 x 7 x 1 cm",
+      "Weight": "40g",
+      "Main Material": "Plastic",
+      "Color": "Green"
+    }
+  },
+  {
+    id: 'balila-unisex-perfume',
+    name: 'Balila Unisex Perfume',
+    brand: 'Balila',
+    category: 'Perfumes',
+    price: 5500,
+    originalPrice: 10000,
+    image: 'https://i.ibb.co/KxKsFn5s/balila1.png',
+    images: [
+      'https://i.ibb.co/KxKsFn5s/balila1.png',
+      'https://i.ibb.co/7tmvfDGZ/balila2.png',
+      'https://i.ibb.co/FbzMrmfh/balila3.png',
+      'https://i.ibb.co/ksDFk56H/balila4.png'
+    ],
+    isNew: true,
+    description: "Announce your arrival without much effort with this sensational fragrance. It's a floral, woody fragrance infused in the exotic gourmand scents making every one that wears it stand out with its aroma still trailing after he/she had long left the scene. A very sensual and aromatic scent that every one who has taste for good perfumes will love. A combination of floral and woody accord form the top, middle and base notes.",
+    rating: 4.5,
+    reviews: 12,
+    keyFeatures: [
+      "Sensational fragrance",
+      "Floral, woody fragrance infused in exotic gourmand scents",
+      "Long-lasting aroma that trails after you",
+      "Sensual and aromatic scent",
+      "Combination of floral and woody accords"
+    ],
+    specifications: {
+      "SKU": "BA244PF5RI5KNNAFAMZ",
+      "Product Line": "JETO",
+      "Weight (kg)": "0.01",
+      "Volume": "120ml"
+    }
+  },
+  {
+    id: 'temptation-eau-de-parfum',
+    name: 'TEMPTATION EAU DE PARFUM 100ML FOR MEN',
+    brand: 'Temptation',
+    category: 'Perfumes',
+    price: 8500,
+    originalPrice: 10000,
+    image: 'https://i.ibb.co/RpCBv8Pr/tempt1.png',
+    images: [
+      'https://i.ibb.co/RpCBv8Pr/tempt1.png',
+      'https://i.ibb.co/KxPY9fvD/tempt2.png',
+      'https://i.ibb.co/Xk7pW9YD/tempt3.png',
+      'https://i.ibb.co/5h9hhh4K/tempt4.png'
+    ],
+    isNew: true,
+    description: "This Eau Du Parfum is Luxurious and Sensuous. Its romantic scent is a dazzling, oriental with floral aroma. A romantic blend of Asian fruit with subtle undertones of musk and raspberry. It has a romantic scent that makes you dazzle all day. Suitable for everyday use with a lasting effect. This 100ml perfume smells great and awesome, a great addition for your daily use. Lightweight and affordable. Need a perfume? This is perfect for you. Smell good, feel great and look awesome.",
+    rating: 5.0,
+    reviews: 1,
+    keyFeatures: [
+      "Long Lasting and Nice Fragrance",
+      "Temptation",
+      "100ml",
+      "Eau De Perfume",
+      "Men Perfume",
+      "Fresh and Aromatic",
+      "Affordable Price"
+    ],
+    specifications: {
+      "SKU": "TE552PF4PDQSENAFAMZ",
+      "Product Line": "JETO",
+      "Model": "Temptation",
+      "Weight (kg)": "0.1",
+      "Volume": "100ml"
+    }
+  },
+  {
+    id: 'black-studded-bag',
+    name: 'Black Studded Bag',
+    category: 'Fashion',
+    price: 22000,
+    originalPrice: 45000,
+    image: 'https://i.ibb.co/93pkK9bk/bg1.png',
+    images: [
+      'https://i.ibb.co/93pkK9bk/bg1.png',
+      'https://i.ibb.co/jvwJV499/bg2.png',
+      'https://i.ibb.co/Xrxp52jg/bg3.png',
+      'https://i.ibb.co/DD5GwJt4/bg4.png'
+    ],
+    isNew: true,
+    description: "Elevate your style with this exquisite black studded handbag. Featuring a structured silhouette with geometric detailing and a matte finish, this bag is the perfect blend of edgy and elegant. It comes with a chain strap for versatile styling. Please note: This item is sold without the original box.",
+    rating: 5.0,
+    reviews: 9,
+    keyFeatures: [
+      "Matte black finish",
+      "Geometric stud detailing",
+      "Chain strap",
+      "Structured design",
+      "Not Boxed"
+    ],
+    specifications: {
+      "Material": "Faux Leather",
+      "Color": "Black",
+      "Style": "Crossbody",
+      "Condition": "New without box"
     }
   }
 ];

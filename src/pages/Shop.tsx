@@ -1,4 +1,5 @@
 import { Link, useSearchParams } from 'react-router-dom';
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Heart, ShoppingBag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
@@ -19,6 +20,8 @@ export default function Shop() {
     }
   };
 
+  const [sortBy, setSortBy] = useState('Featured');
+
   const { addToCart } = useCart();
   const { toggleWishlist, isInWishlist } = useWishlist();
   const { formatPrice } = useCurrency();
@@ -30,6 +33,17 @@ export default function Shop() {
         p.description.toLowerCase().includes(searchQuery.toLowerCase())
       : true;
     return matchesCategory && matchesSearch;
+  }).sort((a, b) => {
+    switch (sortBy) {
+      case 'Price: Low to High':
+        return a.price - b.price;
+      case 'Price: High to Low':
+        return b.price - a.price;
+      case 'Newest Arrivals':
+        return (a.isNew === b.isNew) ? 0 : a.isNew ? -1 : 1;
+      default:
+        return 0;
+    }
   });
 
   return (
@@ -67,7 +81,11 @@ export default function Shop() {
         
         <div className="flex items-center gap-2">
           <span className="text-sm font-medium uppercase tracking-wider text-muted-foreground">Sort by:</span>
-          <select className="bg-transparent border-none text-sm font-bold uppercase tracking-wider focus:ring-0 cursor-pointer">
+          <select 
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+            className="bg-transparent border-none text-sm font-bold uppercase tracking-wider focus:ring-0 cursor-pointer"
+          >
             <option>Featured</option>
             <option>Price: Low to High</option>
             <option>Price: High to Low</option>
