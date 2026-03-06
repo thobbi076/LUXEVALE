@@ -75,7 +75,13 @@ export default function Cart() {
                 >
                   <div className="col-span-1 md:col-span-6 flex items-center gap-6">
                     <div className="h-24 w-24 rounded-xl bg-muted overflow-hidden flex-shrink-0 border border-border">
-                      <img src={optimizeImage(item.image, 200)} alt={item.name} className="h-full w-full object-cover" loading="lazy" />
+                      <img 
+                        src={optimizeImage(item.image, 200)} 
+                        alt={item.name} 
+                        className="h-full w-full object-cover" 
+                        loading="lazy" 
+                        decoding="async"
+                      />
                     </div>
                     <div>
                       <h3 className="text-lg font-bold mb-1">{item.name}</h3>

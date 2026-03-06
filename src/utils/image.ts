@@ -10,7 +10,18 @@ export function optimizeImage(src: string, width?: number, quality: number = 75)
   if (!src) return '';
   
   // Only optimize external images from supported domains
-  if (!src.includes('i.ibb.co') && !src.includes('googleusercontent.com')) {
+  const isSupportedDomain = src.includes('i.ibb.co') || src.includes('googleusercontent.com');
+  if (!isSupportedDomain) {
+    return src;
+  }
+
+  // Check if we are running on Vercel. If not, return the original URL
+  // as /_vercel/image is a Vercel-specific edge function.
+  const isVercel = typeof window !== 'undefined' && 
+    (window.location.hostname.includes('vercel.app') || 
+     window.location.hostname.includes('vercel.com'));
+
+  if (!isVercel) {
     return src;
   }
 

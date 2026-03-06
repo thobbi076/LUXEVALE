@@ -105,6 +105,7 @@ export default function Product() {
               src={optimizeImage(selectedImage || product.image, 1080)} 
               alt={product.name} 
               className="w-full h-full object-cover object-center"
+              decoding="async"
             />
           </div>
           <div className="grid grid-cols-4 gap-4">
@@ -114,7 +115,13 @@ export default function Product() {
                 className={`aspect-square bg-card rounded-lg overflow-hidden cursor-pointer transition-all ${selectedImage === img ? 'ring-2 ring-primary' : 'hover:ring-2 hover:ring-primary/50'}`}
                 onClick={() => setSelectedImage(img)}
               >
-                <img src={optimizeImage(img, 320)} alt="Thumbnail" className="w-full h-full object-cover" loading="lazy" />
+                <img 
+                  src={optimizeImage(img, 320)} 
+                  alt={`Thumbnail ${i + 1}`} 
+                  className="w-full h-full object-cover" 
+                  loading="lazy" 
+                  decoding="async"
+                />
               </div>
             ))}
           </div>
