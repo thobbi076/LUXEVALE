@@ -3,6 +3,7 @@ import { Trash2, Minus, Plus, MessageCircle, Info, ArrowLeft } from 'lucide-reac
 import { useCart } from '../context/CartContext';
 import { useCurrency } from '../context/CurrencyContext';
 import { motion, AnimatePresence } from 'motion/react';
+import { optimizeImage } from '../utils/image';
 
 export default function Cart() {
   const { items, removeFromCart, updateQuantity, cartTotal } = useCart();
@@ -74,7 +75,7 @@ export default function Cart() {
                 >
                   <div className="col-span-1 md:col-span-6 flex items-center gap-6">
                     <div className="h-24 w-24 rounded-xl bg-muted overflow-hidden flex-shrink-0 border border-border">
-                      <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
+                      <img src={optimizeImage(item.image, 200)} alt={item.name} className="h-full w-full object-cover" />
                     </div>
                     <div>
                       <h3 className="text-lg font-bold mb-1">{item.name}</h3>

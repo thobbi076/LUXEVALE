@@ -6,6 +6,7 @@ import { useCart } from '../context/CartContext';
 import { useCurrency } from '../context/CurrencyContext';
 import { motion, AnimatePresence } from 'motion/react';
 import { products } from '../data/products';
+import { optimizeImage } from '../utils/image';
 
 export default function Product() {
   const { id } = useParams();
@@ -101,7 +102,7 @@ export default function Product() {
         <div className="space-y-4">
           <div className="aspect-square bg-card rounded-2xl overflow-hidden relative">
             <img 
-              src={selectedImage || product.image} 
+              src={optimizeImage(selectedImage || product.image, 1080)} 
               alt={product.name} 
               className="w-full h-full object-cover object-center"
             />
@@ -113,7 +114,7 @@ export default function Product() {
                 className={`aspect-square bg-card rounded-lg overflow-hidden cursor-pointer transition-all ${selectedImage === img ? 'ring-2 ring-primary' : 'hover:ring-2 hover:ring-primary/50'}`}
                 onClick={() => setSelectedImage(img)}
               >
-                <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
+                <img src={optimizeImage(img, 320)} alt="Thumbnail" className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
