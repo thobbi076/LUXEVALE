@@ -267,5 +267,300 @@ export const products: Product[] = [
       "Style": "Crossbody",
       "Condition": "New without box"
     }
+  },
+  {
+    id: 'six-pieces-ankle-socks',
+    name: 'Six Pieces-in-1 Quality Ankle Socks',
+    category: 'Fashion',
+    price: 3000,
+    originalPrice: 4500,
+    image: 'https://i.ibb.co/NnJNYH82/sock1.png',
+    images: [
+      'https://i.ibb.co/NnJNYH82/sock1.png',
+      'https://i.ibb.co/1GFBG5sB/sock2.png',
+      'https://i.ibb.co/cS43T84y/sock3.png',
+      'https://i.ibb.co/3yy6bsL6/sock4.png'
+    ],
+    isNew: true,
+    description: "The 6 Pieces (3 Pairs) ankle socks are produced from cotton rich fabric. Designed to protect the feet from the effect of the harshness of shoe on the feet, warm and cold weathers. It expands for proper fit on the feet. It is one size (fits adults). High quality 100% cotton which boasts ample absorbency and softness while resisting pilling and shedding, finished off in a stronger pure natural cotton fibre and is machine washable for easy care and comfortability.",
+    rating: 4.5,
+    reviews: 0,
+    keyFeatures: [
+      "6 Pieces (3 Pairs)",
+      "1 Pair of each color (Black/White/Ash)",
+      "High quality 100% cotton",
+      "Easy to wear and maintain",
+      "Classy, Stylish, and Fashionable",
+      "Safe to wear",
+      "One size fits adults"
+    ],
+    specifications: {
+      "SKU": "FA203AA172BVWNAFAMZ",
+      "Product Line": "City Deals",
+      "Model": "Fashion",
+      "Weight (kg)": "0.3",
+      "Color": "White/Black/Ash",
+      "Main Material": "Cotton"
+    }
+  },
+  {
+    id: 'geneva-couple-watches',
+    name: 'Geneva Couple Watches Women Casual Silicone Band Quartz Watch Jewelry Set',
+    category: 'Fashion',
+    price: 9500,
+    originalPrice: 14000,
+    image: 'https://i.ibb.co/RGp1qP01/watch1.png',
+    images: [
+      'https://i.ibb.co/RGp1qP01/watch1.png',
+      'https://i.ibb.co/LD0dYcmc/watch2.png',
+      'https://i.ibb.co/QFJDwvv4/watch3.png',
+      'https://i.ibb.co/6JGcy19v/watch4.png'
+    ],
+    isNew: true,
+    description: "This black and white couple watch is paired with a couple love bracelet for a casual and stylish look. The watch uses a quartz movement to ensure accurate time display. The silicone strap is comfortable and durable for everyday wear. Although not waterproof, the delicate alloy case demonstrates high quality craftsmanship. Whether it's Valentine's Day, birthday or anniversary, this watch and bracelet combination is the perfect gift for your loved one, conveying deep emotion and care.",
+    rating: 4.6,
+    reviews: 19,
+    keyFeatures: [
+      "Classic black and white color scheme",
+      "Includes 2 watches and 1 set of bracelets",
+      "Accurate Quartz movement",
+      "Comfortable silicone strap",
+      "Symbol of emotion and care",
+      "Perfect gift for couples"
+    ],
+    specifications: {
+      "SKU": "FA203FC5PTN3ANAFAMZ",
+      "Product Line": "Haogogo-COD",
+      "Production Country": "China",
+      "Size": "10 x 10 x 3 cm",
+      "Weight": "0.08kg",
+      "Color": "Black/White",
+      "Main Material": "Alloy",
+      "Movement": "Quartz",
+      "Band Material": "Silicone",
+      "Waterproof": "No"
+    }
+  },
+  {
+    id: 'minimalist-square-watch',
+    name: 'Stylish Minimalist Square Silicone Strap Quartz Watch',
+    category: 'Fashion',
+    price: 7500,
+    originalPrice: 11500,
+    image: 'https://i.ibb.co/wkqSSyP/wtch1.png',
+    images: [
+      'https://i.ibb.co/wkqSSyP/wtch1.png',
+      'https://i.ibb.co/RpHFF8Xs/wtch2.png',
+      'https://i.ibb.co/zWNj7JwM/wtch3.png',
+      'https://i.ibb.co/Dg1jqX7g/wtch4.png'
+    ],
+    isNew: true,
+    description: "This stylish minimalist square watch features a comfortable silicone strap and a durable alloy case. It is an incredible gift suitable for any occasion, highlighting your temperament and emphasizing your uniqueness. With its business casual and sports style, it fits perfectly into any wardrobe.",
+    rating: 4.5,
+    reviews: 0,
+    keyFeatures: [
+      "Minimalist Square Design",
+      "Quartz Movement",
+      "Alloy Case Material",
+      "Silicone Band",
+      "Suitable for any occasion",
+      "Unisex Design"
+    ],
+    specifications: {
+      "SKU": "FA203FC6TBIHFNAFAMZ",
+      "Weight (kg)": "0.03",
+      "Movement": "Quartz",
+      "Case Material": "Alloy",
+      "Band Material": "Silicone",
+      "Case Shape": "Square",
+      "Style": "Sports / Business Casual",
+      "Battery": "Non-rechargeable Button Battery"
+    }
+  },
+  {
+    id: 'givanas-caribbean-vanilla',
+    name: 'Givanas 100% CARBBEAN VANILLA PERFUME',
+    category: 'Perfumes',
+    price: 6500,
+    originalPrice: 5000,
+    image: 'https://i.ibb.co/jZhpzm2f/perf1.png',
+    images: [
+      'https://i.ibb.co/jZhpzm2f/perf1.png',
+      'https://i.ibb.co/kWv0TRs/perf2.png',
+      'https://i.ibb.co/2X92Bz4/perf3.png',
+      'https://i.ibb.co/V0xZdJhD/perf4.png'
+    ],
+    isNew: true,
+    description: "An elegant rich modern fruity chypre fragrance. The fresh top notes of bergamot and watermelon are boosted by a subtle floral accord of pretty jasmin, rose and violet notes. The dry down is a tenacious blend of oakmoss, amber and precious patchouli woods.",
+    rating: 4.5,
+    reviews: 10,
+    keyFeatures: [
+      "Eau De parfum",
+      "Natural spray",
+      "E 100ml",
+      "UNIQUE FRAGRANCE",
+      "AFFORDABLE"
+    ],
+    specifications: {
+      "SKU": "GI958PF46XB1ANAFAMZ",
+      "Product Line": "JETO",
+      "Model": "Carbbean Vanilla",
+      "Weight (kg)": "0.01",
+      "Color": "Black"
+    }
+  },
+  {
+    id: 'grey-de-kouroun-wishbone',
+    name: 'Grey De Kouroun Wishbone Perfume',
+    category: 'Perfumes',
+    price: 6500,
+    originalPrice: 8000,
+    image: 'https://i.ibb.co/S4FJDmzf/wish1.png',
+    images: [
+      'https://i.ibb.co/S4FJDmzf/wish1.png',
+      'https://i.ibb.co/vxs84M8F/wish2.png',
+      'https://i.ibb.co/KcBddKX7/wish3.png',
+      'https://i.ibb.co/6JVfH3gK/wish4.png'
+    ],
+    isNew: true,
+    description: "Wishbone natural spray is a product of GREY DE KOUROUN. This natural spray is affordable, long-lasting, does not leave stain on cloths and can be used by both gender.",
+    rating: 4.5,
+    reviews: 15,
+    keyFeatures: [
+      "Long lasting",
+      "Nice fragrance",
+      "Affordable price",
+      "Natural spray"
+    ],
+    specifications: {
+      "SKU": "GR041PF3PFFA7NAFAMZ",
+      "Product Line": "JETO",
+      "Weight (kg)": "0.01"
+    }
+  },
+  {
+    id: 'ecstasy-chic-eau-de-toilette',
+    name: 'Ecstasy Collection Chic Eau de Toilette - 25ml',
+    category: 'Perfumes',
+    price: 8500,
+    originalPrice: 10500,
+    image: 'https://i.ibb.co/ns4KmPLY/chic1.png',
+    images: [
+      'https://i.ibb.co/ns4KmPLY/chic1.png',
+      'https://i.ibb.co/PsgbF8d0/chic2.png',
+      'https://i.ibb.co/N6QkXDfq/chic3.png',
+      'https://i.ibb.co/mF8PvCgX/chic4.png'
+    ],
+    isNew: true,
+    description: "Ecstasy Chic is not just a fragrance, it’s a statement. Designed for women who understand that true luxury doesn’t shout, it lingers. With a refined blend of woody, oriental, gourmand and light oud accords, this premium Eau de Toilette delivers a confident, seductive presence that lasts all day.",
+    rating: 4.8,
+    reviews: 20,
+    keyFeatures: [
+      "All-Day Longevity",
+      "Premium 5X Essence",
+      "Moderate Projection",
+      "Skin-Friendly Formula",
+      "All-Season Wear"
+    ],
+    specifications: {
+      "SKU": "EC647PF7VJ103NAFAMZ",
+      "Product Line": "KATES ASSOCIATED INDUSTRIES LIMITED",
+      "Model": "Chic Collection",
+      "Weight (kg)": "0.2",
+      "Certifications": "Fair Trade|Eco Friendly",
+      "Color": "Red",
+      "Main Material": "Parfum, Eau de Toilette"
+    }
+  },
+  {
+    id: 'roushun-vitamin-c-serum',
+    name: 'Roushun Vitamin C Serum [Anti-Aging Serum]---30ml',
+    category: 'Skincare',
+    price: 4500,
+    originalPrice: 7500,
+    image: 'https://i.ibb.co/pBxnVpV5/rous1.png',
+    images: [
+      'https://i.ibb.co/pBxnVpV5/rous1.png',
+      'https://i.ibb.co/LDC8byxq/rous2.png',
+      'https://i.ibb.co/27g0LBJb/rous3.png',
+      'https://i.ibb.co/4ZYNv9N7/rous4.png'
+    ],
+    isNew: true,
+    description: "NEW IMPROVED formula Roushun Vitamin C Serum is thin and highly effective. It will help fade sun spots, discoloration, refine skin texture, reduce wrinkle formation, and minimize existing wrinkles. It also has a high concentrated base of pure vegan hyaluronic acid to plump skin cells and protect and restore.",
+    rating: 4.6,
+    reviews: 25,
+    keyFeatures: [
+      "Hyaluronic acid",
+      "Anti-aging",
+      "Whitening",
+      "Roushun brand",
+      "Vitamin C"
+    ],
+    specifications: {
+      "SKU": "RO613ST4GXB8LNAFAMZ",
+      "Product Line": "JETO",
+      "Weight (kg)": "0.2"
+    }
+  },
+  {
+    id: 'anua-niacinamide-dark-spot-serum',
+    name: 'Anua Niacinamide 10%+ TXA 4% Dark Spot Correcting Serum -30ml',
+    category: 'Skincare',
+    price: 8500,
+    originalPrice: 16500,
+    image: 'https://i.ibb.co/d4Kh0zdx/anua1.png',
+    images: [
+      'https://i.ibb.co/d4Kh0zdx/anua1.png',
+      'https://i.ibb.co/9HxFpswk/anua2.png',
+      'https://i.ibb.co/vCKS2V92/anua3.png',
+      'https://i.ibb.co/Q3VGGRGK/anua4.png'
+    ],
+    isNew: true,
+    description: "The Anua Niacinamide 10% + TXA 4% Dark Spot Correcting Serum is a potent skincare solution designed to target and reduce the appearance of dark spots and hyperpigmentation. This serum combines 10% niacinamide with 4% tranexamic acid (TXA) to promote a more even complexion, reduce redness, and enhance overall skin radiance.",
+    rating: 4.7,
+    reviews: 19,
+    keyFeatures: [
+      "Effective Dark Corrector",
+      "Hydrating Formula",
+      "Brightens and Evens Skin Tone",
+      "Lightweight and Fast Absorbing",
+      "Suitable for All Skin Types"
+    ],
+    specifications: {
+      "SKU": "AN522ST5X3ID6NAFAMZ",
+      "Product Line": "PROMO Mall",
+      "Weight (kg)": "0.7"
+    }
+  },
+  {
+    id: 'galuin-waffle-shorts-set',
+    name: 'GALUIN Waffle Shorts And T Shirt Set-Khaki',
+    category: 'Fashion',
+    price: 16500,
+    originalPrice: 22800,
+    image: 'https://i.ibb.co/vxXJn8DG/galu1.png',
+    images: [
+      'https://i.ibb.co/vxXJn8DG/galu1.png',
+      'https://i.ibb.co/mrPT94kj/galu2.png',
+      'https://i.ibb.co/RkhVFVzF/galu3.png',
+      'https://i.ibb.co/v6rPHy2j/galu4.png'
+    ],
+    isNew: true,
+    description: "Stylish GALUIN Waffle Shorts and T-Shirt set in Khaki. Perfect for casual, everyday wear. Features a comfortable waffle texture fabric. Set includes 1 T-shirt and 1 Short.",
+    rating: 5.0,
+    reviews: 29,
+    keyFeatures: [
+      "Brand: GALUIN",
+      "Style: Top + Pants",
+      "Occasion: Casual, Everyday",
+      "Gender: Men",
+      "Available Sizes: L, XL, XXL, XXXL"
+    ],
+    specifications: {
+      "SKU": "FA203MW4XV51LNAFAMZ",
+      "Model": "Waffle Shorts And T Shirt Set",
+      "Weight (kg)": "0.5",
+      "Color": "Khaki"
+    }
   }
 ];
