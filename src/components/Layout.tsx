@@ -2,12 +2,14 @@ import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { ShoppingCart, Search, Diamond, Menu, X, Globe } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useCurrency } from '../context/CurrencyContext';
+import { useAdmin } from '../context/AdminContext';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function Layout() {
   const { cartCount } = useCart();
   const { currency, setCurrency } = useCurrency();
+  const { content } = useAdmin();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCurrencyOpen, setIsCurrencyOpen] = useState(false);
   const [email, setEmail] = useState('');
@@ -44,6 +46,13 @@ export default function Layout() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground font-sans">
+      {/* Promo Bar */}
+      {content.promoMessage && (
+        <div className="bg-primary text-primary-foreground text-center py-2 text-sm font-medium px-4">
+          {content.promoMessage}
+        </div>
+      )}
+
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">

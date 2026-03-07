@@ -1,16 +1,19 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import { useAdmin } from '../context/AdminContext';
 import { optimizeImage } from '../utils/image';
 
 export default function Home() {
+  const { content } = useAdmin();
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEE5Mt2icreK6XZIUbxdCJoOh6MuaB3ZJWt8MRNUcUIa8BGEdq6cat1dt4hQ1Lb4bmzMA0TezYl9g1mFm92D3pxVnx0d3nCcBOtz5IAPIK7urYo5W9DHrlYSqkLbEdg4jO_Dsg8FtZfGoeRViUUhrsveiemx0HOTRlSPuD62DGUmALhluOIrdo1JSXQ7r8dZdbhCWJNS0PHVTN76d4TiuNC1FTbBeqzE9iQAUoTiEa8aJT40SHAyJ5TW1xpR4t2JU-74BZqF2oIEM"
+            src={content.banner.image}
             alt="Hero Background"
             className="w-full h-full object-cover"
             fetchPriority="high"
@@ -27,7 +30,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
           >
-            Affordable Luxury. Delivered.
+            {content.banner.title}
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -35,7 +38,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl font-light mb-8 text-white/90"
           >
-            Discover premium lifestyle products without the premium price tag.
+            {content.banner.subtitle}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -43,7 +46,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <Link 
-              to="/shop" 
+              to={content.banner.link} 
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-all transform hover:scale-105 shadow-lg"
             >
               Shop Now <ArrowRight className="h-5 w-5" />

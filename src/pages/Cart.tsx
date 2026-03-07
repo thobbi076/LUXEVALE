@@ -1,13 +1,20 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Trash2, Minus, Plus, MessageCircle, Info, ArrowLeft } from 'lucide-react';
+import { Trash2, Minus, Plus, MessageCircle, Info, ArrowLeft, Loader2 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useCurrency } from '../context/CurrencyContext';
+import { useAdmin } from '../context/AdminContext';
+import { syncOrderToSheet } from '../services/googleSheetService';
 import { motion, AnimatePresence } from 'motion/react';
 import { optimizeImage } from '../utils/image';
 
 export default function Cart() {
-  const { items, removeFromCart, updateQuantity, cartTotal } = useCart();
+  const { items, removeFromCart, updateQuantity, cartTotal, clearCart } = useCart();
   const { formatPrice } = useCurrency();
+  const { addOrder } = useAdmin();
+  
+  const [customerName, setCustomerName] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (items.length === 0) {
     return (
@@ -24,9 +31,39 @@ export default function Cart() {
     );
   }
 
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
+    if (!customerName.trim()) {
+      alert('Please enter your name to proceed.');
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    const orderId = `ORD-${Date.now().toString().slice(-6)}`;
+    const newOrder = {
+      id: orderId,
+      customerName: customerName,
+      items: items.map(item => ({
+        productId: item.id,
+        name: item.name,
+        quantity: item.quantity,
+        price: item.price
+      })),
+      total: cartTotal,
+      status: 'Pending' as const,
+      date: new Date().toISOString(),
+    };
+
+    // Sync to Google Sheet
+    await syncOrderToSheet(newOrder);
+
+    // Add order to Admin Context
+    addOrder(newOrder);
+
     const phoneNumber = '2349128517004';
-    let message = `*New Order from LUXEVALE*\n\n`;
+    let message = `*New Order from LUXEVALE*\n`;
+    message += `*Order ID:* ${orderId}\n`;
+    message += `*Customer:* ${customerName}\n\n`;
     
     items.forEach(item => {
       message += `• ${item.name} (x${item.quantity})\n`;
@@ -40,6 +77,9 @@ export default function Cart() {
 
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
+    
+    setIsSubmitting(false);
+    clearCart();
   };
 
   return (
@@ -154,11 +194,28 @@ export default function Cart() {
             <p className="text-xs text-muted-foreground text-right">Including taxes</p>
           </div>
 
+          <div className="mb-4">
+            <label className="block text-sm font-medium text-foreground mb-1">Your Name</label>
+            <input
+              type="text"
+              value={customerName}
+              onChange={(e) => setCustomerName(e.target.value)}
+              className="w-full rounded-lg border border-border bg-background p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+              placeholder="Enter your full name"
+            />
+          </div>
+
           <button 
             onClick={handleCheckout}
-            className="w-full bg-foreground text-background py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-foreground/90 transition-all shadow-lg mb-4"
+            disabled={isSubmitting}
+            className="w-full bg-foreground text-background py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-foreground/90 transition-all shadow-lg mb-4 disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            <MessageCircle className="h-5 w-5" /> Checkout via WhatsApp
+            {isSubmitting ? (
+              <Loader2 className="h-5 w-5 animate-spin" />
+            ) : (
+              <MessageCircle className="h-5 w-5" />
+            )}
+            {isSubmitting ? 'Processing...' : 'Checkout via WhatsApp'}
           </button>
 
           <div className="bg-background p-4 rounded-xl border border-border flex gap-3 items-start">

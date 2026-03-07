@@ -8,6 +8,9 @@ export interface Product {
   images?: string[];
   isNew: boolean;
   isBestSeller?: boolean;
+  isFeatured?: boolean;
+  isHidden?: boolean;
+  stock?: number;
   description: string;
   rating: number;
   reviews: number;
