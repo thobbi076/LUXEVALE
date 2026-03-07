@@ -30,12 +30,12 @@ export const products: Product[] = [
     category: 'Fashion',
     price: 25000,
     originalPrice: 36000,
-    image: '/assets/bag1.png',
+    image: 'https://i.ibb.co/KjXdpwvY/bag1.png',
     images: [
-      '/assets/bag1.png',
-      '/assets/bag5.png',
-      '/assets/bag2.png',
-      '/assets/bag3.png'
+      'https://i.ibb.co/KjXdpwvY/bag1.png',
+      'https://i.ibb.co/xtfKfQH7/bag5.png',
+      'https://i.ibb.co/q37hNf8W/bag2.png',
+      'https://i.ibb.co/DHDMn86G/bag3.png'
     ],
     isNew: true,
     description: 'A sophisticated satchel featuring a distinctive buckle and key charm detail. Available in classic black and bold red, this structured bag is perfect for the modern professional. The high-gloss finish and silver-tone hardware add a touch of luxury to any outfit.',
