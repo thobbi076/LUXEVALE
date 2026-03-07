@@ -11,7 +11,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: `url(${optimizeImage("https://lh3.googleusercontent.com/aida-public/AB6AXuDEE5Mt2icreK6XZIUbxdCJoOh6MuaB3ZJWt8MRNUcUIa8BGEdq6cat1dt4hQ1Lb4bmzMA0TezYl9g1mFm92D3pxVnx0d3nCcBOtz5IAPIK7urYo5W9DHrlYSqkLbEdg4jO_Dsg8FtZfGoeRViUUhrsveiemx0HOTRlSPuD62DGUmALhluOIrdo1JSXQ7r8dZdbhCWJNS0PHVTN76d4TiuNC1FTbBeqzE9iQAUoTiEa8aJT40SHAyJ5TW1xpR4t2JU-74BZqF2oIEM", 1920)})`,
+            backgroundImage: `url("https://lh3.googleusercontent.com/aida-public/AB6AXuDEE5Mt2icreK6XZIUbxdCJoOh6MuaB3ZJWt8MRNUcUIa8BGEdq6cat1dt4hQ1Lb4bmzMA0TezYl9g1mFm92D3pxVnx0d3nCcBOtz5IAPIK7urYo5W9DHrlYSqkLbEdg4jO_Dsg8FtZfGoeRViUUhrsveiemx0HOTRlSPuD62DGUmALhluOIrdo1JSXQ7r8dZdbhCWJNS0PHVTN76d4TiuNC1FTbBeqzE9iQAUoTiEa8aJT40SHAyJ5TW1xpR4t2JU-74BZqF2oIEM")`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -71,7 +71,7 @@ export default function Home() {
               <Link to="/shop">
                 <div 
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                  style={{ backgroundImage: `url(${optimizeImage(collection.image, 1080)})` }}
+                  style={{ backgroundImage: `url(${collection.image})` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                 <div className="absolute bottom-0 left-0 p-6 w-full">

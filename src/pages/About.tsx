@@ -9,7 +9,7 @@ export default function About() {
         <div 
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: `url(${optimizeImage("https://lh3.googleusercontent.com/aida-public/AB6AXuBru5H_4jchzuWHy6XQ9PPo8nYxJIc_JxJLZh0XG-hEG0RGNw-RfQD21pi3udigkfaIT_Lt6m-gTYjBQND7YqK2SAr3hqsixR2fuZ176p97Pol0D47HGOz7zoEenOcmESqlORguKZ55M7llIW0ck64WjNEOmjyC5mKrZu14nWhNg6f1yLJyLKloPTlbNjYy_cGOJ9w7J8ZFykRNeo63wlBbDCzePwmr28Y0pwb7oqKrDIPJAYqCKpgj6b46MHvgecAqoNitJoUffyA", 1920)})`,
+            backgroundImage: `url("https://lh3.googleusercontent.com/aida-public/AB6AXuBru5H_4jchzuWHy6XQ9PPo8nYxJIc_JxJLZh0XG-hEG0RGNw-RfQD21pi3udigkfaIT_Lt6m-gTYjBQND7YqK2SAr3hqsixR2fuZ176p97Pol0D47HGOz7zoEenOcmESqlORguKZ55M7llIW0ck64WjNEOmjyC5mKrZu14nWhNg6f1yLJyLKloPTlbNjYy_cGOJ9w7J8ZFykRNeo63wlBbDCzePwmr28Y0pwb7oqKrDIPJAYqCKpgj6b46MHvgecAqoNitJoUffyA")`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}

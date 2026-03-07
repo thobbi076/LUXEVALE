@@ -101,12 +101,19 @@ export default function Product() {
         {/* Product Image */}
         <div className="space-y-4">
           <div className="aspect-square bg-card rounded-2xl overflow-hidden relative">
-            <img 
-              src={optimizeImage(selectedImage || product.image, 1080)} 
-              alt={product.name} 
-              className="w-full h-full object-cover object-center"
-              decoding="async"
-            />
+            <AnimatePresence mode="wait">
+              <motion.img 
+                key={selectedImage || product.image}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                src={selectedImage || product.image} 
+                alt={product.name} 
+                className="w-full h-full object-cover object-center"
+                decoding="async"
+              />
+            </AnimatePresence>
           </div>
           <div className="grid grid-cols-4 gap-4">
             {(product.images && product.images.length > 0 ? product.images : [product.image, product.image, product.image, product.image]).map((img, i) => (
@@ -116,7 +123,7 @@ export default function Product() {
                 onClick={() => setSelectedImage(img)}
               >
                 <img 
-                  src={optimizeImage(img, 320)} 
+                  src={img} 
                   alt={`Thumbnail ${i + 1}`} 
                   className="w-full h-full object-cover" 
                   loading="lazy" 
