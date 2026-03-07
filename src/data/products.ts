@@ -562,5 +562,99 @@ export const products: Product[] = [
       "Weight (kg)": "0.5",
       "Color": "Khaki"
     }
+  },
+  {
+    id: 'multi-color-chic-satchel',
+    name: 'Multi-Color Chic Satchel',
+    category: 'Fashion',
+    price: 28000,
+    originalPrice: 42000,
+    image: 'https://i.ibb.co/TD7V7Y1q/bgg1.png',
+    images: [
+      'https://i.ibb.co/TD7V7Y1q/bgg1.png',
+      'https://i.ibb.co/cKjLcmbh/bgg2.png',
+      'https://i.ibb.co/MXDdrfQ/bgg3.png',
+      'https://i.ibb.co/gbKygrgY/bgg4.png'
+    ],
+    isNew: true,
+    description: 'A vibrant and versatile satchel available in six stunning colors. This chic accessory is designed for the fashion-forward individual who values both style and functionality. Crafted with premium materials and featuring a spacious interior, it is the perfect companion for any occasion.',
+    rating: 4.8,
+    reviews: 18,
+    keyFeatures: [
+      'Available in 6 vibrant colors',
+      'Spacious interior compartment',
+      'Premium faux leather finish',
+      'Adjustable shoulder strap',
+      'Elegant gold-tone hardware'
+    ],
+    specifications: {
+      'Material': 'Premium Faux Leather',
+      'Style': 'Satchel',
+      'Dimensions': '12" x 9" x 5"',
+      'Closure': 'Secure Zip'
+    }
+  },
+  {
+    id: 'elegant-evening-gown',
+    name: 'Elegant Evening Gown',
+    category: 'Fashion',
+    price: 18000,
+    originalPrice: 24000,
+    image: 'https://i.ibb.co/v6NgjByB/gown1.png',
+    images: [
+      'https://i.ibb.co/v6NgjByB/gown1.png',
+      'https://i.ibb.co/TMKS6Z0b/gown2.png',
+      'https://i.ibb.co/BH2PZr9f/gown3.png',
+      'https://i.ibb.co/d429V02k/gown4.png'
+    ],
+    isNew: true,
+    description: 'Turn heads in this breathtaking evening gown. Designed with elegance in mind, this gown features a flattering silhouette and intricate detailing that exudes sophistication. Perfect for galas, weddings, and high-profile events.',
+    rating: 4.9,
+    reviews: 22,
+    keyFeatures: [
+      'Flattering floor-length silhouette',
+      'Intricate lace detailing',
+      'Premium silk-blend fabric',
+      'Hidden back zipper',
+      'Comfortable inner lining'
+    ],
+    specifications: {
+      'Material': 'Silk Blend & Lace',
+      'Occasion': 'Evening / Formal',
+      'Fit': 'Slim Fit',
+      'Length': 'Floor Length'
+    }
+  },
+  {
+    id: 'min-min-designer-bag',
+    name: 'Min Min Designer Bag',
+    category: 'Fashion',
+    price: 21000,
+    originalPrice: 27000,
+    image: 'https://i.ibb.co/DH73LcVd/min1.png',
+    images: [
+      'https://i.ibb.co/DH73LcVd/min1.png',
+      'https://i.ibb.co/9HF1VTjk/min2.png',
+      'https://i.ibb.co/DfL26GyS/min3.png',
+      'https://i.ibb.co/HTDxFBBD/min4.png'
+    ],
+    isNew: true,
+    isBestSeller: true,
+    description: 'The Min Min Designer Bag is the epitome of modern luxury. With its unique structured design and premium finish, it adds a touch of class to any ensemble. A must-have for those who appreciate high-end craftsmanship.',
+    rating: 4.7,
+    reviews: 15,
+    keyFeatures: [
+      'Unique structured design',
+      'Signature Min Min hardware',
+      'High-gloss premium finish',
+      'Multiple interior pockets',
+      'Detachable chain strap'
+    ],
+    specifications: {
+      'Material': 'Patent Leather',
+      'Style': 'Designer Handbag',
+      'Weight': '0.6kg',
+      'Color': 'Classic Black'
+    }
   }
 ];

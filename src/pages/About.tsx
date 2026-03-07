@@ -6,14 +6,15 @@ export default function About() {
     <div className="flex flex-col min-h-screen">
       {/* Hero */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url("https://lh3.googleusercontent.com/aida-public/AB6AXuBru5H_4jchzuWHy6XQ9PPo8nYxJIc_JxJLZh0XG-hEG0RGNw-RfQD21pi3udigkfaIT_Lt6m-gTYjBQND7YqK2SAr3hqsixR2fuZ176p97Pol0D47HGOz7zoEenOcmESqlORguKZ55M7llIW0ck64WjNEOmjyC5mKrZu14nWhNg6f1yLJyLKloPTlbNjYy_cGOJ9w7J8ZFykRNeo63wlBbDCzePwmr28Y0pwb7oqKrDIPJAYqCKpgj6b46MHvgecAqoNitJoUffyA")`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBru5H_4jchzuWHy6XQ9PPo8nYxJIc_JxJLZh0XG-hEG0RGNw-RfQD21pi3udigkfaIT_Lt6m-gTYjBQND7YqK2SAr3hqsixR2fuZ176p97Pol0D47HGOz7zoEenOcmESqlORguKZ55M7llIW0ck64WjNEOmjyC5mKrZu14nWhNg6f1yLJyLKloPTlbNjYy_cGOJ9w7J8ZFykRNeo63wlBbDCzePwmr28Y0pwb7oqKrDIPJAYqCKpgj6b46MHvgecAqoNitJoUffyA"
+            alt="About Hero"
+            className="w-full h-full object-cover"
+            fetchPriority="high"
+            loading="eager"
+            referrerPolicy="no-referrer"
+          />
           <div className="absolute inset-0 bg-black/40" />
         </div>
 

@@ -112,6 +112,8 @@ export default function Product() {
                 alt={product.name} 
                 className="w-full h-full object-cover object-center"
                 decoding="async"
+                fetchPriority="high"
+                referrerPolicy="no-referrer"
               />
             </AnimatePresence>
           </div>
@@ -119,7 +121,7 @@ export default function Product() {
             {(product.images && product.images.length > 0 ? product.images : [product.image, product.image, product.image, product.image]).map((img, i) => (
               <div 
                 key={i} 
-                className={`aspect-square bg-card rounded-lg overflow-hidden cursor-pointer transition-all ${selectedImage === img ? 'ring-2 ring-primary' : 'hover:ring-2 hover:ring-primary/50'}`}
+                className={`aspect-square bg-card rounded-lg overflow-hidden cursor-pointer transition-all relative ${selectedImage === img ? 'ring-2 ring-primary' : 'hover:ring-2 hover:ring-primary/50'}`}
                 onClick={() => setSelectedImage(img)}
               >
                 <img 
@@ -128,6 +130,7 @@ export default function Product() {
                   className="w-full h-full object-cover" 
                   loading="lazy" 
                   decoding="async"
+                  referrerPolicy="no-referrer"
                 />
               </div>
             ))}

@@ -8,14 +8,15 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url("https://lh3.googleusercontent.com/aida-public/AB6AXuDEE5Mt2icreK6XZIUbxdCJoOh6MuaB3ZJWt8MRNUcUIa8BGEdq6cat1dt4hQ1Lb4bmzMA0TezYl9g1mFm92D3pxVnx0d3nCcBOtz5IAPIK7urYo5W9DHrlYSqkLbEdg4jO_Dsg8FtZfGoeRViUUhrsveiemx0HOTRlSPuD62DGUmALhluOIrdo1JSXQ7r8dZdbhCWJNS0PHVTN76d4TiuNC1FTbBeqzE9iQAUoTiEa8aJT40SHAyJ5TW1xpR4t2JU-74BZqF2oIEM")`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEE5Mt2icreK6XZIUbxdCJoOh6MuaB3ZJWt8MRNUcUIa8BGEdq6cat1dt4hQ1Lb4bmzMA0TezYl9g1mFm92D3pxVnx0d3nCcBOtz5IAPIK7urYo5W9DHrlYSqkLbEdg4jO_Dsg8FtZfGoeRViUUhrsveiemx0HOTRlSPuD62DGUmALhluOIrdo1JSXQ7r8dZdbhCWJNS0PHVTN76d4TiuNC1FTbBeqzE9iQAUoTiEa8aJT40SHAyJ5TW1xpR4t2JU-74BZqF2oIEM"
+            alt="Hero Background"
+            className="w-full h-full object-cover"
+            fetchPriority="high"
+            loading="eager"
+            referrerPolicy="no-referrer"
+          />
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
@@ -69,9 +70,12 @@ export default function Home() {
               className="group relative aspect-[3/4] overflow-hidden rounded-2xl cursor-pointer"
             >
               <Link to="/shop">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                  style={{ backgroundImage: `url(${collection.image})` }}
+                <img 
+                  src={collection.image}
+                  alt={collection.name}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                 <div className="absolute bottom-0 left-0 p-6 w-full">

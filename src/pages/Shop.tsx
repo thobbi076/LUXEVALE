@@ -108,9 +108,12 @@ export default function Shop() {
           >
             <div className="relative aspect-[3/4] rounded-xl overflow-hidden bg-card">
               <Link to={`/product/${product.id}`}>
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                  style={{ backgroundImage: `url(${product.image})` }}
+                <img 
+                  src={product.image}
+                  alt={product.name}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
                 />
               </Link>
               
