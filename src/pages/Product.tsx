@@ -40,6 +40,16 @@ export default function Product() {
           : [];
       setSelectedSize(sizes[0]);
       setActiveAccordion(product.fragranceNotes ? 'notes' : 'features');
+
+      // Preload all images
+      const imagesToPreload = product.images && product.images.length > 0 
+        ? product.images 
+        : [product.image];
+      
+      imagesToPreload.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
     }
   }, [product]);
 
@@ -101,7 +111,7 @@ export default function Product() {
         {/* Product Image */}
         <div className="space-y-4">
           <div className="aspect-square bg-card rounded-2xl overflow-hidden relative">
-            <AnimatePresence mode="wait">
+            <AnimatePresence>
               <motion.img 
                 key={selectedImage || product.image}
                 initial={{ opacity: 0 }}
@@ -110,7 +120,7 @@ export default function Product() {
                 transition={{ duration: 0.3 }}
                 src={selectedImage || product.image} 
                 alt={product.name} 
-                className="w-full h-full object-cover object-center"
+                className="absolute inset-0 w-full h-full object-cover object-center"
                 decoding="async"
                 fetchPriority="high"
                 referrerPolicy="no-referrer"

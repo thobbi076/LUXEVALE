@@ -1,3 +1,8 @@
+import bag1 from '../assets/bag1.png';
+import bag2 from '../assets/bag2.png';
+import bag3 from '../assets/bag3.png';
+import bag5 from '../assets/bag5.png';
+
 export interface Product {
   id: string;
   name: string;
@@ -30,12 +35,12 @@ export const products: Product[] = [
     category: 'Fashion',
     price: 25000,
     originalPrice: 36000,
-    image: 'https://i.ibb.co/KjXdpwvY/bag1.png',
+    image: bag1,
     images: [
-      'https://i.ibb.co/KjXdpwvY/bag1.png',
-      'https://i.ibb.co/xtfKfQH7/bag5.png',
-      'https://i.ibb.co/q37hNf8W/bag2.png',
-      'https://i.ibb.co/DHDMn86G/bag3.png'
+      bag1,
+      bag5,
+      bag2,
+      bag3
     ],
     isNew: true,
     description: 'A sophisticated satchel featuring a distinctive buckle and key charm detail. Available in classic black and bold red, this structured bag is perfect for the modern professional. The high-gloss finish and silver-tone hardware add a touch of luxury to any outfit.',

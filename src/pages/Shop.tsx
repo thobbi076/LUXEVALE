@@ -98,7 +98,7 @@ export default function Shop() {
 
       {/* Product Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-        {filteredProducts.slice(0, visibleCount).map((product) => (
+        {filteredProducts.slice(0, visibleCount).map((product, index) => (
           <motion.div 
             key={product.id}
             initial={{ opacity: 0, scale: 0.95 }}
@@ -112,7 +112,8 @@ export default function Shop() {
                   src={product.image}
                   alt={product.name}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
+                  loading={index < 4 ? "eager" : "lazy"}
+                  fetchPriority={index < 4 ? "high" : "auto"}
                   referrerPolicy="no-referrer"
                 />
               </Link>
