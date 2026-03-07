@@ -3,26 +3,40 @@ export const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyUms8
 
 export const syncProductToSheet = async (product: any) => {
   try {
-    // Google Apps Script Web Apps usually require no-cors for simple POSTs from browser
-    // However, to get a response, we need CORS. If the script doesn't support CORS, we might have issues.
-    // We'll try standard fetch first.
-    // Often these scripts use Content-Type: application/x-www-form-urlencoded or json
+    const payload = {
+      name: product.name,
+      price: product.price,
+      category: product.category,
+      image: product.image,
+      dateAdded: new Date().toISOString()
+    };
     
-    // We'll send as text/plain to avoid preflight OPTIONS request
-    // The Google Apps Script should be written to handle JSON.parse(e.postData.contents)
-    
-    const response = await fetch(GOOGLE_SCRIPT_URL, {
+    await fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',
       mode: 'no-cors',
       headers: {
-        'Content-Type': 'text/plain',
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(product),
+      body: JSON.stringify(payload),
     });
     
     return true;
   } catch (error) {
     console.error('Error syncing to Google Sheet:', error);
+    return false;
+  }
+};
+
+export const syncAllProducts = async (products: any[]) => {
+  try {
+    for (const product of products) {
+      await syncProductToSheet(product);
+      // Add a small delay to avoid rate limiting
+      await new Promise(resolve => setTimeout(resolve, 500));
+    }
+    return true;
+  } catch (error) {
+    console.error('Error syncing all products:', error);
     return false;
   }
 };

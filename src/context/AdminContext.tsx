@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { products as initialProducts, Product } from '../data/products';
-import { syncProductToSheet } from '../services/googleSheetService';
+import { syncProductToSheet, syncAllProducts } from '../services/googleSheetService';
 
 export interface Order {
   id: string;
@@ -36,6 +36,9 @@ interface AdminContextType {
   isAuthenticated: boolean;
   login: (password: string) => boolean;
   logout: () => void;
+  isGoogleSheetSyncEnabled: boolean;
+  toggleGoogleSheetSync: () => void;
+  lastSyncStatus: { success: boolean; time: string } | null;
 }
 
 const AdminContext = createContext<AdminContextType | undefined>(undefined);
@@ -43,6 +46,15 @@ const AdminContext = createContext<AdminContextType | undefined>(undefined);
 export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
     return localStorage.getItem('admin_auth') === 'true';
+  });
+
+  const [isGoogleSheetSyncEnabled, setIsGoogleSheetSyncEnabled] = useState(() => {
+    return localStorage.getItem('admin_sync_enabled') === 'true';
+  });
+
+  const [lastSyncStatus, setLastSyncStatus] = useState<{ success: boolean; time: string } | null>(() => {
+    const saved = localStorage.getItem('admin_last_sync');
+    return saved ? JSON.parse(saved) : null;
   });
 
   const login = (password: string) => {
@@ -102,6 +114,16 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     localStorage.setItem('admin_content', JSON.stringify(content));
   }, [content]);
 
+  useEffect(() => {
+    localStorage.setItem('admin_sync_enabled', String(isGoogleSheetSyncEnabled));
+  }, [isGoogleSheetSyncEnabled]);
+
+  useEffect(() => {
+    if (lastSyncStatus) {
+      localStorage.setItem('admin_last_sync', JSON.stringify(lastSyncStatus));
+    }
+  }, [lastSyncStatus]);
+
   // Sync across tabs
   useEffect(() => {
     const handleStorageChange = (e: StorageEvent) => {
@@ -117,15 +139,24 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       if (e.key === 'admin_auth') {
         setIsAuthenticated(e.newValue === 'true');
       }
+      if (e.key === 'admin_sync_enabled') {
+        setIsGoogleSheetSyncEnabled(e.newValue === 'true');
+      }
     };
 
     window.addEventListener('storage', handleStorageChange);
     return () => window.removeEventListener('storage', handleStorageChange);
   }, []);
 
+  const toggleGoogleSheetSync = () => {
+    setIsGoogleSheetSyncEnabled(prev => !prev);
+  };
+
   const addProduct = (product: Product) => {
     setProducts(prev => [...prev, { ...product, stock: product.stock ?? 0, isHidden: false }]);
-    syncToSheet(product);
+    if (isGoogleSheetSyncEnabled) {
+      syncToSheet(product);
+    }
   };
 
   const updateProduct = (id: string, updates: Partial<Product>) => {
@@ -150,19 +181,19 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const syncToSheet = async (product: Product) => {
     try {
-      await syncProductToSheet(product);
-      return true;
+      const success = await syncProductToSheet(product);
+      setLastSyncStatus({ success, time: new Date().toISOString() });
+      return success;
     } catch (error) {
       console.error('Sync failed:', error);
+      setLastSyncStatus({ success: false, time: new Date().toISOString() });
       return false;
     }
   };
 
   const syncAllToSheet = async () => {
-    for (const product of products) {
-      await syncProductToSheet(product);
-      await new Promise(resolve => setTimeout(resolve, 500)); // Rate limiting
-    }
+    const success = await syncAllProducts(products);
+    setLastSyncStatus({ success, time: new Date().toISOString() });
   };
 
   return (
@@ -180,7 +211,10 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       syncAllToSheet,
       isAuthenticated,
       login,
-      logout
+      logout,
+      isGoogleSheetSyncEnabled,
+      toggleGoogleSheetSync,
+      lastSyncStatus
     }}>
       {children}
     </AdminContext.Provider>

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAdmin } from '../../context/AdminContext';
 import { motion } from 'motion/react';
-import { ShoppingBag, ShoppingCart, TrendingUp, Users } from 'lucide-react';
+import { ShoppingBag, ShoppingCart, TrendingUp, Users, Database, Check, AlertTriangle, Loader2, RefreshCw } from 'lucide-react';
 import { 
   BarChart, 
   Bar, 
@@ -17,7 +17,22 @@ import {
 } from 'recharts';
 
 const AdminDashboard = () => {
-  const { products, orders } = useAdmin();
+  const { 
+    products, 
+    orders, 
+    isGoogleSheetSyncEnabled, 
+    toggleGoogleSheetSync, 
+    syncAllToSheet, 
+    lastSyncStatus 
+  } = useAdmin();
+
+  const [isSyncing, setIsSyncing] = useState(false);
+
+  const handleManualSync = async () => {
+    setIsSyncing(true);
+    await syncAllToSheet();
+    setIsSyncing(false);
+  };
 
   const totalRevenue = orders.reduce((sum, order) => sum + order.total, 0);
   const totalOrders = orders.length;
@@ -67,7 +82,9 @@ const AdminDashboard = () => {
 
   return (
     <div className="space-y-8">
-      <h1 className="text-2xl font-bold text-gray-900">Dashboard Overview</h1>
+      <div className="flex justify-between items-center">
+        <h1 className="text-2xl font-bold text-gray-900">Dashboard Overview</h1>
+      </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat, index) => (
@@ -89,6 +106,64 @@ const AdminDashboard = () => {
             </div>
           </motion.div>
         ))}
+      </div>
+
+      {/* Google Sheets Sync Section */}
+      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-green-100 rounded-lg text-green-600">
+              <Database className="w-6 h-6" />
+            </div>
+            <div>
+              <h2 className="text-lg font-semibold text-gray-900">Google Sheets Sync</h2>
+              <p className="text-sm text-gray-500">Manage product synchronization with Google Sheets</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            {lastSyncStatus && (
+              <span className={`text-sm flex items-center gap-1 ${lastSyncStatus.success ? 'text-green-600' : 'text-red-600'}`}>
+                {lastSyncStatus.success ? <Check className="w-4 h-4" /> : <AlertTriangle className="w-4 h-4" />}
+                Last sync: {new Date(lastSyncStatus.time).toLocaleString()}
+              </span>
+            )}
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-gray-50 p-4 rounded-lg">
+          <div className="flex items-center gap-4">
+            <label className="relative inline-flex items-center cursor-pointer">
+              <input 
+                type="checkbox" 
+                className="sr-only peer"
+                checked={isGoogleSheetSyncEnabled}
+                onChange={toggleGoogleSheetSync}
+              />
+              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
+              <span className="ml-3 text-sm font-medium text-gray-900">
+                Auto-sync on product add
+              </span>
+            </label>
+          </div>
+
+          <button
+            onClick={handleManualSync}
+            disabled={isSyncing}
+            className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50"
+          >
+            {isSyncing ? (
+              <>
+                <Loader2 className="w-4 h-4 animate-spin" />
+                Syncing...
+              </>
+            ) : (
+              <>
+                <RefreshCw className="w-4 h-4" />
+                Sync All Products
+              </>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Charts Section */}

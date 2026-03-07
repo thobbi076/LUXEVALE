@@ -1,8 +1,68 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAdmin } from '../../context/AdminContext';
 import { Product } from '../../data/products';
 import { motion, AnimatePresence } from 'motion/react';
 import { Plus, Edit, Trash2, UploadCloud, X, Check, Loader2, AlertTriangle } from 'lucide-react';
+
+const StockCell = ({ product, onUpdate }: { product: Product, onUpdate: (id: string, updates: Partial<Product>) => void }) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [stock, setStock] = useState(product.stock || 0);
+
+  useEffect(() => {
+    setStock(product.stock || 0);
+  }, [product.stock]);
+
+  const handleSave = () => {
+    if (stock !== product.stock) {
+      onUpdate(product.id, { stock });
+    }
+    setIsEditing(false);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSave();
+    } else if (e.key === 'Escape') {
+      setStock(product.stock || 0);
+      setIsEditing(false);
+    }
+  };
+
+  if (isEditing) {
+    return (
+      <div className="flex items-center gap-1" onClick={(e) => e.stopPropagation()}>
+        <input
+          type="number"
+          min="0"
+          value={stock}
+          onChange={(e) => setStock(parseInt(e.target.value) || 0)}
+          onBlur={handleSave}
+          onKeyDown={handleKeyDown}
+          className="w-20 px-2 py-1 text-sm border border-indigo-500 rounded shadow-sm focus:outline-none"
+          autoFocus
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div 
+      onClick={(e) => {
+        e.stopPropagation();
+        setIsEditing(true);
+      }}
+      className="flex items-center gap-2 cursor-pointer group py-1"
+      title="Click to edit stock"
+    >
+      <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+        (product.stock || 0) > 0 ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+      }`}>
+        {product.stock || 0}
+      </span>
+      <Edit className="w-3 h-3 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+    </div>
+  );
+};
 
 const AdminProducts = () => {
   const { products, addProduct, updateProduct, deleteProduct, syncAllToSheet } = useAdmin();
@@ -140,11 +200,7 @@ const AdminProducts = () => {
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{product.category}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₦{product.price.toLocaleString()}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                      (product.stock || 0) > 0 ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-                    }`}>
-                      {product.stock || 0}
-                    </span>
+                    <StockCell product={product} onUpdate={updateProduct} />
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {product.isHidden ? (
