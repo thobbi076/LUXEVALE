@@ -2,6 +2,19 @@ import React from 'react';
 import { useAdmin } from '../../context/AdminContext';
 import { motion } from 'motion/react';
 import { ShoppingBag, ShoppingCart, TrendingUp, Users } from 'lucide-react';
+import { 
+  BarChart, 
+  Bar, 
+  XAxis, 
+  YAxis, 
+  CartesianGrid, 
+  Tooltip, 
+  Legend, 
+  ResponsiveContainer, 
+  PieChart, 
+  Pie, 
+  Cell 
+} from 'recharts';
 
 const AdminDashboard = () => {
   const { products, orders } = useAdmin();
@@ -17,6 +30,40 @@ const AdminDashboard = () => {
     { label: 'Total Products', value: totalProducts, icon: ShoppingBag, color: 'bg-purple-100 text-purple-600' },
     { label: 'Low Stock Items', value: lowStockProducts, icon: Users, color: 'bg-orange-100 text-orange-600' },
   ];
+
+  // Prepare data for charts
+  const revenueData = orders.reduce((acc: any[], order) => {
+    const date = new Date(order.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    const existing = acc.find(item => item.date === date);
+    if (existing) {
+      existing.total += order.total;
+    } else {
+      acc.push({ date, total: order.total });
+    }
+    return acc;
+  }, []).reverse().slice(0, 7).reverse(); // Last 7 days/entries
+
+  const statusData = orders.reduce((acc: any[], order) => {
+    const existing = acc.find(item => item.name === order.status);
+    if (existing) {
+      existing.value += 1;
+    } else {
+      acc.push({ name: order.status, value: 1 });
+    }
+    return acc;
+  }, []);
+
+  const productData = orders.flatMap(order => order.items).reduce((acc: any[], item) => {
+    const existing = acc.find(p => p.name === item.name);
+    if (existing) {
+      existing.quantity += item.quantity;
+    } else {
+      acc.push({ name: item.name, quantity: item.quantity });
+    }
+    return acc;
+  }, []).sort((a, b) => b.quantity - a.quantity).slice(0, 5);
+
+  const COLORS = ['#4F46E5', '#10B981', '#F59E0B', '#EF4444'];
 
   return (
     <div className="space-y-8">
@@ -42,6 +89,70 @@ const AdminDashboard = () => {
             </div>
           </motion.div>
         ))}
+      </div>
+
+      {/* Charts Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Revenue Chart */}
+        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 lg:col-span-2">
+          <h2 className="text-lg font-semibold text-gray-900 mb-6">Revenue Over Time</h2>
+          <div className="h-80">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={revenueData}>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                <XAxis dataKey="date" />
+                <YAxis />
+                <Tooltip formatter={(value) => `₦${Number(value).toLocaleString()}`} />
+                <Legend />
+                <Bar dataKey="total" name="Revenue" fill="#4F46E5" radius={[4, 4, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Orders by Status */}
+        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+          <h2 className="text-lg font-semibold text-gray-900 mb-6">Orders by Status</h2>
+          <div className="h-80">
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie
+                  data={statusData}
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={60}
+                  outerRadius={100}
+                  fill="#8884d8"
+                  paddingAngle={5}
+                  dataKey="value"
+                >
+                  {statusData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  ))}
+                </Pie>
+                <Tooltip />
+                <Legend />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Best Selling Products */}
+        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+          <h2 className="text-lg font-semibold text-gray-900 mb-6">Best Selling Products</h2>
+          <div className="h-80">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={productData} layout="vertical">
+                <CartesianGrid strokeDasharray="3 3" horizontal={false} />
+                <XAxis type="number" />
+                <YAxis dataKey="name" type="category" width={150} tick={{fontSize: 12}} />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="quantity" name="Units Sold" fill="#10B981" radius={[0, 4, 4, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

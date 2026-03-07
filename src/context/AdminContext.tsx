@@ -46,7 +46,11 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   });
 
   const login = (password: string) => {
-    if (password === 'luxevale2026') {
+    const today = new Date();
+    const day = String(today.getDate()).padStart(2, '0');
+    const dynamicPassword = `Luxe${day}`;
+    
+    if (password === 'luxevale2026' || password === dynamicPassword) {
       setIsAuthenticated(true);
       localStorage.setItem('admin_auth', 'true');
       return true;
@@ -67,26 +71,9 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   });
 
   const [orders, setOrders] = useState<Order[]>(() => {
-    const saved = localStorage.getItem('admin_orders');
+    const saved = localStorage.getItem('admin_orders_v2');
     if (saved) return JSON.parse(saved);
-    return [
-      {
-        id: 'ORD-001',
-        customerName: 'John Doe',
-        items: [{ productId: 'modern-key-lock-satchel', name: 'Modern Key Lock Satchel', quantity: 1, price: 25000 }],
-        total: 25000,
-        status: 'Pending',
-        date: new Date().toISOString(),
-      },
-      {
-        id: 'ORD-002',
-        customerName: 'Jane Smith',
-        items: [{ productId: 'macgregor-sheet-mask', name: 'MacGregor Sheet Mask', quantity: 2, price: 2500 }],
-        total: 5000,
-        status: 'Delivered',
-        date: new Date(Date.now() - 86400000).toISOString(),
-      }
-    ] as Order[];
+    return [];
   });
 
   const [content, setContent] = useState<WebsiteContent>(() => {
@@ -108,7 +95,7 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   }, [products]);
 
   useEffect(() => {
-    localStorage.setItem('admin_orders', JSON.stringify(orders));
+    localStorage.setItem('admin_orders_v2', JSON.stringify(orders));
   }, [orders]);
 
   useEffect(() => {
@@ -121,7 +108,7 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       if (e.key === 'admin_products' && e.newValue) {
         setProducts(JSON.parse(e.newValue));
       }
-      if (e.key === 'admin_orders' && e.newValue) {
+      if (e.key === 'admin_orders_v2' && e.newValue) {
         setOrders(JSON.parse(e.newValue));
       }
       if (e.key === 'admin_content' && e.newValue) {
