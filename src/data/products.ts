@@ -30,12 +30,12 @@ export const products: Product[] = [
     category: 'Fashion',
     price: 25000,
     originalPrice: 36000,
-    image: 'https://i.ibb.co/KjXdpwvY/bag1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836580/bag1_sxr98e.png',
     images: [
-      'https://i.ibb.co/KjXdpwvY/bag1.png',
-      'https://i.ibb.co/xtfKfQH7/bag5.png',
-      'https://i.ibb.co/q37hNf8W/bag2.png',
-      'https://i.ibb.co/DHDMn86G/bag3.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836580/bag1_sxr98e.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836625/bag5_d339n7.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836585/bag2_hh0bk7.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836607/bag3_nhhkpw.png'
     ],
     isNew: true,
     description: 'A sophisticated satchel featuring a distinctive buckle and key charm detail. Available in classic black and bold red, this structured bag is perfect for the modern professional. The high-gloss finish and silver-tone hardware add a touch of luxury to any outfit.',
@@ -61,12 +61,12 @@ export const products: Product[] = [
     category: 'Fashion',
     price: 15000,
     originalPrice: 23000,
-    image: 'https://i.ibb.co/JRt1F0BJ/tro1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908061/tro1_obgbjx.png',
     images: [
-      'https://i.ibb.co/JRt1F0BJ/tro1.png',
-      'https://i.ibb.co/LXrYYg8m/tro2.png',
-      'https://i.ibb.co/FLHcxdST/tro3.png',
-      'https://i.ibb.co/cSGK80XL/tro4.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908061/tro1_obgbjx.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908071/tro2_fhiil3.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908063/tro3_nwkauq.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908083/tro4_whlaf2.png'
     ],
     isNew: true,
     description: "Stay comfortable and stylish with these Men's Wide Leg Trousers. Featuring a relaxed fit and a clean, minimalist design, these trousers are perfect for creating a modern silhouette. Ideal for pairing with a simple tee or a crisp shirt.",
@@ -93,12 +93,12 @@ export const products: Product[] = [
     category: 'Skincare',
     price: 2500,
     originalPrice: 3600,
-    image: 'https://i.ibb.co/jZ8x6dmB/mas1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837382/mas1_hrlbzo.png',
     images: [
-      'https://i.ibb.co/jZ8x6dmB/mas1.png',
-      'https://i.ibb.co/Vprz2jsM/mas2.png',
-      'https://i.ibb.co/cc0dYLJJ/mas3.png',
-      'https://i.ibb.co/JjhFrmbW/mas4.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837382/mas1_hrlbzo.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837362/mas2_ijqrur.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837379/mas3_we71a4.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837417/mas4_jgkiyo.png'
     ],
     isNew: true,
     description: "Revitalize your skin with MacGregor Natural Moisture Sheet Masks. Available in Charcoal for deep pore cleansing and oil control, and Pomegranate for firming and wrinkle improvement. These masks provide intense hydration and leave your skin feeling refreshed and radiant.",
@@ -126,12 +126,12 @@ export const products: Product[] = [
     category: 'Skincare',
     price: 3500,
     originalPrice: 6000,
-    image: 'https://i.ibb.co/kgyk2dtr/mask1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837379/mask1_j4trls.png',
     images: [
-      'https://i.ibb.co/kgyk2dtr/mask1.png',
-      'https://i.ibb.co/dJgjPr9q/mask2.png',
-      'https://i.ibb.co/zV0V19hs/mask3.png',
-      'https://i.ibb.co/TV7ttWs/mask4.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837379/mask1_j4trls.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837410/mask2_o5kxjq.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837404/mask3_eccaxk.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837412/mask4_cblqjh.png'
     ],
     isNew: true,
     description: "The mask cleansing face contains green tea extract, which can effectively clean the skin pores, deeply clean up skin dirt, adjust the skin's water and oil balance, replenish skin moisture, and nourish the skin. Effectively reduce control oil, improve facial fullness, and Keep beautiful skin.",
@@ -163,12 +163,12 @@ export const products: Product[] = [
     category: 'Perfumes',
     price: 5500,
     originalPrice: 9000,
-    image: 'https://i.ibb.co/KxKsFn5s/balila1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836605/balila1_jws29n.png',
     images: [
-      'https://i.ibb.co/KxKsFn5s/balila1.png',
-      'https://i.ibb.co/7tmvfDGZ/balila2.png',
-      'https://i.ibb.co/FbzMrmfh/balila3.png',
-      'https://i.ibb.co/ksDFk56H/balila4.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836605/balila1_jws29n.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836627/balila2_xp1lr6.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836641/balila3_sdu72j.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836635/balila4_pjpe17.png'
     ],
     isNew: true,
     description: "Announce your arrival without much effort with this sensational fragrance. It's a floral, woody fragrance infused in the exotic gourmand scents making every one that wears it stand out with its aroma still trailing after he/she had long left the scene. A very sensual and aromatic scent that every one who has taste for good perfumes will love. A combination of floral and woody accord form the top, middle and base notes.",
@@ -202,12 +202,12 @@ export const products: Product[] = [
     category: 'Perfumes',
     price: 8500,
     originalPrice: 10000,
-    image: 'https://i.ibb.co/RpCBv8Pr/tempt1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772838010/tempt1_wgxivn.png',
     images: [
-      'https://i.ibb.co/RpCBv8Pr/tempt1.png',
-      'https://i.ibb.co/KxPY9fvD/tempt2.png',
-      'https://i.ibb.co/Xk7pW9YD/tempt3.png',
-      'https://i.ibb.co/5h9hhh4K/tempt4.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772838010/tempt1_wgxivn.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772838041/tempt2_ypaanh.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772838301/tempt3_ipvtc0.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772907794/tempt4_s9tzyg.png'
     ],
     isNew: true,
     description: "This Eau Du Parfum is Luxurious and Sensuous. Its romantic scent is a dazzling, oriental with floral aroma. A romantic blend of Asian fruit with subtle undertones of musk and raspberry. It has a romantic scent that makes you dazzle all day. Suitable for everyday use with a lasting effect. This 100ml perfume smells great and awesome, a great addition for your daily use. Lightweight and affordable. Need a perfume? This is perfect for you. Smell good, feel great and look awesome.",
@@ -243,12 +243,12 @@ export const products: Product[] = [
     category: 'Fashion',
     price: 22000,
     originalPrice: 37000,
-    image: 'https://i.ibb.co/93pkK9bk/bg1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836631/bg1_k5as4g.png',
     images: [
-      'https://i.ibb.co/93pkK9bk/bg1.png',
-      'https://i.ibb.co/jvwJV499/bg2.png',
-      'https://i.ibb.co/Xrxp52jg/bg3.png',
-      'https://i.ibb.co/DD5GwJt4/bg4.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836631/bg1_k5as4g.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836644/bg2_aarevx.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836659/bg3_rwrg3h.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836672/bg4_ehfaky.png'
     ],
     isNew: true,
     description: "Elevate your style with this exquisite black studded handbag. Featuring a structured silhouette with geometric detailing and a matte finish, this bag is the perfect blend of edgy and elegant. It comes with a chain strap for versatile styling. Please note: This item is sold without the original box.",
@@ -274,12 +274,12 @@ export const products: Product[] = [
     category: 'Fashion',
     price: 3000,
     originalPrice: 4500,
-    image: 'https://i.ibb.co/NnJNYH82/sock1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772838033/sock1_pxuz8n.png',
     images: [
-      'https://i.ibb.co/NnJNYH82/sock1.png',
-      'https://i.ibb.co/1GFBG5sB/sock2.png',
-      'https://i.ibb.co/cS43T84y/sock3.png',
-      'https://i.ibb.co/3yy6bsL6/sock4.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772838033/sock1_pxuz8n.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772838030/sock2_damonj.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837960/sock3_cxcjfs.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772838019/sock4_im7n4x.png'
     ],
     isNew: true,
     description: "The 6 Pieces (3 Pairs) ankle socks are produced from cotton rich fabric. Designed to protect the feet from the effect of the harshness of shoe on the feet, warm and cold weathers. It expands for proper fit on the feet. It is one size (fits adults). High quality 100% cotton which boasts ample absorbency and softness while resisting pilling and shedding, finished off in a stronger pure natural cotton fibre and is machine washable for easy care and comfortability.",
@@ -309,12 +309,12 @@ export const products: Product[] = [
     category: 'Fashion',
     price: 9500,
     originalPrice: 14000,
-    image: 'https://i.ibb.co/RGp1qP01/watch1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908091/watch1_luv2be.png',
     images: [
-      'https://i.ibb.co/RGp1qP01/watch1.png',
-      'https://i.ibb.co/LD0dYcmc/watch2.png',
-      'https://i.ibb.co/QFJDwvv4/watch3.png',
-      'https://i.ibb.co/6JGcy19v/watch4.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908091/watch1_luv2be.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908086/watch2_r7f6mp.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908100/watch3_hxvuj0.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908100/watch4_a2zwm3.png'
     ],
     isNew: true,
     description: "This black and white couple watch is paired with a couple love bracelet for a casual and stylish look. The watch uses a quartz movement to ensure accurate time display. The silicone strap is comfortable and durable for everyday wear. Although not waterproof, the delicate alloy case demonstrates high quality craftsmanship. Whether it's Valentine's Day, birthday or anniversary, this watch and bracelet combination is the perfect gift for your loved one, conveying deep emotion and care.",
@@ -347,12 +347,12 @@ export const products: Product[] = [
     category: 'Fashion',
     price: 7500,
     originalPrice: 11500,
-    image: 'https://i.ibb.co/wkqSSyP/wtch1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908101/wtch1_rt8vkw.png',
     images: [
-      'https://i.ibb.co/wkqSSyP/wtch1.png',
-      'https://i.ibb.co/RpHFF8Xs/wtch2.png',
-      'https://i.ibb.co/zWNj7JwM/wtch3.png',
-      'https://i.ibb.co/Dg1jqX7g/wtch4.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908101/wtch1_rt8vkw.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908109/wtch2_gibwsj.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908123/wtch3_hgoyz2.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908127/wtch4_qmdq2b.png'
     ],
     isNew: true,
     description: "This stylish minimalist square watch features a comfortable silicone strap and a durable alloy case. It is an incredible gift suitable for any occasion, highlighting your temperament and emphasizing your uniqueness. With its business casual and sports style, it fits perfectly into any wardrobe.",
@@ -383,12 +383,12 @@ export const products: Product[] = [
     category: 'Perfumes',
     price: 6500,
     originalPrice: 9500,
-    image: 'https://i.ibb.co/jZhpzm2f/perf1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837622/perf1_veuplk.png',
     images: [
-      'https://i.ibb.co/jZhpzm2f/perf1.png',
-      'https://i.ibb.co/kWv0TRs/perf2.png',
-      'https://i.ibb.co/2X92Bz4/perf3.png',
-      'https://i.ibb.co/V0xZdJhD/perf4.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837622/perf1_veuplk.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837626/perf2_ygnwao.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837647/perf3_vqgzvf.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837667/perf4_uwz5mm.png'
     ],
     isNew: true,
     description: "An elegant rich modern fruity chypre fragrance. The fresh top notes of bergamot and watermelon are boosted by a subtle floral accord of pretty jasmin, rose and violet notes. The dry down is a tenacious blend of oakmoss, amber and precious patchouli woods.",
@@ -415,12 +415,12 @@ export const products: Product[] = [
     category: 'Perfumes',
     price: 6500,
     originalPrice: 8000,
-    image: 'https://i.ibb.co/S4FJDmzf/wish1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908617/wish1_shcppw.png',
     images: [
-      'https://i.ibb.co/S4FJDmzf/wish1.png',
-      'https://i.ibb.co/vxs84M8F/wish2.png',
-      'https://i.ibb.co/KcBddKX7/wish3.png',
-      'https://i.ibb.co/6JVfH3gK/wish4.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908617/wish1_shcppw.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908626/wish2_nnh3xv.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908628/wish3_j44brd.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908614/wish4_igdvvt.png'
     ],
     isNew: true,
     description: "Wishbone natural spray is a product of GREY DE KOUROUN. This natural spray is affordable, long-lasting, does not leave stain on cloths and can be used by both gender.",
@@ -444,12 +444,12 @@ export const products: Product[] = [
     category: 'Perfumes',
     price: 8500,
     originalPrice: 10500,
-    image: 'https://i.ibb.co/ns4KmPLY/chic1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836647/chic1_cixifh.png',
     images: [
-      'https://i.ibb.co/ns4KmPLY/chic1.png',
-      'https://i.ibb.co/PsgbF8d0/chic2.png',
-      'https://i.ibb.co/N6QkXDfq/chic3.png',
-      'https://i.ibb.co/mF8PvCgX/chic4.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836647/chic1_cixifh.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836661/chic2_lshgpl.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836672/chic3_pam2ip.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836673/chic4_shzwmh.png'
     ],
     isNew: true,
     description: "Ecstasy Chic is not just a fragrance, it’s a statement. Designed for women who understand that true luxury doesn’t shout, it lingers. With a refined blend of woody, oriental, gourmand and light oud accords, this premium Eau de Toilette delivers a confident, seductive presence that lasts all day.",
@@ -478,12 +478,12 @@ export const products: Product[] = [
     category: 'Skincare',
     price: 4500,
     originalPrice: 7500,
-    image: 'https://i.ibb.co/pBxnVpV5/rous1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837706/rous1_oo3dqr.png',
     images: [
-      'https://i.ibb.co/pBxnVpV5/rous1.png',
-      'https://i.ibb.co/LDC8byxq/rous2.png',
-      'https://i.ibb.co/27g0LBJb/rous3.png',
-      'https://i.ibb.co/4ZYNv9N7/rous4.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837706/rous1_oo3dqr.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837949/rous2_oun06o.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837989/rous3_vvkwji.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837989/rous4_sd4w5i.png'
     ],
     isNew: true,
     description: "NEW IMPROVED formula Roushun Vitamin C Serum is thin and highly effective. It will help fade sun spots, discoloration, refine skin texture, reduce wrinkle formation, and minimize existing wrinkles. It also has a high concentrated base of pure vegan hyaluronic acid to plump skin cells and protect and restore.",
@@ -508,12 +508,12 @@ export const products: Product[] = [
     category: 'Skincare',
     price: 8500,
     originalPrice: 16500,
-    image: 'https://i.ibb.co/d4Kh0zdx/anua1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836571/anua1_pgwpwb.png',
     images: [
-      'https://i.ibb.co/d4Kh0zdx/anua1.png',
-      'https://i.ibb.co/9HxFpswk/anua2.png',
-      'https://i.ibb.co/vCKS2V92/anua3.png',
-      'https://i.ibb.co/Q3VGGRGK/anua4.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836571/anua1_pgwpwb.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836585/anua2_ypg21v.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836594/anua3_pcwrlv.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836607/anua4_ymcnud.png'
     ],
     isNew: true,
     description: "The Anua Niacinamide 10% + TXA 4% Dark Spot Correcting Serum is a potent skincare solution designed to target and reduce the appearance of dark spots and hyperpigmentation. This serum combines 10% niacinamide with 4% tranexamic acid (TXA) to promote a more even complexion, reduce redness, and enhance overall skin radiance.",
@@ -538,12 +538,12 @@ export const products: Product[] = [
     category: 'Fashion',
     price: 16500,
     originalPrice: 22800,
-    image: 'https://i.ibb.co/vxXJn8DG/galu1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836674/galu1_jh5wp1.png',
     images: [
-      'https://i.ibb.co/vxXJn8DG/galu1.png',
-      'https://i.ibb.co/mrPT94kj/galu2.png',
-      'https://i.ibb.co/RkhVFVzF/galu3.png',
-      'https://i.ibb.co/v6rPHy2j/galu4.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836674/galu1_jh5wp1.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836694/galu2_xtfjku.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837375/galu3_cwioku.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837383/galu4_hajqt0.png'
     ],
     isNew: true,
     description: "Stylish GALUIN Waffle Shorts and T-Shirt set in Khaki. Perfect for casual, everyday wear. Features a comfortable waffle texture fabric. Set includes 1 T-shirt and 1 Short.",
@@ -569,12 +569,12 @@ export const products: Product[] = [
     category: 'Fashion',
     price: 28000,
     originalPrice: 42000,
-    image: 'https://i.ibb.co/TD7V7Y1q/bgg1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772907996/bgg1_naelaj.png',
     images: [
-      'https://i.ibb.co/TD7V7Y1q/bgg1.png',
-      'https://i.ibb.co/cKjLcmbh/bgg2.png',
-      'https://i.ibb.co/MXDdrfQ/bgg3.png',
-      'https://i.ibb.co/gbKygrgY/bgg4.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772907996/bgg1_naelaj.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772907984/bgg2_zeekno.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908000/bgg3_udzegx.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772907989/bgg4_txko3t.png'
     ],
     isNew: true,
     description: 'A vibrant and versatile satchel available in six stunning colors. This chic accessory is designed for the fashion-forward individual who values both style and functionality. Crafted with premium materials and featuring a spacious interior, it is the perfect companion for any occasion.',
@@ -600,12 +600,12 @@ export const products: Product[] = [
     category: 'Fashion',
     price: 18000,
     originalPrice: 24000,
-    image: 'https://i.ibb.co/v6NgjByB/gown1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908009/gown1_jvzfvh.png',
     images: [
-      'https://i.ibb.co/v6NgjByB/gown1.png',
-      'https://i.ibb.co/TMKS6Z0b/gown2.png',
-      'https://i.ibb.co/BH2PZr9f/gown3.png',
-      'https://i.ibb.co/d429V02k/gown4.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908009/gown1_jvzfvh.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908033/gown2_pzonaz.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908040/gown3_mnat2i.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908043/gown4_ix9gth.png'
     ],
     isNew: true,
     description: 'Turn heads in this breathtaking evening gown. Designed with elegance in mind, this gown features a flattering silhouette and intricate detailing that exudes sophistication. Perfect for galas, weddings, and high-profile events.',
@@ -631,12 +631,12 @@ export const products: Product[] = [
     category: 'Fashion',
     price: 21000,
     originalPrice: 27000,
-    image: 'https://i.ibb.co/DH73LcVd/min1.png',
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908036/min1_v8blpp.png',
     images: [
-      'https://i.ibb.co/DH73LcVd/min1.png',
-      'https://i.ibb.co/9HF1VTjk/min2.png',
-      'https://i.ibb.co/DfL26GyS/min3.png',
-      'https://i.ibb.co/HTDxFBBD/min4.png'
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908036/min1_v8blpp.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908048/min2_ew8iwl.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908061/min3_pqesln.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908074/min4_brhpir.png'
     ],
     isNew: true,
     isBestSeller: true,
