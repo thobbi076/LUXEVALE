@@ -10,6 +10,7 @@ import Product from './pages/Product';
 import Cart from './pages/Cart';
 import About from './pages/About';
 import FAQ from './pages/FAQ';
+import Admin from './pages/Admin';
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
                 <Route path="cart" element={<Cart />} />
                 <Route path="about" element={<About />} />
                 <Route path="faq" element={<FAQ />} />
+                <Route path="admin" element={<Admin />} />
               </Route>
             </Routes>
           </BrowserRouter>

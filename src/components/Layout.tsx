@@ -246,8 +246,11 @@ export default function Layout() {
             )}
           </div>
         </div>
-        <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          &copy; 2026 LUXEVALE. All rights reserved.
+        <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p>&copy; 2026 LUXEVALE. All rights reserved.</p>
+          <Link to="/admin" className="text-xs text-muted-foreground hover:text-primary transition-colors opacity-50 hover:opacity-100">
+            Admin Access
+          </Link>
         </div>
       </footer>
     </div>
