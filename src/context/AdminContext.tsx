@@ -82,11 +82,7 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     return initialProducts.map(p => ({ ...p, stock: p.stock ?? 10, isHidden: p.isHidden ?? false }));
   });
 
-  const [orders, setOrders] = useState<Order[]>(() => {
-    const saved = localStorage.getItem('admin_orders_v2');
-    if (saved) return JSON.parse(saved);
-    return [];
-  });
+  const [orders, setOrders] = useState<Order[]>([]);
 
   const [content, setContent] = useState<WebsiteContent>(() => {
     const saved = localStorage.getItem('admin_content');
@@ -102,13 +98,30 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     };
   });
 
+  // Fetch orders from server
+  const fetchOrders = async () => {
+    try {
+      const response = await fetch('/api/orders');
+      if (response.ok) {
+        const data = await response.json();
+        setOrders(data);
+      }
+    } catch (error) {
+      console.error('Failed to fetch orders:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchOrders();
+    const interval = setInterval(fetchOrders, 5000); // Poll every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   useEffect(() => {
     localStorage.setItem('admin_products', JSON.stringify(products));
   }, [products]);
 
-  useEffect(() => {
-    localStorage.setItem('admin_orders_v2', JSON.stringify(orders));
-  }, [orders]);
+  // Removed localStorage sync for orders as it's now server-side
 
   useEffect(() => {
     localStorage.setItem('admin_content', JSON.stringify(content));
@@ -130,9 +143,7 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       if (e.key === 'admin_products' && e.newValue) {
         setProducts(JSON.parse(e.newValue));
       }
-      if (e.key === 'admin_orders_v2' && e.newValue) {
-        setOrders(JSON.parse(e.newValue));
-      }
+      // Removed admin_orders_v2 sync
       if (e.key === 'admin_content' && e.newValue) {
         setContent(JSON.parse(e.newValue));
       }
@@ -167,12 +178,36 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     setProducts(prev => prev.filter(p => p.id !== id));
   };
 
-  const addOrder = (order: Order) => {
+  const addOrder = async (order: Order) => {
+    // Optimistic update
     setOrders(prev => [order, ...prev]);
+    
+    try {
+      await fetch('/api/orders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(order),
+      });
+      // Re-fetch to ensure sync
+      fetchOrders();
+    } catch (error) {
+      console.error('Failed to save order:', error);
+    }
   };
 
-  const updateOrderStatus = (id: string, status: Order['status']) => {
+  const updateOrderStatus = async (id: string, status: Order['status']) => {
+    // Optimistic update
     setOrders(prev => prev.map(o => o.id === id ? { ...o, status } : o));
+
+    try {
+      await fetch(`/api/orders/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status }),
+      });
+    } catch (error) {
+      console.error('Failed to update order status:', error);
+    }
   };
 
   const updateContent = (updates: Partial<WebsiteContent>) => {
