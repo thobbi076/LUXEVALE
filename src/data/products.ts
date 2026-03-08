@@ -659,5 +659,292 @@ export const products: Product[] = [
       'Weight': '0.6kg',
       'Color': 'Classic Black'
     }
+  },
+  {
+    id: 'beautiful-unique-ladies-corporate-gown',
+    name: 'Beautiful And Unique Ladies Corporate Gown(No Belt,no Cap)',
+    category: 'Fashion',
+    price: 12000,
+    originalPrice: 16500,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773001804/1.1_jkhxsa.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773001804/1.1_jkhxsa.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773001738/1.2_fwexmz.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773001864/1.3_dnr79z.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773001731/1.4_dodbtu.png'
+    ],
+    isNew: true,
+    description: "Fashionable and Unique ladies cooperate gown for classy ladies it comes in various sizes to fits perfectly well and give you that Adorable look you desire it's Affordable and Adorable it's suitable for all occasion and events it comfortable outfits that makes you stand out and have that confidence that you deserve",
+    rating: 5.0,
+    reviews: 12,
+    keyFeatures: [
+      'Beautiful',
+      'Fabulous',
+      'Unique',
+      'Affordable'
+    ],
+    specifications: {
+      'SKU': 'FA203MW4V9T3INAFAMZ',
+      'Product Line': 'Michelle Collection'
+    }
+  },
+  {
+    id: 'gorgeous-classy-ladies-gown-jacket',
+    name: 'Gorgeous And Classy Ladies Gown And Jacket',
+    category: 'Fashion',
+    price: 14500,
+    originalPrice: 19000,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773001858/2.1_mk9jht.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773001858/2.1_mk9jht.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773001708/2.2_ib1byr.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773001870/2.3_rxm4n3.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002026/2.4_nfkjdi.png'
+    ],
+    isNew: true,
+    description: "Fashionable and Unique ladies gown and jacket for classy ladies it comes in various sizes to fits perfectly well and give you that Adorable look you desire it's Affordable and Adorable it's suitable for all occasion and events it comfortable outfits that makes you stand out and have that confidence that you deserve",
+    rating: 5.0,
+    reviews: 24,
+    keyFeatures: [
+      'Beautiful',
+      'Fabulous',
+      'Unique',
+      'Affordable'
+    ],
+    specifications: {
+      'SKU': 'FA203MW4FHN72NAFAMZ',
+      'Product Line': 'Michelle Collection',
+      'What’s in the box': 'A gown and jacket',
+      'Size Guide': 'M, L, XL'
+    }
+  },
+  {
+    id: 'ladies-corporate-gown',
+    name: 'Ladies Corporate Gown',
+    category: 'Fashion',
+    price: 11500,
+    originalPrice: 15000,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773001940/4.1_xpxieg.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773001940/4.1_xpxieg.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773001923/4.2_mbe8zy.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773001996/4.3_ftr3ok.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773001968/4.4_yvfwdp.png'
+    ],
+    isNew: true,
+    description: "This is a trendy beautiful gown. just as it appears in the picture it is beautifully designed. it is a gown with jacket. It has zip . Its good for official and causal wear.its beautiful and comes in different sizes to fit perfectly well and give you that desirable fitting you deserve",
+    rating: 5.0,
+    reviews: 8,
+    keyFeatures: [
+      'Unique design',
+      'Beautiful color',
+      'Adorable and affordable',
+      'Elegant'
+    ],
+    specifications: {
+      'SKU': 'FA203MW2W4H71NAFAMZ',
+      'Product Line': 'Michelle Collection',
+      'Weight (kg)': '0.5',
+      'Color': 'NAVY BLUE',
+      'Main Material': 'ployster',
+      'Size Guide': 'L, XL, XXL'
+    }
+  },
+  {
+    id: 'fabulous-dress-gown-elegant-ladies',
+    name: 'Fabulous Dress Gown For Elegant Ladies',
+    category: 'Fashion',
+    price: 14500,
+    originalPrice: 21000,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002015/5.1_cy0vmg.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002015/5.1_cy0vmg.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773001994/5.2_pwsyrp.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002039/5.3_xmuzzq.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002042/5.4_jdufxl.png'
+    ],
+    isNew: true,
+    description: "Unique and syslish gorgeous Fashionable gown for elegant ladies it's fabulous and adorable,it comes in various sizes to fit perfectly well and give you that wonderful fitting you desire it can be wear to different events and occasions and stand out in style it affordable too",
+    rating: 5.0,
+    reviews: 17,
+    keyFeatures: [
+      'Fabolous',
+      'Gorgeous',
+      'Unique',
+      'Beautiful'
+    ],
+    specifications: {
+      'SKU': 'FA203MW5HX3DWNAFAMZ',
+      'Product Line': 'Michelle Collection',
+      'Size Guide': 'M, L, XL'
+    }
+  },
+  {
+    id: 'machislet-maxi-dress',
+    name: 'Machislet Maxi Dress Bodycon Dress Shift Dress Cotton Dress Party Dress Wedding Dress Evening Dress Casual Dress Holiday Dress',
+    category: 'Fashion',
+    price: 8500,
+    originalPrice: 12000,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002048/6.1_tdtoko.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002048/6.1_tdtoko.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002035/6.2_il5dv6.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002052/6.3_pazd91.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002060/6.4_yfdvua.png'
+    ],
+    isNew: true,
+    description: "Known as the queen of fashion in many styles, dresses are the most unpredictable, popular and popular. Dress is a general term for a variety, and it is one of the summer dresses of choice for young girls.\nThe long one-shoulder sleeves are the unique beauty of this dress, and the ripple print of the water is wild and unmistakable. It has good elasticity and can maximize your figure.\nIt creates a more defined size and is an elegant hip-pack style. If you want fa? Onner the curves, this dress is a good choice.\nThe matching of the bright and unrestrained colors of this dress is the perfect combination of sexy and intellectual, and it is a choice you will not regret!",
+    rating: 5.0,
+    reviews: 29,
+    keyFeatures: [
+      'Sexy Sexy',
+      'Sleeves straps',
+      'Pleasant to wear',
+      'Easy to maintain'
+    ],
+    specifications: {
+      'SKU': 'FA203MW5EVMDMNAFAMZ',
+      'Product Line': 'Machislet',
+      'Model': 'Maxi Dress,Bodycon Dress,Shift Dress,Cotton Dress,Silk Dress,Party Dress,Wedding Dress,Evening Dress,Casual Dress,Holiday Dress',
+      'Weight (kg)': '0.2',
+      'Color': 'Chroma',
+      'Main Material': 'Coton',
+      'What’s in the box': 'dreeses',
+      'Variation available': 'M'
+    }
+  },
+  {
+    id: 'machislet-short-sleeved-lace-up-dress',
+    name: 'Machislet Short-sleeved Lace-up Dress Evening Dress Casual Dress',
+    category: 'Fashion',
+    price: 16500,
+    originalPrice: 22500,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002079/8.1_c8xgfn.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002079/8.1_c8xgfn.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002070/8.2_rdo0cx.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002089/8.3_ccgs5i.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002090/8.4_pbaetn.png'
+    ],
+    isNew: true,
+    description: "Machislet - A Pioneer in African Fashion, a Sanctuary of Apparel and Footwear Artistry\nAt the heart of the African continent, there is a brand that is redefining the boundaries of fashion – Machislet. As a leader in African fashion, Machislet focuses on delivering unique and vibrant apparel and footwear to consumers worldwide. Each piece created by Machislet is a celebration of the essece of African culture, an homage to traditional craftsmanship, and a showcase of contemporary design aesthetics.",
+    rating: 5.0,
+    reviews: 14,
+    keyFeatures: [
+      'Brand: Machislet',
+      'Sexy Sexy',
+      'Sleeves straps',
+      'Pleasant to wear',
+      'Easy to maintain',
+      'Loose and breathable',
+      'Daily leisure'
+    ],
+    specifications: {
+      'SKU': 'MA504MW761VEHNAFAMZ',
+      'Product Line': 'Machislet SMT02',
+      'Model': 'Lace-up Dress',
+      'Production Country': 'China',
+      'Weight (kg)': '0.3',
+      'Certifications': 'Eco Friendly',
+      'Color': 'white and red',
+      'Main Material': 'Blended Cotton',
+      'What’s in the box': '1*DRESSES',
+      'Size Guide': 'S, M, L'
+    }
+  },
+  {
+    id: 'women-casual-sexy-bodycon-maxi-dress',
+    name: 'Women Casual Sexy Bodycon Maxi Dress',
+    category: 'Fashion',
+    price: 14500,
+    originalPrice: 18500,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002061/7.1_rvrycb.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002061/7.1_rvrycb.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002052/7.2_npxoqc.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002064/7.3_wtnquw.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002075/7.4_peueph.png'
+    ],
+    isNew: true,
+    description: "1.It is made of high quality materials,durable enought for your daily wearing\n2.This Special design setand will steal your heart! Chic and comfy, you can't go wrong with this amazing cute DRESS!\n3.Great for party,Daily,I am sure you will like it!",
+    rating: 5.0,
+    reviews: 21,
+    keyFeatures: [
+      'elastic',
+      'fit all',
+      'soft',
+      'comfortable'
+    ],
+    specifications: {
+      'SKU': 'GE779MW6AL8BMNAFAMZ',
+      'Model': 'Bodycon Maxi',
+      'Weight (kg)': '0.3',
+      'Color': 'PINK',
+      'Main Material': 'polyester + spandex',
+      'Size Guide': 'S, M, L, XL, XXL',
+      'Available Colours': 'candy pink and black'
+    }
+  },
+  {
+    id: 'adorable-bodycon-long-gown',
+    name: 'Adorable bodycon Long Gown for ladies',
+    category: 'Fashion',
+    price: 13000,
+    originalPrice: 17000,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002079/9.1_nuiarq.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002079/9.1_nuiarq.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002086/9.2_ga8ewx.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002099/9.3_wdykqp.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002106/9.4_zidgs6.png'
+    ],
+    isNew: true,
+    description: "Elegant fashionable ladies long gown it's beautiful and sexy it comes in various sizes to fit perfectly well and give you that desirable fitting you deserve it can be wear to different events and occasions and stand out in style it affordable and classy",
+    rating: 5.0,
+    reviews: 11,
+    keyFeatures: [
+      'Gorgeous',
+      'Unique',
+      'Classy',
+      'Affordable'
+    ],
+    specifications: {
+      'SKU': 'FA203MW7FRRE1NAFAMZ',
+      'Product Line': 'Michelle collection',
+      'Weight (kg)': '0.4kg',
+      'Color': 'Black',
+      'Size Guide': 'S, L, XL'
+    }
+  },
+  {
+    id: 'gorgeous-stylish-ladies-long-gown',
+    name: 'Gorgeous And Stylish Ladies Long Gown(no Hart)',
+    category: 'Fashion',
+    price: 13000,
+    originalPrice: 17500,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002105/10.1_qk9wyy.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002105/10.1_qk9wyy.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002115/10.2_qqkbgn.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002116/10.3_u81re2.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773002107/10.4_j9rt88.png'
+    ],
+    isNew: true,
+    description: "Elegant fashionable ladies long gown it's beautiful and sexy it comes in various sizes to fit perfectly well and give you that desirable fitting you deserve it can be wear to different events and occasions and stand out in style it affordable and classy",
+    rating: 5.0,
+    reviews: 27,
+    keyFeatures: [
+      'Gorgeous',
+      'Unique',
+      'Classy',
+      'Affordable'
+    ],
+    specifications: {
+      'SKU': 'FA203MW7ATESDNAFAMZ',
+      'Product Line': 'Michelle collection',
+      'Weight (kg)': '0.2kg',
+      'Color': 'Yellow',
+      'Size Guide': 'S, L, XL'
+    }
   }
 ];

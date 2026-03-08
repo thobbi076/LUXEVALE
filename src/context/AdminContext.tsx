@@ -78,7 +78,14 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   // Initialize products with default stock if missing
   const [products, setProducts] = useState<Product[]>(() => {
     const saved = localStorage.getItem('admin_products');
-    if (saved) return JSON.parse(saved);
+    if (saved) {
+      const parsedSaved = JSON.parse(saved) as Product[];
+      const savedIds = new Set(parsedSaved.map(p => p.id));
+      const newProducts = initialProducts
+        .filter(p => !savedIds.has(p.id))
+        .map(p => ({ ...p, stock: p.stock ?? 10, isHidden: p.isHidden ?? false }));
+      return [...parsedSaved, ...newProducts];
+    }
     return initialProducts.map(p => ({ ...p, stock: p.stock ?? 10, isHidden: p.isHidden ?? false }));
   });
 
