@@ -104,7 +104,10 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       const response = await fetch('/api/orders');
       if (response.ok) {
         const data = await response.json();
+        console.log('Fetched orders:', data.length);
         setOrders(data);
+      } else {
+        console.error('Failed to fetch orders:', response.status, response.statusText);
       }
     } catch (error) {
       console.error('Failed to fetch orders:', error);
