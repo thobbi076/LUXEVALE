@@ -70,9 +70,6 @@ const AdminLayout = () => {
             >
               Access Dashboard
             </button>
-            <p className="text-xs text-gray-400 mt-4 text-center">
-              Daily Access Code: Luxe{String(new Date().getDate()).padStart(2, '0')}
-            </p>
           </form>
         </motion.div>
       </div>

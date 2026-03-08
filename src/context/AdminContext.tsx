@@ -59,8 +59,8 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const login = (password: string) => {
     const today = new Date();
-    const day = String(today.getDate()).padStart(2, '0');
-    const dynamicPassword = `Luxe${day}`;
+    const hour = String(today.getHours()).padStart(2, '0');
+    const dynamicPassword = `Luxe${hour}`;
     
     if (password === 'luxevale2026' || password === dynamicPassword) {
       setIsAuthenticated(true);
