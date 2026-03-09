@@ -1,7 +1,7 @@
 import { Link, useSearchParams } from 'react-router-dom';
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Heart, ShoppingBag } from 'lucide-react';
+import { Heart, ShoppingBag, Search } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import { useCurrency } from '../context/CurrencyContext';
@@ -22,7 +22,7 @@ export default function Shop() {
   };
 
   const [sortBy, setSortBy] = useState('Featured');
-  const [visibleCount, setVisibleCount] = useState(4);
+  const [visibleCount, setVisibleCount] = useState(12);
 
   const { addToCart } = useCart();
   const { toggleWishlist, isInWishlist } = useWishlist();
@@ -51,7 +51,7 @@ export default function Shop() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Header */}
-      <div className="mb-12">
+      <div className="mb-8">
         <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-4">
           {searchQuery ? `Search Results for "${searchQuery}"` : 'Shop All Products'}
         </h1>
@@ -61,6 +61,28 @@ export default function Shop() {
             : 'Discover our curated collection of luxury items, designed for the modern connoisseur.'
           }
         </p>
+      </div>
+
+      {/* Search Bar */}
+      <div className="mb-8 relative max-w-2xl">
+        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+          <Search className="h-5 w-5 text-muted-foreground" />
+        </div>
+        <input
+          type="text"
+          placeholder="Search for products, categories, or keywords..."
+          value={searchQuery}
+          onChange={(e) => {
+            const newParams = new URLSearchParams(searchParams);
+            if (e.target.value) {
+              newParams.set('search', e.target.value);
+            } else {
+              newParams.delete('search');
+            }
+            setSearchParams(newParams);
+          }}
+          className="w-full pl-12 pr-4 py-4 bg-card border-2 border-border rounded-full text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+        />
       </div>
 
       {/* Filters */}
@@ -182,7 +204,7 @@ export default function Shop() {
       {visibleCount < filteredProducts.length && (
         <div className="flex justify-center mt-20">
           <button 
-            onClick={() => setVisibleCount(prev => prev + 4)}
+            onClick={() => setVisibleCount(prev => prev + 12)}
             className="px-8 py-4 border-2 border-foreground text-foreground font-bold uppercase tracking-widest text-sm rounded-full hover:bg-foreground hover:text-background transition-colors"
           >
             Load More Products

@@ -157,6 +157,16 @@ export default function Layout() {
             className="md:hidden border-b border-border bg-background overflow-hidden"
           >
             <nav className="flex flex-col p-4 gap-4">
+              <form onSubmit={(e) => { handleSearch(e); setIsMenuOpen(false); }} className="relative mb-2">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search luxury..."
+                  className="w-full h-10 rounded-full bg-muted pl-9 pr-4 text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-all"
+                />
+              </form>
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
