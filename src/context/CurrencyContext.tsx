@@ -26,19 +26,25 @@ const CURRENCY_SYMBOLS: Record<Currency, string> = {
 };
 
 export function CurrencyProvider({ children }: { children: React.ReactNode }) {
-  const [currency, setCurrency] = useState<Currency>('NGN');
-
-  // Load currency from local storage on mount
-  // useEffect(() => {
-  //   const savedCurrency = localStorage.getItem('luxevale-currency');
-  //   if (savedCurrency && Object.keys(EXCHANGE_RATES).includes(savedCurrency)) {
-  //     setCurrency(savedCurrency as Currency);
-  //   }
-  // }, []);
+  const [currency, setCurrency] = useState<Currency>(() => {
+    try {
+      const saved = localStorage.getItem('luxevale-currency');
+      if (saved && Object.keys(EXCHANGE_RATES).includes(saved)) {
+        return saved as Currency;
+      }
+    } catch (e) {
+      console.warn('LocalStorage access failed', e);
+    }
+    return 'NGN';
+  });
 
   // Save currency to local storage on change
   useEffect(() => {
-    localStorage.setItem('luxevale-currency', currency);
+    try {
+      localStorage.setItem('luxevale-currency', currency);
+    } catch (e) {
+      console.warn('LocalStorage set failed', e);
+    }
   }, [currency]);
 
   const convertPrice = (price: number) => {

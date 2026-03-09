@@ -27,9 +27,10 @@ const AdminLayout = () => {
     { path: '/admin/content', icon: FileText, label: 'Content' },
   ];
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (login(password)) {
+    const success = await login(password);
+    if (success) {
       setError('');
       navigate('/admin/dashboard');
     } else {

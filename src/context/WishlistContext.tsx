@@ -11,23 +11,23 @@ interface WishlistContextType {
 const WishlistContext = createContext<WishlistContextType | undefined>(undefined);
 
 export function WishlistProvider({ children }: { children: React.ReactNode }) {
-  const [wishlist, setWishlist] = useState<string[]>([]);
-
-  // Load wishlist from local storage on mount
-  useEffect(() => {
-    const savedWishlist = localStorage.getItem('luxevale-wishlist');
-    if (savedWishlist) {
-      try {
-        setWishlist(JSON.parse(savedWishlist));
-      } catch (e) {
-        console.error('Failed to parse wishlist from local storage');
-      }
+  const [wishlist, setWishlist] = useState<string[]>(() => {
+    try {
+      const saved = localStorage.getItem('luxevale-wishlist');
+      if (saved) return JSON.parse(saved);
+    } catch (e) {
+      console.warn('LocalStorage access failed', e);
     }
-  }, []);
+    return [];
+  });
 
   // Save wishlist to local storage on change
   useEffect(() => {
-    localStorage.setItem('luxevale-wishlist', JSON.stringify(wishlist));
+    try {
+      localStorage.setItem('luxevale-wishlist', JSON.stringify(wishlist));
+    } catch (e) {
+      console.warn('LocalStorage set failed', e);
+    }
   }, [wishlist]);
 
   const addToWishlist = (id: string) => {

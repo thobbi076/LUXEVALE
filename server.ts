@@ -1,8 +1,13 @@
+console.log(`[Server] server.ts is loading... NODE_ENV: ${process.env.NODE_ENV}`);
 import express from "express";
 import { createServer as createViteServer } from "vite";
 import path from "path";
 import { fileURLToPath } from 'url';
 import fs from 'fs';
+import dotenv from 'dotenv';
+import { google } from 'googleapis';
+
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -20,15 +25,94 @@ if (!fs.existsSync(DATA_FILE)) {
   console.log('[Server] Found existing orders.json file');
 }
 
-async function startServer() {
-  const app = express();
-  const PORT = 3000;
+// Google Sheets Setup
+const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
+const SPREADSHEET_ID = process.env.GOOGLE_SHEETS_ID;
+const SERVICE_ACCOUNT_EMAIL = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+const PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n');
 
-  app.use(express.json());
+async function syncToGoogleSheets(order: any) {
+  if (!SPREADSHEET_ID || !SERVICE_ACCOUNT_EMAIL || !PRIVATE_KEY) {
+    console.log('[Sheets] Missing credentials, skipping sync');
+    return;
+  }
+
+  try {
+    const auth = new google.auth.JWT({
+      email: SERVICE_ACCOUNT_EMAIL,
+      key: PRIVATE_KEY,
+      scopes: SCOPES,
+    });
+
+    const sheets = google.sheets({ version: 'v4', auth });
+    
+    const values = [[
+      order.id,
+      order.customerName || 'Unknown',
+      '', // email placeholder
+      '', // phone placeholder
+      order.items.map((i: any) => `${i.name} (x${i.quantity})`).join(', '),
+      order.total,
+      order.status,
+      order.date
+    ]];
+
+    await sheets.spreadsheets.values.append({
+      spreadsheetId: SPREADSHEET_ID,
+      range: 'Sheet1!A:H',
+      valueInputOption: 'RAW',
+      requestBody: { values },
+    });
+    
+    console.log(`[Sheets] Order ${order.id} synced successfully`);
+  } catch (error) {
+    console.error('[Sheets] Error syncing order:', error);
+  }
+}
+
+async function startServer() {
+  try {
+    const app = express();
+    const PORT = 3000;
+
+    app.use(express.json());
+
+  // Request logging middleware
+  app.use((req, res, next) => {
+    console.log(`[Server] ${req.method} ${req.url}`);
+    next();
+  });
 
   // API routes FIRST
   app.get("/api/health", (req, res) => {
     res.json({ status: "ok" });
+  });
+
+  app.get("/test-server", (req, res) => {
+    res.send("Server is running!");
+  });
+
+  // Admin login
+  app.post("/api/admin/login", (req, res) => {
+    const { password } = req.body;
+    const adminPassword = process.env.ADMIN_PASSWORD || 'luxevale2026';
+    
+    // Dynamic password based on current hour (e.g., Luxe14)
+    const today = new Date();
+    const hour = String(today.getHours()).padStart(2, '0');
+    const dynamicPassword = `Luxe${hour}`;
+    
+    // Also check UTC hour in case of timezone mismatch
+    const utcHour = String(today.getUTCHours()).padStart(2, '0');
+    const dynamicPasswordUTC = `Luxe${utcHour}`;
+    
+    console.log(`[Login] Attempt with password. Server Local Hour: ${hour}, UTC Hour: ${utcHour}`);
+    
+    if (password === adminPassword || password === dynamicPassword || password === dynamicPasswordUTC) {
+      res.json({ success: true });
+    } else {
+      res.status(401).json({ success: false, error: 'Invalid password' });
+    }
   });
 
   // Get all orders
@@ -67,6 +151,9 @@ async function startServer() {
         orders.unshift(newOrder); // Add to beginning
         fs.writeFileSync(DATA_FILE, JSON.stringify(orders, null, 2));
         console.log(`[Server] Order saved. Total orders: ${orders.length}`);
+        
+        // Sync to Google Sheets in background
+        syncToGoogleSheets(newOrder).catch(err => console.error('[Sheets] Background sync failed:', err));
       } else {
         console.log(`[Server] Order ${newOrder.id} already exists. Skipping.`);
       }
@@ -107,27 +194,68 @@ async function startServer() {
       res.status(500).json({ error: "Failed to update order" });
     }
   });
+  
+  // Catch-all for API routes that don't exist to prevent falling through to HTML
+  app.all("/api/*", (req, res) => {
+    console.log(`[Server] 404 API Not Found: ${req.method} ${req.url}`);
+    res.status(404).json({ error: `API route not found: ${req.method} ${req.url}` });
+  });
 
-  if (process.env.NODE_ENV === "production") {
+  const distPath = path.join(__dirname, "dist");
+  const isProduction = process.env.NODE_ENV === "production" && fs.existsSync(distPath);
+  console.log(`[Server] isProduction: ${isProduction}, distPath exists: ${fs.existsSync(distPath)}`);
+
+  if (isProduction) {
     // Serve static files in production
-    app.use(express.static(path.join(__dirname, "dist")));
+    console.log(`[Server] Serving static files from ${distPath}`);
+    app.use(express.static(distPath));
 
     // SPA fallback for production
     app.get("*", (req, res) => {
-      res.sendFile(path.join(__dirname, "dist", "index.html"));
+      res.sendFile(path.join(distPath, "index.html"));
     });
   } else {
     // Vite middleware for development
+    console.log(`[Server] Initializing Vite middleware... NODE_ENV: ${process.env.NODE_ENV}`);
+    process.env.NODE_ENV = 'development';
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
+      root: process.cwd(),
+      mode: "development"
     });
+    
+    // Use the middleware directly
     app.use(vite.middlewares);
+    
+    app.use('*', async (req, res, next) => {
+      try {
+        const url = req.originalUrl;
+        let template = fs.readFileSync(path.resolve(process.cwd(), 'index.html'), 'utf-8');
+        template = await vite.transformIndexHtml(url, template);
+        res.status(200).set({ 'Content-Type': 'text/html' }).end(template);
+      } catch (e: any) {
+        vite.ssrFixStacktrace(e);
+        next(e);
+      }
+    });
+    
+    console.log(`[Server] Vite middleware initialized.`);
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`[Server] Starting server on port ${PORT}...`);
+  const server = app.listen(PORT, "0.0.0.0", () => {
+    console.log(`[Server] Server running on http://0.0.0.0:${PORT}`);
+    console.log(`[Server] Data file: ${DATA_FILE}`);
+    console.log(`[Server] NODE_ENV: ${process.env.NODE_ENV}`);
   });
+
+  server.on('error', (err) => {
+    console.error("[Server] Server error event:", err);
+  });
+} catch (error) {
+  console.error("[Server] FATAL ERROR during server startup:", error);
+}
 }
 
 startServer();

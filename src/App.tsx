@@ -18,6 +18,7 @@ import AdminOrders from './pages/admin/AdminOrders';
 import AdminContent from './pages/admin/AdminContent';
 
 export default function App() {
+  console.log("[Client] App rendering...");
   return (
     <CartProvider>
       <WishlistProvider>

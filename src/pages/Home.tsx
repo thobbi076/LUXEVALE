@@ -5,6 +5,7 @@ import { useAdmin } from '../context/AdminContext';
 import { optimizeImage } from '../utils/image';
 
 export default function Home() {
+  console.log("[Client] Home rendering...");
   const { content } = useAdmin();
 
   return (

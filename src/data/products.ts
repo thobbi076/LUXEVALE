@@ -946,5 +946,309 @@ export const products: Product[] = [
       'Color': 'Yellow',
       'Size Guide': 'S, L, XL'
     }
+  },
+  {
+    id: 'happy-flower-yellow-women-perfume',
+    name: 'Happy Flower "yellow" women Perfume',
+    category: 'Perfumes',
+    price: 8000,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091278/22.1_ydo14g.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091278/22.1_ydo14g.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091290/22.2_qdvpl7.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091312/22.3_cui4z3.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091290/22.4_sdsvw1.png'
+    ],
+    isNew: true,
+    description: 'Warmkiss Happy Flower Eau de Parfum for women. It has a floral and fruity scent profile. The fragrance is described as long-lasting and light. It is available in a 50ml volume. The perfume is suitable for everyday wear.',
+    rating: 4.8,
+    reviews: 12,
+    keyFeatures: [
+      'Warmkiss Happy Flower Eau de Parfum for women.',
+      'It has a floral and fruity scent profile.',
+      'The fragrance is described as long-lasting and light.',
+      'It is available in a 50ml volume.',
+      'The perfume is suitable for everyday wear.'
+    ],
+    specifications: {
+      'SKU': 'GE779PF75VCUBNAFAMZ',
+      'Weight (kg)': '0.2',
+      'Volume': '50ml'
+    }
+  },
+  {
+    id: 'perfume-red-velvet',
+    name: 'Perfume Red velvet',
+    category: 'Perfumes',
+    price: 10500,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091329/21.1_luk34z.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091329/21.1_luk34z.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091346/21.2_p1vezr.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091331/21.3_m5drwe.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091383/21.4_mcmwc6.png'
+    ],
+    isNew: true,
+    description: 'Warm kiss Red velvet perfume 100ml, top note is citrus, bergamot, middle note is musk, aloe and base note is jasmine, woody, musk and agarwood.',
+    rating: 4.9,
+    reviews: 28,
+    keyFeatures: [
+      'Warmkiss Red velvet perfume 100ml'
+    ],
+    specifications: {
+      'SKU': 'GE779PF6ODNJLNAFAMZ',
+      'Weight (kg)': '100ml',
+      'Color': 'Red',
+      'Volume': '100ml'
+    },
+    fragranceNotes: {
+      top: 'citrus, bergamot',
+      heart: 'musk, aloe',
+      base: 'jasmine, woody, musk and agarwood'
+    }
+  },
+  {
+    id: 'veyes-rouge-n-romance-perfume',
+    name: 'Veyes Rouge,n romance perfume',
+    category: 'Perfumes',
+    price: 9500,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091284/20.1_rge8dg.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091284/20.1_rge8dg.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091325/20.2_l9b9zp.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091283/20.3_c6qer9.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091399/20.4_pkto2a.png'
+    ],
+    isNew: true,
+    description: 'This is a Veyes Rouge\'n Romance Eau de Parfum. Volume: 100ml (3.4 fl.oz). Scent Profile: A sweet-floral, warm, and rich fragrance. Target Audience: Marketed as a feminine, captivating, and high-class scent for women.',
+    rating: 4.7,
+    reviews: 35,
+    keyFeatures: [
+      'This is a Veyes Rouge\'n Romance Eau de Parfum.',
+      'Volume: 100ml (3.4 fl.oz)',
+      'Scent Profile: A sweet-floral, warm, and rich fragrance',
+      'Target Audience: Marketed as a feminine, captivating, and high-class scent for women'
+    ],
+    specifications: {
+      'SKU': 'VE226PF860NZJNAFAMZ',
+      'Weight (kg)': '0.2',
+      'Volume': '100ml'
+    }
+  },
+  {
+    id: 'lulanzi-passion-cologne-perfume',
+    name: 'Lulanzi Passion Cologne Perfume 50ml',
+    category: 'Perfumes',
+    price: 8500,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091316/24.1_gb741f.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091316/24.1_gb741f.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091367/24.2_exifmx.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091368/24.3_qjcgpo.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091401/24.4_iv4zjh.png'
+    ],
+    isNew: true,
+    description: 'The Scent of Passion: An aromatic composition designed to be noticeably pleasant. Cologne Perfume: Provides the crisp freshness of a cologne but with the longevity of a perfume.',
+    rating: 4.6,
+    reviews: 19,
+    keyFeatures: [
+      'Scent Profile: A vibrant and energetic Passion Cologne fragrance.',
+      'Design: Unique gradient bottle (Blue/Pink/Red) for a stylish presentation.',
+      'Concentration: Cologne Perfume formula for a noticeable and lasting scent.',
+      'Size: Perfect 50ml / 1.7 FL.OZ. travel and daily use size.'
+    ],
+    specifications: {
+      'SKU': 'GE779PF82RBADNAFAMZ',
+      'Product Line': 'wowmart.ng',
+      'Model': 'WARMKISS',
+      'Weight (kg)': '0.20',
+      'Certifications': 'Eco Friendly',
+      'Volume': '50ml'
+    },
+    howToUse: 'For external use only. Spray onto pulse points like the neck, chin, or other areas where blood flows to help diffuse the fragrance.'
+  },
+  {
+    id: 'vv-love-dema-fougere-perfume',
+    name: 'V.V.LOVE Dema Fougere Perfume',
+    category: 'Perfumes',
+    price: 6000,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091385/25.1_rhqr9y.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091385/25.1_rhqr9y.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091404/25.2_bqeybd.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091411/25.3_iroqnt.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091439/25.4_l6mimp.png'
+    ],
+    isNew: true,
+    description: 'This is a bottle of Dema Fougere Eau de Toilette spray. Volume: 30ml (1.0 FL.OZ.). Type: Eau de Toilette (EDT). Scent Profile: Fougere (a classic fragrance classification typically featuring herbaceous and woody notes).',
+    rating: 4.8,
+    reviews: 22,
+    keyFeatures: [
+      'This is a bottle of Dema Fougere Eau de Toilette spray.',
+      'Volume: 30ml (1.0 FL.OZ.)',
+      'Type: Eau de Toilette (EDT)',
+      'Scent Profile: Fougere (a classic fragrance classification typically featuring herbaceous and woody notes)'
+    ],
+    specifications: {
+      'SKU': 'VV297PF6UN7DRNAFAMZ',
+      'Weight (kg)': '0.1',
+      'Volume': '30ml'
+    }
+  },
+  {
+    id: 'drunken-man-black-crow-at-9pm',
+    name: 'Drunken Man (Black Crow at 9pm) Men Perfume Eau de Toilette',
+    category: 'Perfumes',
+    price: 6500,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091430/26.1_qmvkrq.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091430/26.1_qmvkrq.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091442/26.2_bbvlpw.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091443/26.3_rptatu.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091451/26.4_plzrjb.png'
+    ],
+    isNew: true,
+    description: 'Step into any room with an aura of irresistible magnetic scent. The WARMKISS Drunken Man Fragrance is more than just a perfume—it\'s a statement. Crafted for the man who is bold, confident, and unforgettable, this Eau de Toilette features a rich, intoxicating scent designed to captivate and draw attention.',
+    rating: 4.9,
+    reviews: 41,
+    keyFeatures: [
+      'Magnetic & Enduring Scent: A powerfully rich and seductive fragrance that leaves a lasting impression.',
+      'Optimal Performance: Designed to be applied to pulse points (neck, wrists) to activate the scent and create a vibrant, irresistible aura.',
+      'Long-Lasting Quality: Enjoy a premium fragrance with a generous 5-year shelf life (Guaranteed by the manufacturer).',
+      'Perfect Size: The 50ml volume is ideal for both daily use and travel.',
+      'High-Quality Formula: Made with a simple yet effective blend of Ethanol, Water, and Essence (Parfum).'
+    ],
+    specifications: {
+      'SKU': 'GE779PF78P4YDNAFAMZ',
+      'Product Line': 'wowmart.ng',
+      'Model': 'Model: W-9031',
+      'Weight (kg)': '0.20',
+      'Volume': '50ml'
+    },
+    howToUse: 'For maximum impact, lightly spray the WARMKISS Drunken Man Fragrance onto your body\'s natural pulse points, such as the: Neck, Wrists, Behind the ears. The warmth from these areas helps to diffuse the fragrance throughout the day, ensuring you remain enveloped in this captivating scent.'
+  },
+  {
+    id: 'warmkiss-earth-man-fragrance',
+    name: 'WARMKISS Earth Man Fragrance Eau de Parfum – Long-Lasting Perfume for Men',
+    category: 'Perfumes',
+    price: 6500,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091434/27.1_mv0ymw.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091434/27.1_mv0ymw.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091464/27.2_iqrdg3.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091489/27.3_w21fd0.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091504/27.4_j3rohn.png'
+    ],
+    isNew: true,
+    description: 'Command attention with WARMKISS Earth Man Fragrance, a powerfully masculine perfume designed to capture the essence of confidence and strength. This 50ml Eau de Parfum opens with fresh, woody notes that blend seamlessly into warm, earthy undertones, creating an irresistibly sophisticated scent for men who stand out naturally. Stylishly bottled with a luxury crystal-cut design, it’s a signature fragrance for the modern man.',
+    rating: 4.7,
+    reviews: 15,
+    keyFeatures: [
+      'Distinctive Masculine Aroma – Fresh, woody, and earthy blend for everyday sophistication.',
+      'Premium Eau de Parfum – Long-lasting formulation for all-day fragrance retention.',
+      'Fragrance Family: Woody – Earthy – Fresh',
+      'Elegant Design – Crystal-pattern bottle for a luxurious feel and premium presentation.',
+      'Versatile Use – Ideal for office, casual outings, dates, and formal events.',
+      'Perfect Gift Choice – Classy packaging suited for birthdays, anniversaries, and holidays.',
+      'Safe Composition – Gentle on skin when used as directed.',
+      'Longevity: 6–10 hours',
+      'Brand: WARMKISS'
+    ],
+    specifications: {
+      'SKU': 'GE779PF6SMV1XNAFAMZ',
+      'Product Line': 'wowmart.ng',
+      'Model': 'JIAOBOLAN',
+      'Weight (kg)': '0.25',
+      'Volume': '50ml'
+    }
+  },
+  {
+    id: 'warmkiss-signature-spicy-floral-amber',
+    name: 'The WARMKISS Signature Spicy Floral Amber Perfume',
+    category: 'Perfumes',
+    price: 9500,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091476/28.1_ka82wu.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091476/28.1_ka82wu.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091502/28.2_qc0xcg.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091489/28.3_fmiupq.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091515/28.4_ywiqwl.png'
+    ],
+    isNew: true,
+    description: 'A mesmerizing floral-spicy creation. The bright sparkle of Pink Pepper and Lemon gives way to a romantic heart of Rose and Jasmine. A truly captivating scent anchored by deep Agarwood (Oud) and creamy Vanilla base.',
+    rating: 4.8,
+    reviews: 33,
+    keyFeatures: [
+      'Spicy-Floral Contrast',
+      'Romantic Rose & Jasmine Heart',
+      'Rich Ambergris & Vanilla Base'
+    ],
+    specifications: {
+      'SKU': 'GE779PF78NGOXNAFAMZ',
+      'Model': 'WARMKISS Signature Spicy Floral Amber',
+      'Weight (kg)': '0.010',
+      'Color': 'Purple',
+      'Volume': '100ml'
+    }
+  },
+  {
+    id: 'cologne-noir-9pm-edt',
+    name: 'COLOGNE NOIR 9PM EDT Perfume for Men - Original Compass Design',
+    category: 'Perfumes',
+    price: 8500,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091507/29.1_vnobji.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091507/29.1_vnobji.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091527/29.2_uxchr4.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091528/29.3_e4uu2y.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091545/29.4_jmgbk5.png'
+    ],
+    isNew: true,
+    description: 'Indulge in the refreshing embrace of this exquisite cologne, designed for the discerning modern man. This fragrance offers a captivating blend of invigorating notes, creating an aura of sophistication and confidence. For those seeking long lasting fragrances for men, this cologne provides a subtle yet enduring scent that will leave a lasting impression.',
+    rating: 4.9,
+    reviews: 50,
+    keyFeatures: [
+      'Type: Eau de Toilette (EDT) for balanced projection and longevity.',
+      'Design: A commanding square matte black bottle with an eye-catching gold compass graphic and matching cap—a symbol of ambition and adventure.',
+      'Longevity: Crafted with a rich fragrance concentration that lasts throughout your day.',
+      'Net Content: 50ml (1.7 FL.OZ)',
+      'Fragrance Family: Aromatic Fougere / Citrus Aromatic'
+    ],
+    specifications: {
+      'SKU': 'GE779PF707IN1NAFAMZ',
+      'Product Line': 'wowmart.ng',
+      'Weight (kg)': '0.020',
+      'Volume': '50ml'
+    }
+  },
+  {
+    id: 'bearing-edp-cologne-perfume',
+    name: 'BEARING EDP Cologne Perfume for Men',
+    category: 'Perfumes',
+    price: 8500,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091533/30.1_wbkvcz.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091533/30.1_wbkvcz.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091550/30.2_grlayq.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091558/30.3_rt8tli.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091582/30.4_vyyxgr.png'
+    ],
+    isNew: true,
+    description: 'BEARING Eau de Parfum Cologne for Men - 50ml. For the man who commands respect, the BEARING Eau de Parfum Cologne is the definitive choice. This fragrance is crafted not just to smell good, but to last all day, thanks to its superior Eau de Parfum (EDP) concentration. Encased in a timeless, high-quality matte black bottle accented with luxurious gold detailing, this cologne is the embodiment of modern masculinity. The traditional "Cologne" label combined with the elegant packaging suggests a powerful and refined scent, likely blending fresh aromatic herbs, crisp citrus notes, and a warm, woody base.',
+    rating: 4.8,
+    reviews: 27,
+    keyFeatures: [
+      'High Concentration (EDP): Formulated as an Eau de Parfum, offering strong, long-lasting performance and silage.',
+      'Classic Masculine Scent: A traditional Aromatic Fougere or Spicy Fresh blend.',
+      'Elegant Packaging: Features a sleek matte black bottle and box with striking gold lettering, ideal for a gift.',
+      'Natural Spray: Comes with a VAPORISATEUR - NATURAL SPRAY atomizer for a fine mist application.',
+      'Generous Volume: Contains 50ml (1.7 Fl. Oz), providing extended use.'
+    ],
+    specifications: {
+      'SKU': 'GE779PF73096LNAFAMZ',
+      'Product Line': 'wowmart.ng',
+      'Weight (kg)': '0.020',
+      'Volume': '50ml'
+    }
   }
 ];
