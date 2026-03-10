@@ -163,7 +163,7 @@ export const products: Product[] = [
     id: 'balila-unisex-perfume',
     name: 'Balila Unisex Perfume',
     brand: 'Balila',
-    category: 'Perfumes',
+    category: 'Unisex',
     price: 5500,
     originalPrice: 9000,
     image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836605/balila1_jws29n.png',
@@ -202,7 +202,7 @@ export const products: Product[] = [
     id: 'temptation-eau-de-parfum',
     name: 'TEMPTATION EAU DE PARFUM 100ML FOR MEN',
     brand: 'Temptation',
-    category: 'Perfumes',
+    category: 'Men\'s Cologne',
     price: 8500,
     originalPrice: 10000,
     image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772838010/tempt1_wgxivn.png',
@@ -383,7 +383,7 @@ export const products: Product[] = [
   {
     id: 'givanas-caribbean-vanilla',
     name: 'Givanas 100% CARBBEAN VANILLA PERFUME',
-    category: 'Perfumes',
+    category: 'Women\'s Perfume',
     price: 6500,
     originalPrice: 9500,
     image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772837622/perf1_veuplk.png',
@@ -415,7 +415,7 @@ export const products: Product[] = [
   {
     id: 'grey-de-kouroun-wishbone',
     name: 'Grey De Kouroun Wishbone Perfume',
-    category: 'Perfumes',
+    category: 'Unisex',
     price: 6500,
     originalPrice: 8000,
     image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772908617/wish1_shcppw.png',
@@ -444,7 +444,7 @@ export const products: Product[] = [
   {
     id: 'ecstasy-chic-eau-de-toilette',
     name: 'Ecstasy Collection Chic Eau de Toilette - 25ml',
-    category: 'Perfumes',
+    category: 'Women\'s Perfume',
     price: 8500,
     originalPrice: 10500,
     image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1772836647/chic1_cixifh.png',
@@ -950,7 +950,8 @@ export const products: Product[] = [
   {
     id: 'happy-flower-yellow-women-perfume',
     name: 'Happy Flower "yellow" women Perfume',
-    category: 'Perfumes',
+    brand: 'Warmkiss',
+    category: 'Women\'s Perfume',
     price: 8000,
     image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091278/22.1_ydo14g.png',
     images: [
@@ -979,7 +980,8 @@ export const products: Product[] = [
   {
     id: 'perfume-red-velvet',
     name: 'Perfume Red velvet',
-    category: 'Perfumes',
+    brand: 'Warmkiss',
+    category: 'Women\'s Perfume',
     price: 10500,
     image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091329/21.1_luk34z.png',
     images: [
@@ -1010,7 +1012,8 @@ export const products: Product[] = [
   {
     id: 'veyes-rouge-n-romance-perfume',
     name: 'Veyes Rouge,n romance perfume',
-    category: 'Perfumes',
+    brand: 'Veyes',
+    category: 'Women\'s Perfume',
     price: 9500,
     image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091284/20.1_rge8dg.png',
     images: [
@@ -1038,7 +1041,8 @@ export const products: Product[] = [
   {
     id: 'lulanzi-passion-cologne-perfume',
     name: 'Lulanzi Passion Cologne Perfume 50ml',
-    category: 'Perfumes',
+    brand: 'Lulanzi',
+    category: 'Men\'s Cologne',
     price: 8500,
     image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091316/24.1_gb741f.png',
     images: [
@@ -1070,7 +1074,8 @@ export const products: Product[] = [
   {
     id: 'vv-love-dema-fougere-perfume',
     name: 'V.V.LOVE Dema Fougere Perfume',
-    category: 'Perfumes',
+    brand: 'V.V.LOVE',
+    category: 'Men\'s Cologne',
     price: 6000,
     image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091385/25.1_rhqr9y.png',
     images: [
@@ -1098,7 +1103,8 @@ export const products: Product[] = [
   {
     id: 'drunken-man-black-crow-at-9pm',
     name: 'Drunken Man (Black Crow at 9pm) Men Perfume Eau de Toilette',
-    category: 'Perfumes',
+    brand: 'Warmkiss',
+    category: 'Men\'s Cologne',
     price: 6500,
     image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091430/26.1_qmvkrq.png',
     images: [
@@ -1130,7 +1136,8 @@ export const products: Product[] = [
   {
     id: 'warmkiss-earth-man-fragrance',
     name: 'WARMKISS Earth Man Fragrance Eau de Parfum – Long-Lasting Perfume for Men',
-    category: 'Perfumes',
+    brand: 'Warmkiss',
+    category: 'Men\'s Cologne',
     price: 6500,
     image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091434/27.1_mv0ymw.png',
     images: [
@@ -1165,7 +1172,8 @@ export const products: Product[] = [
   {
     id: 'warmkiss-signature-spicy-floral-amber',
     name: 'The WARMKISS Signature Spicy Floral Amber Perfume',
-    category: 'Perfumes',
+    brand: 'Warmkiss',
+    category: 'Unisex',
     price: 9500,
     image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091476/28.1_ka82wu.png',
     images: [
@@ -1194,7 +1202,8 @@ export const products: Product[] = [
   {
     id: 'cologne-noir-9pm-edt',
     name: 'COLOGNE NOIR 9PM EDT Perfume for Men - Original Compass Design',
-    category: 'Perfumes',
+    brand: 'Cologne Noir',
+    category: 'Men\'s Cologne',
     price: 8500,
     image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091507/29.1_vnobji.png',
     images: [
@@ -1224,7 +1233,8 @@ export const products: Product[] = [
   {
     id: 'bearing-edp-cologne-perfume',
     name: 'BEARING EDP Cologne Perfume for Men',
-    category: 'Perfumes',
+    brand: 'Bearing',
+    category: 'Men\'s Cologne',
     price: 8500,
     image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773091533/30.1_wbkvcz.png',
     images: [
@@ -1249,6 +1259,131 @@ export const products: Product[] = [
       'Product Line': 'wowmart.ng',
       'Weight (kg)': '0.020',
       'Volume': '50ml'
+    }
+  },
+  {
+    id: 'midia-ladies-square-bag-khaki',
+    name: "MIDIA Ladies' square bag, single-shoulder bag, Women's bag handbag, crossbody bag-Khaki",
+    brand: 'MIDIA',
+    category: 'Fashion',
+    price: 16500,
+    originalPrice: 22000,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176742/53.1_rsx0n3.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176742/53.1_rsx0n3.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176757/53.2_xo72cv.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176772/53.3_imebmc.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176786/53.4_i55mmd.png'
+    ],
+    isNew: true,
+    description: "Welcome to MIDIA. Fashionable and lightweight: This vintage leather bag for women is not only fashionable but also lightweight, suitable for all kinds of occasions. Convenient and multi-functional: This shoulder and crossbody bag is equipped with adjustable shoulder straps. Durable and waterproof: This Messenger handbag is made of leather.",
+    rating: 4.8,
+    reviews: 15,
+    keyFeatures: [
+      'Material: PU',
+      'Size: 22*8*17',
+      'Handle height: 10CM',
+      'Shoulder strap: 110CM (adjustable)',
+      'Weight: 0.38KG',
+      'Fashionable and grand'
+    ],
+    specifications: {
+      'SKU': 'FA203FC6UW82DNAFAMZ',
+      'Weight (kg)': '0.6',
+      'Color': 'Khaki',
+      'Main Material': 'PU'
+    }
+  },
+  {
+    id: 'black-regal-ladies-handbag',
+    name: 'Black Regal Ladies Handbag with Adjustable Straps for Everyday Elegance',
+    brand: 'Regal',
+    category: 'Fashion',
+    price: 16500,
+    originalPrice: 21000,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176825/56.1_wpjejn.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176825/56.1_wpjejn.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176830/56.2_mopwoy.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176824/56.3_foigxo.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176859/56.4_qzckpj.png'
+    ],
+    isNew: true,
+    description: 'Step out in confidence with the Black Regal Ladies Handbag, crafted to blend timeless style with modern functionality. Featuring adjustable straps for versatile carrying and a sleek design that elevates any outfit, this handbag is perfect for work, shopping, or casual outings.',
+    rating: 4.9,
+    reviews: 24,
+    keyFeatures: [
+      'Elegant Design: A stylish accessory for both formal and casual wear',
+      'Adjustable Straps: Wear comfortably as a shoulder or crossbody bag',
+      'Spacious & Practical: Fits phone, wallet, makeup, and daily essentials',
+      'Durable Build: Made to withstand everyday use',
+      'Lightweight & Comfortable: Easy to carry all day long',
+      'Versatile Use: ideal for work, shopping, travel, or outings'
+    ],
+    specifications: {
+      'SKU': 'FA203FC7NFB7XNAFAMZ',
+      'Weight (kg)': '0.04kg',
+      'Color': 'Black'
+    }
+  },
+  {
+    id: 'midia-lady-handbag-duchess-white',
+    name: 'MIDIA Lady handbag Duchess bag woman crossbody bag -white',
+    brand: 'MIDIA',
+    category: 'Fashion',
+    price: 17500,
+    originalPrice: 24000,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176768/54.1_kzmpju.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176768/54.1_kzmpju.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176815/54.2_gjodul.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176746/54.3_gp9qh3.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176744/54.4_i34vqz.png'
+    ],
+    isNew: true,
+    description: 'Size: 19cm x 14cm x 10cm. Classic herringbone pattern design, resembling the silhouette of Princess Diana\'s bag. The soft material has a delicate feel, and the herringbone pattern is full and three-dimensional. The interior is equipped with concealed zippered pockets and inner pouches.',
+    rating: 4.7,
+    reviews: 18,
+    keyFeatures: [
+      'Classic herringbone pattern design',
+      'Crown Bag'
+    ],
+    specifications: {
+      'SKU': 'FA203FC7IU68RNAFAMZ',
+      'Weight (kg)': '0.4',
+      'Color': 'white',
+      'Main Material': 'pu'
+    }
+  },
+  {
+    id: 'midia-2-pcs-crocodile-patterned-black',
+    name: 'MIDIA 2 PCS Crocodile Patterned Leather Handbag - Crossbody Bag woman\'s Shoulder Bag - black',
+    brand: 'MIDIA',
+    category: 'Fashion',
+    price: 24500,
+    originalPrice: 32000,
+    image: 'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176794/55.1_dikkao.png',
+    images: [
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176794/55.1_dikkao.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176785/55.2_iyxzta.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176803/55.3_nvhc3z.png',
+      'https://res.cloudinary.com/dghv07yzv/image/upload/v1773176843/55.4_lyyxm7.png'
+    ],
+    isNew: true,
+    description: 'Material: PU. Inner lining: PU. Hardness: Moderately soft. Size: Length 27 * Width 13 * Height 21. The sequin texture is fine and does not fall off. The main bag has an extremely large capacity. The secondary bag is small and exquisite.',
+    rating: 4.9,
+    reviews: 32,
+    keyFeatures: [
+      '2 PCS Double Bags',
+      'Durable and waterproof',
+      'Superb texture'
+    ],
+    specifications: {
+      'SKU': 'FA203FC7A5MP7NAFAMZ',
+      'Model': 'MIDIA',
+      'Weight (kg)': '0.8',
+      'Color': 'brown',
+      'Main Material': 'PU'
     }
   }
 ];

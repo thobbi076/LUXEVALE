@@ -1,12 +1,22 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Heart, ShoppingBag } from 'lucide-react';
 import { useAdmin } from '../context/AdminContext';
+import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
+import { useCurrency } from '../context/CurrencyContext';
+import { products } from '../data/products';
 import { optimizeImage } from '../utils/image';
 
 export default function Home() {
   console.log("[Client] Home rendering...");
   const { content } = useAdmin();
+  const { addToCart } = useCart();
+  const { toggleWishlist, isInWishlist } = useWishlist();
+  const { formatPrice } = useCurrency();
+
+  // Get 4 featured products (e.g., new arrivals or specific items)
+  const featuredProducts = products.filter(p => p.isNew || p.isBestSeller).slice(0, 4);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -91,6 +101,105 @@ export default function Home() {
               </Link>
             </motion.div>
           ))}
+        </div>
+      </section>
+      {/* Featured Products */}
+      <section className="py-20 px-4 max-w-7xl mx-auto w-full bg-muted/30">
+        <div className="flex justify-between items-end mb-12">
+          <div>
+            <h2 className="text-3xl font-bold mb-2">Featured Products</h2>
+            <p className="text-muted-foreground">Discover our latest and most popular items.</p>
+          </div>
+          <Link to="/shop" className="hidden sm:flex items-center gap-2 text-primary font-bold hover:underline">
+            View All <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {featuredProducts.map((product, index) => (
+            <motion.div 
+              key={product.id}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+              className="group flex flex-col gap-4"
+            >
+              <div className="relative aspect-[3/4] rounded-xl overflow-hidden bg-card">
+                <Link to={`/product/${product.id}`}>
+                  <img 
+                    src={product.image}
+                    alt={product.name}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                  />
+                </Link>
+                
+                {product.isNew && (
+                  <span className="absolute top-4 left-4 bg-primary text-white text-xs font-bold uppercase tracking-wider px-2 py-1 rounded z-10">
+                    New
+                  </span>
+                )}
+                
+                {product.isBestSeller && (
+                  <span className="absolute top-4 left-4 bg-foreground text-background text-xs font-bold uppercase tracking-wider px-2 py-1 rounded z-10">
+                    Best Seller
+                  </span>
+                )}
+
+                <button 
+                  onClick={() => toggleWishlist(product.id)}
+                  className={`absolute top-4 right-4 h-10 w-10 rounded-full flex items-center justify-center transition-all backdrop-blur-sm z-10 ${
+                    isInWishlist(product.id) 
+                      ? 'bg-primary text-white opacity-100' 
+                      : 'bg-white/90 text-muted-foreground hover:text-primary opacity-0 group-hover:opacity-100'
+                  }`}
+                >
+                  <Heart className={`h-5 w-5 ${isInWishlist(product.id) ? 'fill-current' : ''}`} />
+                </button>
+
+                <div className="absolute bottom-0 left-0 w-full p-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 z-10">
+                  <button 
+                    onClick={() => addToCart({ ...product, quantity: 1 })}
+                    className="w-full bg-white/90 backdrop-blur-md text-foreground font-bold uppercase tracking-wider text-xs py-3 rounded-lg hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2 shadow-lg"
+                  >
+                    <ShoppingBag className="h-4 w-4" /> Add to Cart
+                  </button>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <span 
+                  className={`text-xs font-bold uppercase tracking-widest mb-1 block ${
+                    ['Skincare', 'Women\'s Perfume', 'Men\'s Cologne', 'Unisex'].includes(product.category) 
+                      ? 'text-accent-purple' 
+                      : ['Gadgets', 'Fashion'].includes(product.category)
+                        ? 'text-primary'
+                        : 'text-muted-foreground'
+                  }`}
+                >
+                  {product.category}
+                </span>
+                <Link to={`/product/${product.id}`} className="block">
+                  <h3 className="text-lg font-bold leading-tight mb-1 hover:text-primary transition-colors truncate px-2">
+                    {product.name}
+                  </h3>
+                </Link>
+                <div className="flex items-center justify-center gap-2">
+                  <p className="text-primary font-bold">{formatPrice(product.price)}</p>
+                  {product.originalPrice && (
+                    <p className="text-muted-foreground text-sm line-through">{formatPrice(product.originalPrice)}</p>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+        <div className="mt-8 text-center sm:hidden">
+          <Link to="/shop" className="inline-flex items-center gap-2 text-primary font-bold hover:underline">
+            View All Products <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </section>
     </div>

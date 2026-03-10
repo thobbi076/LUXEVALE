@@ -30,17 +30,22 @@ export default function Shop() {
 
   const filteredProducts = products.filter(p => {
     const matchesCategory = filter === 'All' || p.category === filter;
+    const matchesBrand = !searchParams.get('brand') || searchParams.get('brand') === 'All' || p.brand === searchParams.get('brand');
     const matchesSearch = searchQuery 
       ? p.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
         p.description.toLowerCase().includes(searchQuery.toLowerCase())
       : true;
-    return matchesCategory && matchesSearch;
+    return matchesCategory && matchesSearch && matchesBrand;
   }).sort((a, b) => {
     switch (sortBy) {
       case 'Price: Low to High':
         return a.price - b.price;
       case 'Price: High to Low':
         return b.price - a.price;
+      case 'Name: A to Z':
+        return a.name.localeCompare(b.name);
+      case 'Name: Z to A':
+        return b.name.localeCompare(a.name);
       case 'Newest Arrivals':
         return (a.isNew === b.isNew) ? 0 : a.isNew ? -1 : 1;
       default:
@@ -88,7 +93,7 @@ export default function Shop() {
       {/* Filters */}
       <div className="flex flex-wrap items-center justify-between gap-4 mb-12 border-b border-border pb-6">
         <div className="flex gap-3 flex-wrap">
-          {['All', 'Fashion', 'Skincare', 'Perfumes'].map((category) => (
+          {['All', 'Fashion', 'Skincare', 'Women\'s Perfume', 'Men\'s Cologne', 'Unisex'].map((category) => (
             <button
               key={category}
               onClick={() => setFilter(category)}
@@ -103,18 +108,44 @@ export default function Shop() {
           ))}
         </div>
         
-        <div className="flex items-center gap-2">
-          <span className="text-sm font-medium uppercase tracking-wider text-muted-foreground">Sort by:</span>
-          <select 
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value)}
-            className="bg-transparent border-none text-sm font-bold uppercase tracking-wider focus:ring-0 cursor-pointer"
-          >
-            <option>Featured</option>
-            <option>Price: Low to High</option>
-            <option>Price: High to Low</option>
-            <option>Newest Arrivals</option>
-          </select>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-medium uppercase tracking-wider text-muted-foreground">Brand:</span>
+            <select 
+              value={searchParams.get('brand') || 'All'}
+              onChange={(e) => {
+                const newParams = new URLSearchParams(searchParams);
+                if (e.target.value === 'All') {
+                  newParams.delete('brand');
+                } else {
+                  newParams.set('brand', e.target.value);
+                }
+                setSearchParams(newParams);
+              }}
+              className="bg-transparent border-none text-sm font-bold uppercase tracking-wider focus:ring-0 cursor-pointer"
+            >
+              <option value="All">All Brands</option>
+              {Array.from(new Set(products.map(p => p.brand).filter(Boolean))).sort().map(brand => (
+                <option key={brand} value={brand}>{brand}</option>
+              ))}
+            </select>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-medium uppercase tracking-wider text-muted-foreground">Sort by:</span>
+            <select 
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="bg-transparent border-none text-sm font-bold uppercase tracking-wider focus:ring-0 cursor-pointer"
+            >
+              <option>Featured</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>Name: A to Z</option>
+              <option>Name: Z to A</option>
+              <option>Newest Arrivals</option>
+            </select>
+          </div>
         </div>
       </div>
 
